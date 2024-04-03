@@ -1,67 +1,37 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
-import Sidebar from './components/sidebar'
+import Sidebar from './components/Sidebar'
 import './App.css'
-import Modal from './components/modal'
-import Signin from './components/signin'
-
+import Modal from './components/Modal'
+import Signin from './components/Signin.jsx'
+import Signup from './components/Signup.jsx'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 
 
 function App() {
   return (
     <>
+    <Router>
+      <div className="app">
+      <div className="bg-gray-100 min-h-screen">
+      <div className="flex items-center justify-center h-screen">
+        <Routes>
+          <Route path="/" element={<Signin />} />
+          <Route path="/signup" element={<Signup />} />
+          {/* Ajoutez d'autres routes au besoin */}
+        </Routes>
+      </div>
+    </div>
+    </div>
+    </Router>
+
 
     
-      <div className="bg-gray-100 min-h-screen"> {/* Changez ici pour la couleur de fond désirée */}
-
-      <div className="flex items-center justify-center h-screen">
-        <Signin />
-      </div>
-      </div>
-        {/* <div className='fixed'>
-        <Sidebar />
-      </div>
-      <div className="ml-64">
-      <div
-  style={{
-    width: '520px',
-    height: '464px',
-    top: '280px',
-    left: '460px'
-  }}
->
-  */}
-
-
-
       
-{/* 
-      <Modal />
-      </div> */}
-
-
-      {/* <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p> */}
+     
+        
     </>
   )
 }

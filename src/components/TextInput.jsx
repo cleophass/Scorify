@@ -2,12 +2,12 @@ import React from 'react';
 
 const TextInput = ({ label }) => {
   return (
-    <div className="flex flex-col text-left"> {/* Add text-left class */}
+    <div className="flex flex-col text-left"style={{ width: '400px' }}>
       <label className="mb-2 text-sm font-medium text-gray-700">{label}</label>
       <input
         type="text"
-        className="w-full rounded-md border border-stroke bg-transparent px-5 py-3 text-base text-body-color outline-none focus:border-primary focus-visible:shadow-none dark:border-dark-3 dark:text-white"
-
+        style={{ width: '400px' }}
+        className="rounded-md border bg-transparent px-5 py-3 text-base text-body-color outline-none focus:border-custom-blue border-stroke dark:border-dark-3 dark:text-white"
         placeholder={label}
       />
     </div>
@@ -15,4 +15,3 @@ const TextInput = ({ label }) => {
 };
 
 export default TextInput;
-

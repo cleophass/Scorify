@@ -1,5 +1,5 @@
 import React from 'react';
-import UserProfile from './userprofile.jsx'; // Si userprofile.jsx est au même niveau que sidebar.jsx
+import UserProfile from './Userprofile.jsx'; // Si userprofile.jsx est au même niveau que sidebar.jsx
 
 
 // import logo
