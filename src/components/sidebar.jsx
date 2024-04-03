@@ -8,41 +8,36 @@ const NavItem = ({ children, onClick, isActive }) => {
   return (
     <div className={`group text-l font-inter font-medium py-2 px-10 cursor-pointer relative hover:bg-primary-light hover:text-custom-blue ${itemClass}`}
          onClick={onClick}>
-      <span className="absolute inset-y-0 right-0 w-1 bg-custom-blue scale-0 group-hover:scale-100 transition-transform duration-200"></span>
+      <span className={`absolute inset-y-0 right-0 w-1 ${isActive ? 'bg-custom-blue' : 'scale-0'} group-hover:scale-100 transition-transform duration-200`}></span>
       {children}
     </div>
   );
 };
 
-const Sidebar = ({ activePage, setActivePage }) => {
+const Sidebar = ({ activePage, setActivePage, onLogout }) => {
   const navigate = useNavigate();
 
   const handleItemClick = (page) => {
     setActivePage(page);
     navigate(`/${page}`);
   };
+
   return (
-    
     <aside className="w-64 bg-white-100 min-h-screen flex flex-col bg-white fixed">
       <div className="flex-grow">
         <div className="flex items-center justify-center pb-5">
-            <img src={Logo} alt="logo" className="h-14" />
+          <img src={Logo} alt="logo" className="h-14" />
         </div>
         <NavItem onClick={() => handleItemClick('dashboard')} isActive={activePage === 'dashboard'}>Tableau de bord</NavItem>
         <NavItem onClick={() => handleItemClick('contrats')} isActive={activePage === 'contrats'}>Contrats</NavItem>
         <NavItem onClick={() => handleItemClick('affaires')} isActive={activePage === 'affaires'}>Affaires</NavItem>
         <NavItem onClick={() => handleItemClick('fournisseurs')} isActive={activePage === 'fournisseurs'}>Fournisseurs</NavItem>
-        <NavItem onClick={() => handleItemClick('critères')} isActive={activePage === 'critères'}>Critères d'évaluation</NavItem>
-
-        {/* now i need a line */}
+        <NavItem onClick={() => handleItemClick('criteres')} isActive={activePage === 'criteres'}>Critères d'évaluation</NavItem>
         <div className="py-2 px-5"><div className="border-t border-light-gray my-5 mx-auto"></div></div>
         <NavItem onClick={() => handleItemClick('account')} isActive={activePage === 'account'}>Mon compte</NavItem>
-        <NavItem onClick={() => { /* Gérer la déconnexion ici */ }}>Déconnexion</NavItem>
-        </div>
-        {/* now i need a div that is in the bottom */}
-        {/* <div className="flex items-center justify-center text-custom-grey p-5"> */}
-        <UserProfile /> 
-        
+        <NavItem onClick={onLogout}>Déconnexion</NavItem>
+      </div>
+      <UserProfile />
     </aside>
   );
 };
