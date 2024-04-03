@@ -8,6 +8,9 @@ const TextInput = ({ label, value, onChange, isInvalid }) => {
         type="text"
         value={value}
         onChange={onChange}
+        /// if label contain email then autocomplete will be email
+        autoComplete={label.toLowerCase().includes('email') ? 'email' : 'off'}
+        
         className={`rounded-md border px-5 py-3 text-base text-body-color outline-none ${isInvalid ? 'border-red-500' : 'bg-transparent border-stroke focus:border-custom-blue'} dark:border-dark-3 dark:text-white`}
         placeholder={label}
       />

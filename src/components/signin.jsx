@@ -24,7 +24,7 @@ const Signin = ({ onLoginSuccess }) => {
     if ((email === 'admin' && password === 'admin') || isValidEmail(email) && password) {
         // Connexion réussie avec admin/admin ou avec une adresse email valide
         onLoginSuccess(); // Cette fonction doit être appelée après une connexion réussie
-        navigate('/home'); // Rediriger vers le tableau de bord ou une autre page de votre choix
+        navigate('/dashboard'); // Rediriger vers le tableau de bord ou une autre page de votre choix
     } else {
         // Afficher une erreur si les champs sont invalides
         return;
