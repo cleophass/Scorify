@@ -32,11 +32,11 @@ const Signin = ({ onLoginSuccess }) => {
 };
 
   return (
-    <section className="bg-gray-1 py-20 dark:bg-dark lg:py-[120px]">
+    <section className="bg-gray-1  dark:bg-dark lg:py-[120px]">
       <div className="">
         <div className="-mx-4 flex flex-wrap">
-          <div className="w-full px-4">
-            <div className="relative mx-auto overflow-hidden rounded-lg bg-white px-10 py-16 text-center dark:bg-dark-2 sm:px-12 md:px-[60px]"style={{ width: '520px', height: '596px' }}>
+          <div className="w-full">
+            <div className="relative overflow-hidden rounded-lg bg-white px-10 py-16 text-center dark:bg-dark-2 sm:px-12 md:px-[60px]"style={{ width: '520px', height: '596px' }}>
               <div className="mb-8 md:mb-16" style={{ paddingTop: '50px' }}> 
                 <a
                   className="mx-auto inline-block max-w-[160px]"

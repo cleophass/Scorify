@@ -50,7 +50,7 @@ const Signup = () => {
   };
 
     return (
-    <section>
+    <section className='bg-gray-1 '>
       <div>
         <div>
           <div>
