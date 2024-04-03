@@ -27,12 +27,14 @@ function App() {
               {isLoggedIn ? (
                 <Route path="/" element={<Navigate replace to="/dashboard" />} />
               ) : (
+              <>
                 <Route path="/" element={<Signin onLoginSuccess={handleLoginSuccess} />} />
+                <Route path="/signup" element={<Signup onSignupSuccess={handleLoginSuccess} />} />
+              </>
               )}
-              <Route path="/signup" element={<Signup onSignupSuccess={handleLoginSuccess} />} />
               <Route path="/dashboard" element={isLoggedIn ? <Dashboard/> : <Navigate replace to="/" />} />
               <Route path="/contrats" element={isLoggedIn ? <Contrats/> : <Navigate replace to="/" />} />
-              {/* Ajoutez d'autres routes en respectant le modèle ci-dessus pour chaque page/component */}
+              {/* Ajoutez d'autres routes en  respectant le modèle ci-dessus pour chaque page/component */}
             </Routes>
           </div>
         </div>
