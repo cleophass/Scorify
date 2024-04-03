@@ -1,11 +1,36 @@
-import React from "react";
-import Logo from '../assets/Logo.svg'; // Assurez-vous que le chemin est correct
-import TextInput from './TextInput.jsx'
+import React, { useState } from "react";
+import Logo from '../assets/Logo.svg';
+import TextInput from './TextInput.jsx';
 import PasswordInput from "./PasswordInput.jsx";
 import ButtonFill from "./ButtonFill.jsx";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
-const Signin = () => {
+function isValidEmail(email) {
+  return /\S+@\S+\.\S+/.test(email);
+}
+
+const Signin = ({ onLoginSuccess }) => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [isEmailInvalid, setIsEmailInvalid] = useState(false);
+  const [isPasswordInvalid, setIsPasswordInvalid] = useState(false);
+  const navigate = useNavigate();
+
+  const handleSignin = (e) => {
+    e.preventDefault();
+    setIsEmailInvalid(!isValidEmail(email) || !email);
+    setIsPasswordInvalid(!password);
+
+    if ((email === 'admin' && password === 'admin') || isValidEmail(email) && password) {
+        // Connexion réussie avec admin/admin ou avec une adresse email valide
+        onLoginSuccess(); // Cette fonction doit être appelée après une connexion réussie
+        navigate('/home'); // Rediriger vers le tableau de bord ou une autre page de votre choix
+    } else {
+        // Afficher une erreur si les champs sont invalides
+        return;
+    }
+};
+
   return (
     <section className="bg-gray-1 py-20 dark:bg-dark lg:py-[120px]">
       <div className="">
@@ -23,14 +48,13 @@ const Signin = () => {
                 Connectez-vous pour accéder à l'outil
               </h2> 
 
-              <form>
+              <form onSubmit={handleSignin}>
                 <div className="mb-6 flex justify-center">
-                <TextInput label="Adresse email" />
+                  <TextInput label="Adresse email" value={email} onChange={(e) => setEmail(e.target.value)} isInvalid={isEmailInvalid} />
                 </div>
                 <div className="mb-6 flex justify-center">
-                <PasswordInput label="Mot de passe" />
+                  <PasswordInput label="Mot de passe" value={password} onChange={(e) => setPassword(e.target.value)} isInvalid={isPasswordInvalid} />
                 </div>
-              </form>
               <div className="text-left mb-6 flex justify-center">
               <a href="" className="text-left font-bold text-custom-blue"style={{ width: '400px' }}>
                 Mot de passe oublié?
@@ -39,6 +63,7 @@ const Signin = () => {
               <div className="mb-6">
               <ButtonFill label="Connexion" />
               </div>
+              </form>
               <div className="mb-6" style={{paddingBottom: '20px'}}>
               <p className="text-base text-body-color dark:text-dark-6">
                 <span className="text-l font-inter font-medium text-custom-grey ">Vous n’êtes pas encore membre ? </span>
