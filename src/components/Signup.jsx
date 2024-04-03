@@ -3,11 +3,54 @@ import Logo from '../assets/Logo.svg';
 import TextInput from './TextInput.jsx';
 import PasswordInput from "./PasswordInput.jsx";
 import ButtonFill from "./ButtonFill.jsx";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
-const Signup = ({}) => {
-  return (
-    <section>
+// Fonction pour valider l'adresse e-mail
+const isValidEmail = (email) => {
+  return /\S+@\S+\.\S+/.test(email);
+}
+
+const Signup = () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [emailError, setEmailError] = useState(false);
+  const [passwordError, setPasswordError] = useState(false);
+  const [confirmPasswordError, setConfirmPasswordError] = useState(false);
+  const navigate = useNavigate();
+
+  const handleSignup = (e) => {
+    e.preventDefault();
+    let isValid = true;
+
+    if (!isValidEmail(email)) {
+      setEmailError(true);
+      isValid = false;
+    } else {
+      setEmailError(false);
+    }
+
+    if (password !== confirmPassword || !password) {
+      setPasswordError(password === '');
+      setConfirmPasswordError(password !== confirmPassword);
+      isValid = false;
+    } else {
+      setPasswordError(false);
+      setConfirmPasswordError(false);
+    }
+
+    if (isValid) {
+      const newUser = { email, password };
+      const users = JSON.parse(localStorage.getItem('users')) || [];
+      users.push(newUser);
+      localStorage.setItem('users', JSON.stringify(users));
+
+      navigate('/'); // Redirection vers la page de connexion
+    }
+  };
+
+    return (
+    <section className='bg-gray-1 '>
       <div>
         <div>
           <div>
@@ -18,16 +61,17 @@ const Signup = ({}) => {
               <h2 className="text-l font-medium text-custom-grey"style={{paddingTop:'20px',paddingBottom:'40px'}}>
                 Inscrivez-vous pour accéder à l'outil
               </h2>
-              <form>
+              <form onSubmit={handleSignup}>
 
                 <div className="mb-6 flex justify-center">
-                  <TextInput label="Adresse email"  />
+                <TextInput label="Adresse email" value={email} onChange={(e) => setEmail(e.target.value)} isInvalid={emailError} />
                 </div>
                 <div className="mb-6 flex justify-center">
-                  <PasswordInput label="Mot de passe"  />
+                <PasswordInput label="Mot de passe" value={password} onChange={(e) => setPassword(e.target.value)}isInvalid={passwordError} />
+
                 </div>
                 <div className="mb-6 flex justify-center">
-                  <PasswordInput label="Confirmation du mot de passe" />
+                <PasswordInput label="Confirmation du mot de passe" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} isInvalid={confirmPasswordError} />
                 </div>   
                 <div className='mb-6 flex justify-center'>
                   <TextInput label="Adresse email manager (optionnel)" />
