@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Sidebar from './Sidebar'; // Assurez-vous du chemin d'accès
+import Sidebar from './Sidebar.jsx'; // Assurez-vous du chemin d'accès
 import Dashboard from './Dashboard.jsx';
 import Contrats from './Contrats.jsx';
 // Autres imports de composants
