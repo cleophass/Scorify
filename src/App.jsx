@@ -8,18 +8,18 @@ function App() {
 
   useEffect(() => {
     // Vérifiez si l'utilisateur est connecté au démarrage de l'application
-    const loggedIn = localStorage.getItem('isLoggedIn') === 'true';
+    const loggedIn = sessionStorage.getItem('isLoggedIn') === 'true';
     setIsLoggedIn(loggedIn);
   }, []);
 
   const handleLoginSuccess = () => {
     setIsLoggedIn(true);
-    localStorage.setItem('isLoggedIn', 'true'); // Marquez l'utilisateur comme connecté dans le localStorage
+    sessionStorage.setItem('isLoggedIn', 'true'); // Marquez l'utilisateur comme connecté dans le localStorage
   };
 
   const handleLogout = () => {
     setIsLoggedIn(false);
-    localStorage.removeItem('isLoggedIn'); // Supprimez l'indicateur de connexion du localStorage
+    sessionStorage.removeItem('isLoggedIn'); // Supprimez l'indicateur de connexion du localStorage
   };
 
   return (

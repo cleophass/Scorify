@@ -8,16 +8,16 @@ import { EllipsisVerticalIcon } from '@heroicons/react/24/outline';
 const TableHeader = ({ isAllSelected, toggleAll }) => {
   return (
     <div className="px-4 py-3 bg-indigo-50 rounded-tl-md rounded-tr-md shadow-inner flex items-center">
-      <div className="w-[46px]">
+      <div className="px-3 w-[46px]">
         <input type="checkbox" checked={isAllSelected} onChange={toggleAll} />
       </div>
-      <div className="w-[80px] px-1 font-inter font-bold">ID</div>
+      <div className="w-[80px] px-4 font-inter font-bold">ID</div>
       <div className="w-[169px] px-1 font-inter font-bold">Titre</div>
       <div className="w-[242px] px-1 font-inter font-bold">Fournisseur</div>
       <div className="w-[137px] px-1 font-inter font-bold">Score</div>
-      <div className="w-28 px-1 font-inter font-bold">Équipe</div>
-      <div className="w-[117px] px-1 font-inter font-bold">Créé le</div>
-      <div className="flex-grow px-1 font-inter font-bold"></div>
+      <div className="w-[137px] px-1 font-inter font-bold">Équipe</div>
+      <div className="w-[137px] px-1 font-inter font-bold">Créé le</div>
+      <div className="flex-grow px-4 font-inter font-bold"></div>
     </div>
   );
 };
@@ -26,17 +26,17 @@ const TableHeader = ({ isAllSelected, toggleAll }) => {
 const DataRow = ({ id, title, provider, score, avatars, dateCreated, isSelected, toggle }) => {
   return (
     <div className={`px-4 py-6 flex items-center border-b border-zinc-200 ${isSelected ? 'bg-gray-200' : ''}`}>
-      <div className="w-[46px]">
+      <div className="px-3 w-[46px]">
         <input type="checkbox" checked={isSelected} onChange={() => toggle(id)} />
       </div>
-      <div className="w-[80px] px-1 font-inter">{id}</div>
+      <div className="w-[80px] px-4 font-inter">{id}</div>
       <div className="w-[169px] px-1 font-inter">{title}</div>
       <div className="w-[242px] px-1 font-inter">{provider}</div>
       <div className="w-[137px] px-1 font-inter"><Score score={score}/></div>
-      <div className="w-28 px-1 font-inter">
+      <div className="w-[137px] px-1 font-inter">
           <TeamAvatars avatars={avatars}/></div>
-      <div className="w-[117px] px-1 font-inter">{dateCreated}</div>
-      <div className="flex-grow px-1 font-inter"><EllipsisVerticalIcon className='h-5'/></div>
+      <div className="w-[137px] px-1 font-inter">{dateCreated}</div>
+      <div className="flex-grow px-4 font-inter"><EllipsisVerticalIcon className='h-5'/></div>
     </div>
   );
 };

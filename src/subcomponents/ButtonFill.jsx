@@ -1,9 +1,15 @@
 import React from 'react';
 
-const ButtonFill = ({label}) => {
+const ButtonFill = ({ label, width = '175px' }) => { // Default width set to '400px'
+  const buttonStyle = {
+    width, // Use the width variable here
+  };
+
   return (
-    // Modifier les classes Tailwind pour correspondre à l'apparence souhaitée.
-    <button className='bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded' style={{ width: '400px' }}>
+    <button 
+      className='bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'
+      style={buttonStyle}
+    >
       {label}
     </button>
   )

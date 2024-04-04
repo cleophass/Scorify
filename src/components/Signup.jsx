@@ -77,7 +77,7 @@ const Signup = () => {
                   <TextInput label="Adresse email manager (optionnel)" />
                 </div>
                 <div className='mb-6'>
-                  <ButtonFill label="Inscription" ></ButtonFill>
+                  <ButtonFill label="Inscription" width='400px'></ButtonFill>
                 </div>              
               </form>
               

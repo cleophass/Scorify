@@ -61,7 +61,8 @@ const Signin = ({ onLoginSuccess }) => {
               </a>
               </div>
               <div className="mb-6">
-              <ButtonFill label="Connexion" />
+                
+              <ButtonFill label="Connexion" width="400px"/>
               </div>
               </form>
               <div className="mb-6" style={{paddingBottom: '20px'}}>

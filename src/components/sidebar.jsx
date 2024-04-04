@@ -1,5 +1,5 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom'; // Importez useNavigate pour la navigation
+import React, { useEffect } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom'; // Importez également useLocation
 import UserProfile from '../subcomponents/Userprofile.jsx';
 import Logo from '../assets/Logo.svg';
 
@@ -16,6 +16,13 @@ const NavItem = ({ children, onClick, isActive }) => {
 
 const Sidebar = ({ activePage, setActivePage, onLogout }) => {
   const navigate = useNavigate();
+  const location = useLocation(); // Utilisez useLocation pour accéder au chemin actuel
+
+  useEffect(() => {
+    // Extraire le nom de la page du chemin
+    const currentPage = location.pathname.split('/')[1]; // Cela suppose que vos chemins sont de la forme "/dashboard", "/contrats", etc.
+    setActivePage(currentPage);
+  }, [location, setActivePage]);
 
   const handleItemClick = (page) => {
     setActivePage(page);

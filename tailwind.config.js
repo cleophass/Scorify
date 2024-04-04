@@ -16,6 +16,9 @@ export default {
     "./src/subcomponents/Score.jsx",
     "./src/subcomponents/Table.jsx",
     "./src/subcomponents/TeamAvatars.jsx",
+    "./src/subcomponents/ButtonIcon.jsx",
+    "./src/subcomponents/ButtonGroup.jsx",
+    "./src/subcomponents/DropDownButton.jsx",
     "./src/App.jsx",
     "./src/main.jsx",
     
