@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import Auth from './components/Auth';
-import MainApp from './components/MainApp';
+import Auth from './primarycomponents/Auth';
+import MainApp from './primarycomponents/MainApp';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -24,7 +24,7 @@ function App() {
 
   return (
     <Router>
-      <div className="app bg-gray-100 min-h-screen">
+      <div className="app min-h-screen">
         <Routes>
           {isLoggedIn ? (
             // Passer handleLogout en prop pour permettre la déconnexion

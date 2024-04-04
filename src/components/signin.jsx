@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import Logo from '../assets/Logo.svg';
-import TextInput from './TextInput.jsx';
-import PasswordInput from "./PasswordInput.jsx";
-import ButtonFill from "./ButtonFill.jsx";
+import TextInput from '../subcomponents/TextInput.jsx';
+import PasswordInput from "../subcomponents/PasswordInput.jsx";
+import ButtonFill from "../subcomponents/ButtonFill.jsx";
 import { Link, useNavigate } from 'react-router-dom';
 
 function isValidEmail(email) {
@@ -37,14 +37,14 @@ const Signin = ({ onLoginSuccess }) => {
         <div className="-mx-4 flex flex-wrap">
           <div className="w-full">
             <div className="relative overflow-hidden rounded-lg bg-white px-10 py-16 text-center dark:bg-dark-2 sm:px-12 md:px-[60px]"style={{ width: '520px', height: '596px' }}>
-              <div className="mb-8 md:mb-16" style={{ paddingTop: '50px' }}> 
+              <div className=""> 
                 <a
                   className="mx-auto inline-block max-w-[160px]"
                 >
-                  <img src={Logo} alt="logo" className="h-8" />
+                  <img src={Logo} alt="logo" className="h-12" />
                 </a>
               </div>
-              <h2  className=" text-l font-inter font-medium text-custom-grey " style={{paddingTop:'20px',paddingBottom:'40px'}}>
+              <h2  className=" text-l font-['Inter'] font-medium text-custom-grey " style={{paddingTop:'20px',paddingBottom:'40px'}}>
                 Connectez-vous pour accéder à l'outil
               </h2> 
 
@@ -66,8 +66,8 @@ const Signin = ({ onLoginSuccess }) => {
               </form>
               <div className="mb-6" style={{paddingBottom: '20px'}}>
               <p className="text-base text-body-color dark:text-dark-6">
-                <span className="text-l font-inter font-medium text-custom-grey ">Vous n’êtes pas encore membre ? </span>
-                <Link to="/signup" className="text-l font-inter font-medium text-custom-blue">Inscrivez-vous</Link>
+                <span className="text-gray-500 text-base font-normal font-['Inter'] leading-normal">Vous n’êtes pas encore membre ? </span>
+                <Link to="/signup" className="text-l font-['Inter'] font-medium text-custom-blue">Inscrivez-vous</Link>
 
               </p>
               </div>
