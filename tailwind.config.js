@@ -25,7 +25,7 @@ export default {
     "./src/App.jsx",
     "./src/main.jsx",
     "./src/subcomponents/DonutChart.jsx",
-    "./src/subcomponents/GraphComponent1.jsx",
+    "./src/subcomponents/GraphComponent.jsx",
     
   ],
   theme: {
