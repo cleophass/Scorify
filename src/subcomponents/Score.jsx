@@ -10,7 +10,7 @@ const Score = ({ score }) => {
     } else if (score <= 100) {
       return "bg-red-600"; // Classe pour rouge
     } else {
-      return "bg-gray-400"; // Classe pour gris par défaut
+      return "bg-light-gray"; // Classe pour gris par défaut
     }
   };
 

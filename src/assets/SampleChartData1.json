@@ -1,0 +1,17 @@
+[
+    {
+        "label": "0 - 26/100",
+        "value": 10,
+        "color": "green"
+    },
+    {
+        "label": "27 - 50/100",
+        "value": 20,
+        "color": "orange"
+    },
+    {
+        "label": "51 - 75/100",
+        "value": 30,
+        "color": "red"
+    }
+]

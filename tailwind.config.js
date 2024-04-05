@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+
 export default {
   content: [
     "./src/components/Contrats.jsx",
@@ -19,8 +20,12 @@ export default {
     "./src/subcomponents/ButtonIcon.jsx",
     "./src/subcomponents/ButtonGroup.jsx",
     "./src/subcomponents/DropDownButton.jsx",
+    "./src/subcomponents/StatsCard.jsx",
+    "./src/subcomponents/ProgressBar.jsx",
     "./src/App.jsx",
     "./src/main.jsx",
+    "./src/subcomponents/DonutChart.jsx",
+    "./src/subcomponents/GraphComponent1.jsx",
     
   ],
   theme: {
@@ -30,10 +35,14 @@ export default {
         'light-gray': '#DFE4EA',
         'back-gray':'#F7F8FA',
         'custom-blue' : '#3758F9',
-        'primary-light':'#E9F0FF'
+        'primary-light':'#E9F0FF',
+        'light-blue' : '#EFF2FF'
       },
       fontFamily: {
         'inter': ['Inter', 'sans-serif'],
+      },
+      fontSize: {
+        '15px': '0.8rem',
       },
     },
   },
