@@ -7,7 +7,7 @@ const ButtonFill = ({ label, width = '175px' }) => { // Default width set to '40
 
   return (
     <button 
-      className='bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'
+      className='bg-custom-blue hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'
       style={buttonStyle}
     >
       {label}

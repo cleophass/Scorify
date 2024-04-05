@@ -1,0 +1,37 @@
+[
+    {
+        "label": "Marketing",
+        "value": 10,
+        "color": "#3858f9"
+    },
+    {
+        "label": "R&D",
+        "value": 10,
+        "color": "#1c3fb7"
+    },
+    {
+        "label": "Logistique",
+        "value": 10,
+        "color": "#c3cdf6"
+    },
+    {
+        "label": "RH",
+        "value": 10,
+        "color": "#5475e5"
+    },
+    {
+        "label": "Juridique",
+        "value": 10,
+        "color": "#809aec"
+    },
+    {
+        "label": "Achats",
+        "value": 10,
+        "color": "#adbcf1"
+    },
+    {
+        "label": "Autres",
+        "value": 10,
+        "color": "#dfe4ea"
+    }
+]

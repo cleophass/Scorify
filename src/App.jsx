@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Auth from './primarycomponents/Auth';
 import MainApp from './primarycomponents/MainApp';
-
 function App() {
+  
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
@@ -23,18 +23,24 @@ function App() {
   };
 
   return (
-    <Router>
-      <div className="app min-h-screen">
-        <Routes>
-          {isLoggedIn ? (
-            // Passer handleLogout en prop pour permettre la déconnexion
-            <Route path="/*" element={<MainApp onLogout={handleLogout} />} />
-          ) : (
-            <Route path="/*" element={<Auth onLoginSuccess={handleLoginSuccess} />} />
-          )}
-        </Routes>
-      </div>
-    </Router>
+
+    // <div style={{ width: '1168px', height: '398px', padding: '20px', boxSizing: 'border-box', background: '#FFF', borderRadius: '8px' }}>
+    //   <LineChartComponent data={sampleData} />
+    // </div>
+    
+      
+     <Router>
+       <div className="app min-h-screen">
+         <Routes>
+           {isLoggedIn ? (
+             // Passer handleLogout en prop pour permettre la déconnexion
+             <Route path="/*" element={<MainApp onLogout={handleLogout} />} />
+           ) : (
+             <Route path="/*" element={<Auth onLoginSuccess={handleLoginSuccess} />} />
+           )}
+         </Routes>
+       </div>
+     </Router>
   );
 }
 
