@@ -18,7 +18,7 @@ const UserProfile = () => {
       <div className="w-full px-5"> {/* Ajustement pour correspondre à la largeur du texte */}
         <div className="border-t border-light-gray my-5"></div>
       </div>
-      <div className="text-l font-['Inter'] font-medium text-custom-grey py-7 px-5">Green Conseil</div>
+      <div className="text-l font-medium text-custom-grey py-7 px-5">Green Conseil</div>
 
 
     </div>

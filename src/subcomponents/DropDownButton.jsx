@@ -36,7 +36,7 @@ const DropDownButton = ({label}) => {
         className="bg-white border border-light-gray rounded-lg flex items-center justify-between transition-all hover:bg-gray-50"
         style={{ width: '250px', height: '50px' }} // Apply width and height directly to the button
       >
-      <span className="text-gray-500 text-base font-normal font-['Inter'] leading-relaxed ml-4">
+      <span className="text-gray-500 text-base font-normal leading-relaxed ml-4">
       {label}
       </span>
       <ChevronDownIcon className="w-4 h-4 mr-4"/>

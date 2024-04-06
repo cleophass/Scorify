@@ -115,16 +115,19 @@ const Dashboard = () => {
         <LineChartComponent dataScores={dataScores} labels={labels} />
         </div>
       </div>
-      <div className="mb-6">
-        <h1 className="text-2xl font-bold text-custom-grey">En attente de score</h1>
-      </div>
+      <div className="mb-6 flex justify-between items-center">
+    <h1 className="text-2xl font-bold text-custom-grey">En attente de score</h1>
+    <a href="#" className="text-blue-600 text-base font-semibold leading-normal">Voir les contrats</a>
+    </div>
+
 
       <Table data={TableData1} />
       
       
-      <div className="mt-10 mb-6">
-        <h1 className="text-2xl font-bold text-custom-grey">Score les plus élevés</h1>
-      </div>
+      <div className="mb-6 flex justify-between items-center">
+    <h1 className="text-2xl font-bold text-custom-grey">Score les plus élevés</h1>
+    <a href="#" className="text-blue-600 text-base font-semibold leading-normal">Voir les contrats</a>
+    </div>
 
       <Table data={TableData2} />
     </div>

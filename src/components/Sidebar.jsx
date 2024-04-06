@@ -6,7 +6,7 @@ import Logo from '../assets/Logo.svg';
 const NavItem = ({ children, onClick, isActive }) => {
   const itemClass = isActive ? "text-custom-blue bg-primary-light" : "text-custom-grey";
   return (
-    <div className={`group text-l font-['Inter'] font-medium py-2 px-10 cursor-pointer relative hover:bg-primary-light hover:text-custom-blue ${itemClass}`}
+    <div className={`group text-l font-medium py-2 px-10 cursor-pointer relative hover:bg-primary-light hover:text-custom-blue ${itemClass}`}
          onClick={onClick}>
       <span className={`absolute inset-y-0 right-0 w-1 ${isActive ? 'bg-custom-blue' : 'scale-0'} group-hover:scale-100 transition-transform duration-200`}></span>
       {children}

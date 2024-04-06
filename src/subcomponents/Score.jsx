@@ -16,7 +16,7 @@ const Score = ({ score }) => {
 
   return (
     <div className={`w-[105px] h-[26px] px-2.5 py-[3px] ${bgColorClass()} rounded-[30px] justify-center items-center gap-px inline-flex`}>
-      <div className="text-white text-xs font-bold font-['Inter'] leading-tight">
+      <div className="text-white text-xs font-bold leading-tight">
         {score ? `${score}/100` : "-"}
       </div>
     </div>
