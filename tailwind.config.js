@@ -26,6 +26,9 @@ export default {
     "./src/main.jsx",
     "./src/subcomponents/DonutChart.jsx",
     "./src/subcomponents/GraphComponent.jsx",
+    "./src/subcomponents/DropdownIcon.jsx",
+    "./src/subcomponents/ButtonFillpdf.jsx",
+    
     
   ],
   theme: {
@@ -36,7 +39,10 @@ export default {
         'back-gray':'#F7F8FA',
         'custom-blue' : '#3758F9',
         'primary-light':'#E9F0FF',
-        'light-blue' : '#EFF2FF'
+        'light-blue' : '#EFF2FF',
+        'custom-yellow' : '#FBBF24',
+        'custom-green' : '#22AD5C',
+        'custom-red' : '#F23030'
       },
       fontFamily: {
         'inter': ['Inter', 'sans-serif'],

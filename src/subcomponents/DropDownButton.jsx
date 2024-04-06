@@ -22,7 +22,7 @@ let useClickOutside = (handler) => {
 };
 // Handler hook for when Outside click dropdown close End Code====>>
 
-const DropDownButton = ({label}) => {
+const DropDownButton = ({label,option1,option2}) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
   let domNode = useClickOutside(() => {
@@ -44,8 +44,8 @@ const DropDownButton = ({label}) => {
       {dropdownOpen && (
         <div className="shadow-lg absolute left-0 z-10 mt-1 w-full rounded-md bg-white py-1">
           {/* Render your dropdown items here */}
-          <DropdownItem label="Option 1" href="/#" />
-          <DropdownItem label="Option 2" href="/#" />
+          <DropdownItem label={option1} href="/#" />
+          <DropdownItem label={option2} href="/#" />
           {/* ... other dropdown items ... */}
         </div>
       )}

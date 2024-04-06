@@ -2,16 +2,16 @@
     {
         "label": "0 - 26/100",
         "value": 10,
-        "color": "green"
+        "color": "#22AD5C"
     },
     {
         "label": "27 - 50/100",
         "value": 20,
-        "color": "orange"
+        "color": "#FBBF24"
     },
     {
         "label": "51 - 75/100",
         "value": 30,
-        "color": "red"
+        "color": "#F23030"
     }
 ]

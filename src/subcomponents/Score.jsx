@@ -4,11 +4,11 @@ const Score = ({ score }) => {
   // Fonction pour déterminer la couleur en fonction du score
   const bgColorClass = () => {
     if (score <= 25) {
-      return "bg-green-500"; // Classe pour vert
+      return "bg-custom-green"; // Classe pour vert
     } else if (score <= 50) {
-      return "bg-yellow-500"; // Classe pour jaune
+      return "bg-custom-yellow"; // Classe pour jaune
     } else if (score <= 100) {
-      return "bg-red-600"; // Classe pour rouge
+      return "bg-custom-red"; // Classe pour rouge
     } else {
       return "bg-light-gray"; // Classe pour gris par défaut
     }

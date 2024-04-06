@@ -55,7 +55,7 @@ const Signin = ({ onLoginSuccess }) => {
                 <div className="mb-2 flex justify-center">
                   <PasswordInput label="Mot de passe" value={password} onChange={(e) => setPassword(e.target.value)} isInvalid={isPasswordInvalid} />
                 </div>
-              <div className="text-left mt-6 mb-6 flex justify-center">
+              <div className="text-left mb-6 flex justify-center">
               <a href="" className="text-left font-bold text-custom-blue"style={{ width: '400px' }}>
                 Mot de passe oublié?
               </a>

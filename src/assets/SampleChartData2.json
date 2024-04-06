@@ -6,7 +6,7 @@
     },
     {
         "label": "R&D",
-        "value": 10,
+        "value": 50,
         "color": "#1c3fb7"
     },
     {
@@ -21,17 +21,17 @@
     },
     {
         "label": "Juridique",
-        "value": 10,
+        "value": 40,
         "color": "#809aec"
     },
     {
         "label": "Achats",
-        "value": 10,
+        "value": 20,
         "color": "#adbcf1"
     },
     {
         "label": "Autres",
-        "value": 10,
+        "value": 5,
         "color": "#dfe4ea"
     }
 ]

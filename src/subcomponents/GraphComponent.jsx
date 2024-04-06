@@ -7,7 +7,7 @@ const GraphComponent = ({label, chartData}) => {
 
   return (
     // Add `border` and `border-gray-300` classes for borders
-    <div className="w-[535px] h-[348px] bg-white rounded-lg border border-gray-200 p-6 flex flex-col items-center"> {/* Optional: added shadow for depth */}
+    <div className="w-[515px] h-[348px] bg-white rounded-lg border border-gray-200 p-6 flex flex-col items-center"> {/* Optional: added shadow for depth */}
       {/* Title */}
       <div className="text-xl font-bold mb-4 self-start">{label}</div>
 
