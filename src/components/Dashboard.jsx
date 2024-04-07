@@ -1,14 +1,13 @@
 import React, {useState} from 'react';
 import Table from '../subcomponents/Table';
-import TableData1 from '../assets/TableData1.json';
-import TableData2 from '../assets/TableData2.json';
-import ButtonFill from '../subcomponents/ButtonFill.jsx';
 import ButtonGroup from '../subcomponents/ButtonGroup.jsx';
 import DropDownButton from '../subcomponents/DropDownButton.jsx';
 import StatsCard from '../subcomponents/StatsCard.jsx';
 import GraphComponent from '../subcomponents/GraphComponent.jsx';
 import SampleChartData1 from '../assets/SampleChartData1.json';
 import SampleChartData2 from '../assets/SampleChartData2.json';
+import TableData1 from '../assets/TableData1.json';
+import TableData2 from '../assets/TableData2.json';
 import LineChartComponent from '../subcomponents/LineChartComponent.jsx';
 import ButtonFillpdf from '../subcomponents/ButtonFillpdf.jsx';
 const Dashboard = () => {
@@ -28,9 +27,25 @@ const Dashboard = () => {
 
       <div className="flex justify-between items-center mb-6">
       <ButtonGroup active={activeTab} onButtonClick={handleButtonClick} />
-        <div className="flex justify-start space-x-4">
-          <DropDownButton label={'Filtrer par service'} option1={"marketing"} option2={"achats"} />
-          <DropDownButton label={'30 derniers jours'} option1={"test"} option2={"test"} />
+        <div className="flex justify-start space-x-11">
+            <DropDownButton
+      label="Filtrer par service"
+      options={[
+        { label: "Marketing", href: "/option1" },
+        { label: "Achats", href: "/option2" },
+      ]}
+
+    />
+    <DropDownButton
+      label="30 derniers jours"
+      options={[
+        { label: "Test", href: "/option1" },
+        { label: "Test", href: "/option2" },
+        { label: "Test", href: "/option3" },
+        { label: "Test", href: "/option4" },
+
+      ]}
+    />
         </div>
       </div>
 
