@@ -1,18 +1,23 @@
 import React, {useState} from 'react';
 import Table from '../subcomponents/Table';
-import TableData1 from '../assets/TableData1.json';
-import TableData2 from '../assets/TableData2.json';
-import ButtonFill from '../subcomponents/ButtonFill.jsx';
 import ButtonGroup from '../subcomponents/ButtonGroup.jsx';
 import DropDownButton from '../subcomponents/DropDownButton.jsx';
 import StatsCard from '../subcomponents/StatsCard.jsx';
 import GraphComponent from '../subcomponents/GraphComponent.jsx';
-import SampleChartData1 from '../assets/SampleChartData1.json';
-import SampleChartData2 from '../assets/SampleChartData2.json';
+
+// Importation du fichier JSON unifié
+import ChartData from '../assets/ChartDataUnified.json';
+import TableData from '../assets/TableDataUnified.json';  // Données unifiées de tableaux
+import statsData from '../assets/statsData.json'; // assuming the data is stored here
+
 import LineChartComponent from '../subcomponents/LineChartComponent.jsx';
 import ButtonFillpdf from '../subcomponents/ButtonFillpdf.jsx';
+
 const Dashboard = () => {
   const [activeTab, setActiveTab] = useState('contrats');
+  const { score: chartDataScore, service: chartDataService } = ChartData[activeTab] || { score: [], service: [] };
+  const { table1: tableData1, table2: tableData2 } = TableData[activeTab] || { table1: [], table2: [] };
+  const { stats1 : stats1, stats2: stats2, stats3: stats3, stats4: stats4 } = statsData[activeTab] || { stats1: [], stats2: [], stats3: [], stats4: [] };
 
   const dataScores = [40,55,35,25,5,5,25,20,5,30,5,10,5];
   const labels = ['Jan', 'Fev', 'Mar', 'Avr', 'Mai', 'Jun', 'Jul', 'Août'];
@@ -28,85 +33,37 @@ const Dashboard = () => {
 
       <div className="flex justify-between items-center mb-6">
       <ButtonGroup active={activeTab} onButtonClick={handleButtonClick} />
-        <div className="flex justify-start space-x-4">
-          <DropDownButton label={'Filtrer par service'} option1={"marketing"} option2={"achats"} />
-          <DropDownButton label={'30 derniers jours'} option1={"test"} option2={"test"} />
+        <div className="flex justify-start space-x-11">
+            <DropDownButton
+      label="Filtrer par service"
+      options={[
+        { label: "Marketing", href: "/option1" },
+        { label: "Achats", href: "/option2" },
+      ]}
+
+    />
+    <DropDownButton
+      label="30 derniers jours"
+      options={[
+        { label: "Test", href: "/option1" },
+        { label: "Test", href: "/option2" },
+        { label: "Test", href: "/option3" },
+        { label: "Test", href: "/option4" },
+
+      ]}
+    />
         </div>
       </div>
 
       <div className="flex justify-between mb-6">
-      {activeTab === 'contrats' && (
-          <>
-            {/* ... vos StatsCard pour Contrats */}
-          
-        <StatsCard 
-          title="Contrats" 
-          subtitle="Total" 
-          value="12" 
-          percentage={0.30} 
-          barvalue={70}
-        />
-        <StatsCard
-          title="Contrats" 
-          subtitle="Score > 50/100" 
-          value="2" 
-          percentage={0.43} 
-          barvalue={30}
-        />
-        <StatsCard
-          title="Contrats" 
-          subtitle="En cours" 
-          value="17" 
-          percentage={0.39} 
-          barvalue={60}
-        />
-        <StatsCard
-          title="Contrats" 
-          subtitle="En attente de score" 
-          value="5" 
-          percentage={0.25} 
-          barvalue={80}
-        />
-        </>
-        )}
-        {activeTab === 'affaires' && (
-          <>
-            {/* Remplacer avec vos StatsCard pour Affaires */}
-            <StatsCard 
-              title="Affaires" 
-              subtitle="Total" 
-              value="7" 
-              percentage={0.35} 
-              barvalue={75}
-            />
-            <StatsCard
-              title="Affaires" 
-              subtitle="Score > 50/100" 
-              value="5" 
-              percentage={0.70} 
-              barvalue={90}
-            />
-            <StatsCard
-              title="Affaires" 
-              subtitle="En cours" 
-              value="10" 
-              percentage={0.20} 
-              barvalue={12}
-            />
-            <StatsCard
-              title="Affaires" 
-              subtitle="En attente de score" 
-              value="2" 
-              percentage={0.55} 
-              barvalue={23}
-            />
-          </>
-        )}
-
+        <StatsCard data={stats1} />
+        <StatsCard data={stats2} />
+        <StatsCard data={stats3} />
+        <StatsCard data={stats4} />
       </div>
       <div className="flex justify-between mb-6">
-        <GraphComponent label="Répartition par score" chartData={SampleChartData1} />
-        <GraphComponent label="Répartition par service" chartData={SampleChartData2} />
+        <GraphComponent label="Répartition par score" chartData={chartDataScore} />
+        <GraphComponent label="Répartition par service" chartData={chartDataService} />
 
       </div>
       <div className=" bg-white rounded-lg border border-gray-200 p-6 flex flex-col items-center mb-10">
@@ -122,7 +79,7 @@ const Dashboard = () => {
     <div className="mb-10">
 
 
-      <Table data={TableData1} />
+      <Table data={tableData1} />
     </div>
       
       
@@ -131,7 +88,7 @@ const Dashboard = () => {
     <a href="#" className="text-blue-600 text-base font-semibold leading-normal">Voir les contrats</a>
     </div>
 
-      <Table data={TableData2} />
+      <Table data={tableData2} />
     </div>
   );
 };

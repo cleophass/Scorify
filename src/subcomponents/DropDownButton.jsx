@@ -1,6 +1,7 @@
 import { ChevronDownIcon } from "@heroicons/react/24/outline";
 import React, { useEffect, useRef, useState } from "react";
-// Handler hook for when Outside click dropdown close
+
+// Hook pour fermer le dropdown lors d'un clic à l'extérieur
 let useClickOutside = (handler) => {
   let domNode = useRef();
 
@@ -20,11 +21,9 @@ let useClickOutside = (handler) => {
 
   return domNode;
 };
-// Handler hook for when Outside click dropdown close End Code====>>
 
-const DropDownButton = ({label,option1,option2}) => {
+const DropDownButton = ({ label, options }) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
-
   let domNode = useClickOutside(() => {
     setDropdownOpen(false);
   });
@@ -34,19 +33,18 @@ const DropDownButton = ({label,option1,option2}) => {
       <button
         onClick={() => setDropdownOpen(!dropdownOpen)}
         className="bg-white border border-light-gray rounded-lg flex items-center justify-between transition-all hover:bg-gray-50"
-        style={{ width: '250px', height: '50px' }} // Apply width and height directly to the button
+        style={{ width: '250px', height: '50px' }}
       >
-      <span className="text-gray-500 text-base font-normal leading-relaxed ml-4">
-      {label}
-      </span>
-      <ChevronDownIcon className="w-4 h-4 mr-4"/>
-    </button>
+        <span className="text-gray-500 text-base font-normal leading-relaxed ml-4">
+          {label}
+        </span>
+        <ChevronDownIcon className="w-4 h-4 mr-4"/>
+      </button>
       {dropdownOpen && (
         <div className="shadow-lg absolute left-0 z-10 mt-1 w-full rounded-md bg-white py-1">
-          {/* Render your dropdown items here */}
-          <DropdownItem label={option1} href="/#" />
-          <DropdownItem label={option2} href="/#" />
-          {/* ... other dropdown items ... */}
+          {options.map(option => (
+            <DropdownItem key={option.label} label={option.label} href={option.href} />
+          ))}
         </div>
       )}
     </div>
