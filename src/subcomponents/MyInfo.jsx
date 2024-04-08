@@ -3,9 +3,7 @@ import TextInput from "../subcomponents/TextInput.jsx";
 import DropdownComponent from '../subcomponents/DropdownComponent.jsx';
 const MyInfo = () => {
     const dropdownOptions = [
-        { label: 'Option 1', href: '#' },
-        { label: 'Option 2', href: '#' },
-        { label: 'Option 3', href: '#' }
+        { label: 'Collaborateur', href: '#' }
     ];
 
 
@@ -20,8 +18,8 @@ const MyInfo = () => {
                 <div className="flex flex-col space-y-4">
                     {/* TextInput déjà rempli et modifiable */}
                     <TextInput 
-                        label="Adresse email" 
-                        value="hello@tailgrids.com" // Valeur initiale
+                        label="Prénom" 
+                        value="Samuel" // Valeur initiale
                         onChange={(e) => {/* logic for handling change */}} // Gérer le changement
                         labelFontSize="text-lg" 
                         locked={false} // Assurez-vous que c'est modifiable
