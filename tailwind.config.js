@@ -28,7 +28,8 @@ export default {
     "./src/subcomponents/GraphComponent.jsx",
     "./src/subcomponents/DropdownIcon.jsx",
     "./src/subcomponents/ButtonFillpdf.jsx",
-    
+    "./src/components/Account.jsx",
+    "./src/components/MyInfo.jsx",
     
   ],
   theme: {
@@ -37,6 +38,7 @@ export default {
         'custom-gray': '#637381',
         'light-gray': '#DFE4EA',
         'back-gray':'#F7F8FA',
+        'dark-grey' :'#637381',
         'custom-blue' : '#3758F9',
         'primary-light':'#E9F0FF',
         'light-blue' : '#EFF2FF',
