@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Sidebar from '../components/Sidebar.jsx'; // Assurez-vous du chemin d'accès
 import Dashboard from '../components/Dashboard.jsx';
 import Contrats from '../components/Contrats.jsx';
+import Account from '../components/Account.jsx';
 // Autres imports de composants
 import { Routes, Route, Navigate } from 'react-router-dom';
 
@@ -16,6 +17,7 @@ const MainApp = ({ onLogout }) => {
           <Routes>
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/contrats" element={<Contrats />} />
+            <Route path="/account" element={<Account />} />
             {/* Ajoutez d'autres routes ici si nécessaire */}
           </Routes>
         </div>

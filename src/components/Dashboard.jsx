@@ -9,18 +9,20 @@ import GraphComponent from '../subcomponents/GraphComponent.jsx';
 import ChartData from '../assets/ChartDataUnified.json';
 import TableData from '../assets/TableDataUnified.json';  // Données unifiées de tableaux
 import statsData from '../assets/statsData.json'; // assuming the data is stored here
-
+import LineChartData from '../assets/LineChartData.json';
 import LineChartComponent from '../subcomponents/LineChartComponent.jsx';
 import ButtonFillpdf from '../subcomponents/ButtonFillpdf.jsx';
+
 
 const Dashboard = () => {
   const [activeTab, setActiveTab] = useState('contrats');
   const { score: chartDataScore, service: chartDataService } = ChartData[activeTab] || { score: [], service: [] };
   const { table1: tableData1, table2: tableData2 } = TableData[activeTab] || { table1: [], table2: [] };
   const { stats1 : stats1, stats2: stats2, stats3: stats3, stats4: stats4 } = statsData[activeTab] || { stats1: [], stats2: [], stats3: [], stats4: [] };
+  const { dataScores, labels } = LineChartData[activeTab];
 
-  const dataScores = [40,55,35,25,5,5,25,20,5,30,5,10,5];
-  const labels = ['Jan', 'Fev', 'Mar', 'Avr', 'Mai', 'Jun', 'Jul', 'Août'];
+  // const dataScores = [40,55,35,25,5,5,25,20,5,30,5,10,5];
+  // const labels = ['Jan', 'Fev', 'Mar', 'Avr', 'Mai', 'Jun', 'Jul', 'Août'];
   const handleButtonClick = (tabName) => {
     setActiveTab(tabName);
   };
@@ -74,7 +76,7 @@ const Dashboard = () => {
       </div>
       <div className="mb-6 flex justify-between items-center">
     <h1 className="text-2xl font-bold text-custom-grey">En attente de score</h1>
-    <a href="#" className="text-blue-600 text-base font-semibold leading-normal">Voir les contrats</a>
+    <a href="#" className="text-blue-600 text-base font-semibold leading-normal">Voir les {activeTab}</a>
     </div>
     <div className="mb-10">
 
@@ -85,7 +87,7 @@ const Dashboard = () => {
       
       <div className="mb-6 flex justify-between items-center">
     <h1 className="text-2xl font-bold text-custom-grey">Score les plus élevés</h1>
-    <a href="#" className="text-blue-600 text-base font-semibold leading-normal">Voir les contrats</a>
+    <a href="#" className="text-blue-600 text-base font-semibold leading-normal">Voir les {activeTab}</a>
     </div>
 
       <Table data={tableData2} />
