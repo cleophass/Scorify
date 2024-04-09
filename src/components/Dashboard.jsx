@@ -36,24 +36,19 @@ const Dashboard = () => {
       <div className="flex justify-between items-center mb-6">
       <ButtonGroup active={activeTab} onButtonClick={handleButtonClick} />
         <div className="flex justify-start space-x-11">
-            <DropDownButton
-      label="Filtrer par service"
-      options={[
-        { label: "Marketing", href: "/option1" },
-        { label: "Achats", href: "/option2" },
-      ]}
+        <DropDownButton
+  label="Votre Label"
+  options={['Option 1', 'Option 2']}
+  onChange={(option) => console.log(option)}
+/>
 
-    />
     <DropDownButton
-      label="30 derniers jours"
-      options={[
-        { label: "Test", href: "/option1" },
-        { label: "Test", href: "/option2" },
-        { label: "Test", href: "/option3" },
-        { label: "Test", href: "/option4" },
-
-      ]}
-    />
+  label="Choix"
+  options={["Option 1", "Option 2", "Option 3"]}
+  onChange={(selectedOption) => {
+    console.log("Option sélectionnée :", selectedOption);
+  }}
+/>
         </div>
       </div>
 

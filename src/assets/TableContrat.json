@@ -1,0 +1,50 @@
+[
+  {
+    "id": "1",
+    "title": "Développeur Frontend",
+    "provider": "Alex Semuyel",
+    "score": 75,
+    "avatars": [
+      "src/assets/monkey.jpg",
+      "src/assets/monkey.jpg",
+      "src/assets/monkey.jpg"
+    ],
+    "dateCreated": "07/04/2024"
+  },
+  {
+    "id": "2",
+    "title": "Gestionnaire de Projet",
+    "provider": "Patrice Martin",
+    "score": 50,
+    "avatars": [
+      "src/assets/monkey.jpg",
+      "src/assets/monkey.jpg",
+      "src/assets/monkey.jpg"
+    ],
+    "dateCreated": "08/04/2024"
+  },
+  {
+    "id": "3",
+    "title": "Manager de développement",
+    "provider": "Camille Dubois",
+    "score": 85,
+    "avatars": [
+      "src/assets/monkey.jpg",
+      "src/assets/monkey.jpg",
+      "src/assets/monkey.jpg"
+    ],
+    "dateCreated": "09/04/2024"
+  },
+  {
+    "id": "4",
+    "title": "Chercheur en informatique",
+    "provider": "Jeanne D'Arc",
+    "score": 95,
+    "avatars": [
+      "src/assets/monkey.jpg",
+      "src/assets/monkey.jpg",
+      "src/assets/monkey.jpg"
+    ],
+    "dateCreated": "10/04/2024"
+  }
+]
