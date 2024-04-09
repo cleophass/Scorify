@@ -18,14 +18,14 @@ const useOutsideClick = (ref, handler) => {
     }, [ref, handler]);
 };
 
-const DropdownComponent = ({ label, options }) => {
+const DropdownComponent = ({ label, options,width="33Opx" }) => {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
     const dropdownRef = useRef(null);
 
     useOutsideClick(dropdownRef, () => setIsDropdownOpen(false));
 
     return (
-        <div ref={dropdownRef} className="relative" style={{width:"330px"}}>
+        <div ref={dropdownRef} className="relative" style={{width:width}}>
             <button
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                 className="inline-flex justify-between items-center bg-white border border-light-gray rounded-lg px-4 py-2 w-full text-gray-500 hover:bg-gray-50 transition-colors"

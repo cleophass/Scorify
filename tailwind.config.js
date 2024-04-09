@@ -30,6 +30,8 @@ export default {
     "./src/subcomponents/ButtonFillpdf.jsx",
     "./src/components/Account.jsx",
     "./src/components/MyInfo.jsx",
+    "./src/subcomponents/ModalUploadPhotos.jsx",
+    "./src/subcomponents/InviteCollaborator.jsx",
     
   ],
   theme: {
