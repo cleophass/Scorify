@@ -17,7 +17,7 @@ const MainApp = ({ onLogout }) => {
           <Routes>
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/contrats" element={<Contrats />} />
-            <Route path="/account" element={<Account />} />
+            <Route path="/account" element={<Account />} /> 
             {/* Ajoutez d'autres routes ici si nécessaire */}
           </Routes>
         </div>
