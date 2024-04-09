@@ -83,7 +83,7 @@ const Signup = () => {
               
               <div className="mb-2 mt-4">
                 <p className="text-base text-body-color dark:text-dark-6">
-                  <span className="text-gray-500 text-base font-normal font-['Inter'] leading-normal">
+                  <span className="text-gray-500 text-base font-normal  leading-normal">
                   Vous êtes déjà membre ?{" "}</span>
                   <Link to="/" className="font-medium text-blue-600">Connectez-vous</Link>
                 </p> 

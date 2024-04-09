@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 import { Combobox } from "@headlessui/react";
+import React from "react";
 
 // const people = [
 //     { id: 1, name: "Leslie Alexander" },

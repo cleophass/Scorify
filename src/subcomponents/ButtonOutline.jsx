@@ -1,3 +1,4 @@
+import React from "react";
 const ButtonOutline = ({ label, onClick, width = "175px" }) => {
     // Default width set to '400px'
     const buttonStyle = {

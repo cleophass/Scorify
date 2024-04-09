@@ -1,11 +1,11 @@
 import React from 'react';
-import Logo from '../assets/monkey.jpg'; // Assurez-vous que le chemin est correct
+import profilepicture from '../assets/monkey.jpg'; // Assurez-vous que le chemin est correct
 
 const UserProfile = () => {
   return (
     <div className="flex flex-col items-center justify-center h-screens"> {/* Correction de h-screens à h-screen */}
       <div className="rounded-lg px-4 pt-4 flex items-center">
-        <img className="h-16 w-16 rounded-full border-2 border-custom-blue" src={Logo} alt="Monkey" />
+        <img className="h-16 w-16 rounded-full border-2 border-custom-blue" src={profilepicture} alt="Monkey" />
         <div className="ml-4">
           <div className="text-lg font-medium">Mayo</div>
           <div className="text-sm text-gray-600">hello@tailgrids.com</div>
@@ -18,7 +18,7 @@ const UserProfile = () => {
       <div className="w-full px-5"> {/* Ajustement pour correspondre à la largeur du texte */}
         <div className="border-t border-light-gray my-5"></div>
       </div>
-      <div className="text-l font-['Inter'] font-medium text-custom-grey py-7 px-5">Green Conseil</div>
+      <div className="text-l font-medium text-custom-grey py-7 px-5">Green Conseil</div>
 
 
     </div>

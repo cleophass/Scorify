@@ -8,6 +8,7 @@ import SearchBar from "../subcomponents/SearchBar.jsx";
 import DropDownButton from "../subcomponents/DropDownButton.jsx";
 import Pagination from "../subcomponents/Pagination.jsx";
 import * as XLSX from "xlsx";
+import React from "react";
 
 const Contrats = () => {
     const [currentPage, setCurrentPage] = useState(1);
@@ -49,9 +50,6 @@ const Contrats = () => {
     };
 
     return (
-<<<<<<< Updated upstream
-        <div>Contrats Content Here stp </div>
-=======
         <>
             <div className="px-16 py-10">
                 <div className="flex justify-between items-center mb-10">
@@ -91,7 +89,6 @@ const Contrats = () => {
                 <Pagination currentPage={currentPage} totalPages={totalPages} onPageChange={onPageChange} />
             </div>
         </>
->>>>>>> Stashed changes
     );
 };
 

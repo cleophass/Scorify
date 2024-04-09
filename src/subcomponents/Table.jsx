@@ -2,12 +2,13 @@ import React, { useState } from 'react';
 import Score from './Score.jsx';
 import TeamAvatars from "./TeamAvatars.jsx";
 import { EllipsisVerticalIcon } from '@heroicons/react/24/outline';
+import DropdownIcon from '../subcomponents/DropdownIcon.jsx';
 
 
 // Composant pour l'entête du tableau
 const TableHeader = ({ isAllSelected, toggleAll }) => {
   return (
-    <div className="px-4 py-3 bg-indigo-50 rounded-tl-md rounded-tr-md shadow-inner flex items-center">
+    <div className="px-4 py-3 bg-indigo-50 rounded-tl-md rounded-tr-md flex items-center">
       <div className="px-3 w-[46px]">
         <input type="checkbox" checked={isAllSelected} onChange={toggleAll} />
       </div>
@@ -24,6 +25,7 @@ const TableHeader = ({ isAllSelected, toggleAll }) => {
 
 // Composant pour une ligne de données
 const DataRow = ({ id, title, provider, score, avatars, dateCreated, isSelected, toggle }) => {
+  
   return (
     <div className={`px-4 py-6 flex items-center border-b border-zinc-200 ${isSelected ? 'bg-gray-200' : ''}`}>
       <div className="px-3 w-[46px]">
@@ -36,7 +38,7 @@ const DataRow = ({ id, title, provider, score, avatars, dateCreated, isSelected,
       <div className="w-[137px] px-2 font-inter">
           <TeamAvatars avatars={avatars}/></div>
       <div className="w-[137px] px-2 font-inter">{dateCreated}</div>
-      <div className="flex-grow px-4 font-inter"><EllipsisVerticalIcon className='h-5'/></div>
+      <div className="flex-grow px-4 font-inter"><DropdownIcon/></div>
     </div>
   );
 };
@@ -66,7 +68,7 @@ const Table = ({ data }) => {
   const isAllSelected = selectedIds.size === data.length;
 
   return (
-    <div className="bg-white rounded-tl-md rounded-tr-md shadow">
+    <div className="bg-white rounded-tl-md rounded-tr-md ">
       <TableHeader isAllSelected={isAllSelected} toggleAll={toggleAll} />
       {data.map((item, index) => (
         <DataRow

@@ -7,18 +7,44 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+dist-ssr/
+/build/
+
+# Cache files for Vite
+/.vite/
+
+# Local environment files
 *.local
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
 
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
-.idea
+.idea/
 .DS_Store
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
+
+# System files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Package lock files (uncomment if you do not want to track these in Git)
+# package-lock.json
+
+# Configuration maps (uncomment if applicable)
+vite.config.js
+# tailwind.config.js.map

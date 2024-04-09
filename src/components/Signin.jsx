@@ -44,7 +44,7 @@ const Signin = ({ onLoginSuccess }) => {
                   <img src={Logo} alt="logo" className="h-12" />
                 </a>
               </div>
-              <h2  className=" text-l font-['Inter'] font-medium text-custom-grey " style={{paddingTop:'20px',paddingBottom:'20px'}}>
+              <h2  className=" text-l font-medium text-custom-grey " style={{paddingTop:'20px',paddingBottom:'20px'}}>
                 Connectez-vous pour accéder à l'outil
               </h2> 
 
@@ -55,7 +55,7 @@ const Signin = ({ onLoginSuccess }) => {
                 <div className="mb-2 flex justify-center">
                   <PasswordInput label="Mot de passe" value={password} onChange={(e) => setPassword(e.target.value)} isInvalid={isPasswordInvalid} />
                 </div>
-              <div className="text-left mt-6 mb-6 flex justify-center">
+              <div className="text-left mb-6 flex justify-center">
               <a href="" className="text-left font-bold text-custom-blue"style={{ width: '400px' }}>
                 Mot de passe oublié?
               </a>
@@ -67,8 +67,8 @@ const Signin = ({ onLoginSuccess }) => {
               </form>
               <div className="mt-10">
               <p className="text-base text-body-color dark:text-dark-6">
-                <span className="text-gray-500 text-base font-normal font-['Inter'] leading-normal">Vous n’êtes pas encore membre ? </span>
-                <Link to="/signup" className="text-l font-['Inter'] font-medium text-custom-blue">Inscrivez-vous</Link>
+                <span className="text-gray-500 text-base font-normal leading-normal">Vous n’êtes pas encore membre ? </span>
+                <Link to="/signup" className="text-l font-medium text-custom-blue">Inscrivez-vous</Link>
 
               </p>
               </div>
