@@ -1,33 +1,33 @@
-import React, {useState} from 'react';
-import Table from '../subcomponents/Table';
-import ButtonGroup from '../subcomponents/ButtonGroup.jsx';
-import DropDownButton from '../subcomponents/DropDownButton.jsx';
-import StatsCard from '../subcomponents/StatsCard.jsx';
-import GraphComponent from '../subcomponents/GraphComponent.jsx';
+import React, {useState} from "react";
+import Table from "../subcomponents/Table";
+import ButtonGroup from "../subcomponents/ButtonGroup.jsx";
+import DropDownButton from "../subcomponents/DropDownButton.jsx";
+import StatsCard from "../subcomponents/StatsCard.jsx";
+import GraphComponent from "../subcomponents/GraphComponent.jsx";
 
 // Importation du fichier JSON unifié
-import ChartData from '../assets/ChartDataUnified.json';
-import TableData from '../assets/TableDataUnified.json';  // Données unifiées de tableaux
-import statsData from '../assets/statsData.json'; // assuming the data is stored here
-import LineChartData from '../assets/LineChartData.json';
-import LineChartComponent from '../subcomponents/LineChartComponent.jsx';
-import ButtonFillpdf from '../subcomponents/ButtonFillpdf.jsx';
+import ChartData from "../assets/ChartDataUnified.json";
+import TableData from "../assets/TableDataUnified.json";  // Données unifiées de tableaux
+import statsData from "../assets/statsData.json"; // assuming the data is stored here
+import LineChartData from "../assets/LineChartData.json";
+import LineChartComponent from "../subcomponents/LineChartComponent.jsx";
+import ButtonFillpdf from "../subcomponents/ButtonFillpdf.jsx";
 
 
 const Dashboard = () => {
-  const [activeTab, setActiveTab] = useState('contrats');
+  const [activeTab, setActiveTab] = useState("contrats");
   const { score: chartDataScore, service: chartDataService } = ChartData[activeTab] || { score: [], service: [] };
   const { table1: tableData1, table2: tableData2 } = TableData[activeTab] || { table1: [], table2: [] };
   const { stats1 : stats1, stats2: stats2, stats3: stats3, stats4: stats4 } = statsData[activeTab] || { stats1: [], stats2: [], stats3: [], stats4: [] };
   const { dataScores, labels } = LineChartData[activeTab];
 
   // const dataScores = [40,55,35,25,5,5,25,20,5,30,5,10,5];
-  // const labels = ['Jan', 'Fev', 'Mar', 'Avr', 'Mai', 'Jun', 'Jul', 'Août'];
+  // const labels = ["Jan", "Fev", "Mar", "Avr", "Mai", "Jun", "Jul", "Août"];
   const handleButtonClick = (tabName) => {
     setActiveTab(tabName);
   };
   return (
-    <div id='content-to-export' className="px-16 py-10">
+    <div id="content-to-export" className="px-16 py-10">
       <div className="flex justify-between items-center mb-10">
         <h1 className="text-4xl font-bold text-custom-grey">Bienvenue Mayo,</h1>
         <ButtonFillpdf label="Exporter (pdf)" />
@@ -38,7 +38,7 @@ const Dashboard = () => {
         <div className="flex justify-start space-x-11">
         <DropDownButton
   label="Tous les services"
-  options={['Marketing', 'Achats', 'RH', 'R&D', 'Juridique', 'Logistique', 'Autres']}
+  options={["Marketing", "Achats", "RH", "R&D", "Juridique", "Logistique", "Autres"]}
   onChange={(option) => console.log(option)}
 />
 
@@ -65,7 +65,7 @@ const Dashboard = () => {
       </div>
       <div className=" bg-white rounded-lg border border-gray-200 p-6 flex flex-col items-center mb-10">
       <div className="text-xl font-bold mb-6 self-start">Score global</div>
-        <div style={{width:'1016px',height: '300px', padding: '20px', boxSizing: 'border-box', background: '#FFF', borderRadius: '8px' }}>
+        <div style={{width:"1016px",height: "300px", padding: "20px", boxSizing: "border-box", background: "#FFF", borderRadius: "8px" }}>
         <LineChartComponent dataScores={dataScores} labels={labels} />
         </div>
       </div>
