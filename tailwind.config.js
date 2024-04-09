@@ -2,31 +2,8 @@
 
 export default {
   content: [
-    "./src/components/Contrats.jsx",
-    "./src/components/Dashboard.jsx",
-    "./src/components/Sidebar.jsx",
-    "./src/components/Signin.jsx",
-    "./src/components/Signup.jsx",
-    "./src/primarycomponents/Auth.jsx",
-    "./src/primarycomponents/MainApp.jsx",
-    "./src/subcomponents/ButtonFill.jsx",
-    "./src/subcomponents/Modal.jsx",
-    "./src/subcomponents/PasswordInput.jsx",
-    "./src/subcomponents/TextInput.jsx",
-    "./src/subcomponents/Userprofile.jsx",
-    "./src/subcomponents/Score.jsx",
-    "./src/subcomponents/Table.jsx",
-    "./src/subcomponents/TeamAvatars.jsx",
-    "./src/subcomponents/ButtonIcon.jsx",
-    "./src/subcomponents/ButtonGroup.jsx",
-    "./src/subcomponents/DropDownButton.jsx",
-    "./src/subcomponents/StatsCard.jsx",
-    "./src/subcomponents/ProgressBar.jsx",
-    "./src/App.jsx",
-    "./src/main.jsx",
-    "./src/subcomponents/DonutChart.jsx",
-    "./src/subcomponents/GraphComponent.jsx",
-    
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
@@ -46,6 +23,6 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/forms')],
 }
 
