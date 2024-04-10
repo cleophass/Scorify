@@ -1,11 +1,10 @@
 [
   {
     "id": "1",
-    "member": "Développeur Frontend",
-    "fullName": "Alex Semuyel",
-    "contact":"092834R83274",
-    "role":"zada",
+    "fullName": "Stéphanie Durant",
+    "contact":"stephanie@green.com",
+    "role":"Collaborateur",
     "statut":"Actif",
-    "contracts":"CDI"
+    "contrats":"2"
   }
 ]
