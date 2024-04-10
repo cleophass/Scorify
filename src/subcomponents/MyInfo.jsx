@@ -27,7 +27,7 @@ const MyInfo = () => {
                     />
                     {/* Dropdown avec un style similaire */}
                     <div>
-                        <label className="mb-2 text-lg font-medium 'text-dark-grey" style={{ height: '28px' }}>Rôles</label>
+                        <label className="mb-2 text-lg font-medium 'text-dark-grey" style={{ height: '28px' }}>Rôle</label>
                             <div className="mt-2">
                                  <DropdownComponent label="Manager"  options={dropdownOptions} />
                             </div>

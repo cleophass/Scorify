@@ -1,11 +1,11 @@
 import React from 'react';
-import profilepicture from '../assets/monkey.jpg'; // Assurez-vous que le chemin est correct
+import profilepicture from '../assets/homme_1.png'; // Assurez-vous que le chemin est correct
 
 const UserProfile = () => {
   return (
     <div className="flex flex-col items-center justify-center h-screens"> {/* Correction de h-screens à h-screen */}
       <div className="rounded-lg px-4 pt-4 flex items-center">
-        <img className="h-16 w-16 rounded-full border-2 border-custom-blue" src={profilepicture} alt="Monkey" />
+        <img className="h-10 w-10 rounded-full border-2 border-custom-blue" src={profilepicture} alt="homme" />
         <div className="ml-4">
           <div className="text-lg font-medium">Daniel</div>
           <div className="text-sm text-gray-600">daniel@green.com</div>
