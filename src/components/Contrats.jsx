@@ -8,41 +8,70 @@ import DropDownButton from "../subcomponents/DropDownButton.jsx";
 import Pagination from "../subcomponents/Pagination.jsx";
 import * as XLSX from "xlsx";
 import React from "react";
-
 const Contrats = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const totalPages = 4;
-
     const [searchQuery, setSearchQuery] = useState("");
+    const [selectedService, setSelectedService] = useState(["Marketing", "Développement", "Support"]);
+    const [scoreRange, setScoreRange] = useState(["rien", "0-25", "26-50", "51-100"]);
+
+
     const handleSearch = (query) => {
         setSearchQuery(query.toLowerCase());
     };
 
+    const onChangeScoreRange = (newSelectedRanges) => {
+        setScoreRange(newSelectedRanges);
+    };
+
+    const onChangeService = (newSelectedService) => {
+        setSelectedService(newSelectedService);
+    };
+
+    const filterByService = (contract) => {
+        if (selectedService.length === 0) {
+            return true; // Afficher tous les contrats si aucun service n'est sélectionné
+        }
+        const showService = selectedService.some(service => {
+            switch (service) {
+                case "Marketing":
+                    return contract.service === "Alex Semuyel";
+                case "Développement":
+                    return contract.service === "Patrice Martin";
+                case "Support":
+                    return contract.service === "Support";
+                default:
+                    return false;
+            }
+        });
+        return showService;
+    };
     const filterContracts = (contract) => {
         return searchQuery ? (
             contract.title.toLowerCase().includes(searchQuery) ||
-            contract.id.toString().includes(searchQuery)
+            contract.id.toLowerCase().includes(searchQuery) 
         ) : true;
     };
 
-    const [service, setService] = useState("");
-    const [scoreRange, setScoreRange] = useState(""); // État pour stocker la plage de score
+    
 
     const filterByScore = (contract) => {
-        if (scoreRange === "") { // Si "Rien" est sélectionné
-            return contract.score === undefined; // Affiche seulement les contrats sans score
+        if (scoreRange.length === 0) {
+            return true; // Afficher tous les contrats si aucune plage n'est sélectionnée
         }
-        switch (scoreRange) {
-            case "0-25":
-                return contract.score >= 0 && contract.score <= 25;
-            case "26-50":
-                return contract.score >= 26 && contract.score <= 50;
-            case "51-100":
-                return contract.score >= 51 && contract.score <= 100;
-            default:
-                return true; // Si aucune plage de score n'est sélectionnée, retourner tous les contrats
-        }
+
+        const showScore = scoreRange.some(range => {
+            switch (range) {
+                case "rien": return contract.score < 0;
+                case "0-25": return contract.score >= 0 && contract.score <= 25;
+                case "26-50": return contract.score >= 26 && contract.score <= 50;
+                case "51-100": return contract.score >= 51 && contract.score <= 100;
+                default: return false;
+            }
+        });
+        return  (showScore);
     };
+
     
 
     const exportToExcel = () => {
@@ -72,24 +101,25 @@ const Contrats = () => {
                         onSearch={handleSearch}
                     />
                     <div className="flex gap-2">
-                        <DropDownButton
-                            label="Filtrer par service"
-                            options={["Tous", "Développeur", "Gestionnaire de Projet", "Chercheur en informatique"]}
-                            onChange={(value) => setService(value === "Tous" ? "" : value)}
+                    <DropDownButton
+                            label="Filtrer par Service"
+                            options={["Marketing", "Développement", "Support"]}
+                            onChange={onChangeService}
                         />
                         <DropDownButton
-    label="Filtrer par Score"
-    options={["Rien", "0-25", "26-50", "51-100"]}
-    onChange={(value) => setScoreRange(value === "Rien" ? "" : value)}
-/>
+                            label="Filtrer par Score"
+                            options={["rien", "0-25", "26-50", "51-100"]}
+                            onChange={onChangeScoreRange}
+                        />
                     </div>
                 </div>
                 <Table
                     data={TableContrat.filter(
                         (contract) =>
-                            (service ? contract.title.toLowerCase().includes(service.toLowerCase()) : true) &&
                             filterContracts(contract) &&
+
                             filterByScore(contract)
+                           
                     )}
                 />
                 <Pagination currentPage={currentPage} totalPages={totalPages} onPageChange={onPageChange} />

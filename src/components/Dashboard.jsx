@@ -13,7 +13,6 @@ import LineChartData from "../assets/LineChartData.json";
 import LineChartComponent from "../subcomponents/LineChartComponent.jsx";
 import ButtonFillpdf from "../subcomponents/ButtonFillpdf.jsx";
 
-
 const Dashboard = () => {
   const [activeTab, setActiveTab] = useState("contrats");
   const { score: chartDataScore, service: chartDataService } = ChartData[activeTab] || { score: [], service: [] };
