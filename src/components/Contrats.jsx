@@ -8,6 +8,7 @@ import DropDownButton from "../subcomponents/DropDownButton.jsx";
 import Pagination from "../subcomponents/Pagination.jsx";
 import * as XLSX from "xlsx";
 import React from "react";
+import DeleteModal from "../subcomponents/DeleteModal.jsx";
 const Contrats = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const totalPages = 4;
@@ -112,7 +113,13 @@ const Contrats = () => {
                             onChange={onChangeScoreRange}
                         />
                     </div>
+
                 </div>
+                <div className="mb-5 mt-2 flex gap-2"><DeleteModal /> <button
+          className="text-custom-blue rounded-full bg-primary text-base font-medium "
+        >
+          Comparer
+        </button></div>
                 <Table
                     data={TableContrat.filter(
                         (contract) =>
