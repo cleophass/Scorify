@@ -13,13 +13,13 @@ const MyInfo = () => {
             <div className="flex items-start justify-between">
                 <div className="flex flex-col space-y-4">
                     <TextInput label="ID Membre" placeholder="132143" labelFontSize="text-lg" locked={true} width="330px"/>
-                    <TextInput label="Adresse email" placeholder="hello@tailgrids.com" labelFontSize="text-lg" locked={true} width="330px"/>
+                    <TextInput label="Adresse email" placeholder="daniel@green.com" labelFontSize="text-lg" locked={true} width="330px"/>
                 </div>
                 <div className="flex flex-col space-y-4">
                     {/* TextInput déjà rempli et modifiable */}
                     <TextInput 
                         label="Prénom" 
-                        value="Samuel" // Valeur initiale
+                        value="Daniel" // Valeur initiale
                         onChange={(e) => {/* logic for handling change */}} // Gérer le changement
                         labelFontSize="text-lg" 
                         locked={false} // Assurez-vous que c'est modifiable
@@ -36,7 +36,7 @@ const MyInfo = () => {
                 </div>
                     <TextInput 
                         label="Nom" 
-                        value="Musharof" // Valeur initiale
+                        value="Dubois" // Valeur initiale
                         onChange={(e) => {/* logic for handling change */}} // Gérer le changement
                         labelFontSize="text-lg" 
                         locked={false} // Assurez-vous que c'est modifiable

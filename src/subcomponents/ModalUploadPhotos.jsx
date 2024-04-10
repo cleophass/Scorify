@@ -40,7 +40,7 @@ const ModalUploadPhotos = () => {
           onClick={() => setModalOpen(true)}
           className="text-custom-blue rounded-full bg-primary text-base font-medium "
         >
-          Modifier la photo
+          Modifier ma photo
         </button>
         <div
           className={`fixed left-0 top-0 flex h-full min-h-screen w-full items-center justify-center bg-black bg-opacity-50 px-4 py-5 z-10 ${
