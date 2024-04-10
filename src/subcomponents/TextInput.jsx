@@ -9,7 +9,7 @@ const TextInput = ({ label, value, onChange, isInvalid, placeholder = label, lab
         value={value}
         onChange={onChange}
         autoComplete={label.toLowerCase().includes('email') ? 'email' : 'off'}
-        className={`rounded-md border px-5 py-3 text-base outline-none transition duration-300 ease-in-out ${isInvalid ? 'border-red-500' : 'border-gray-300 focus:border-blue-500'} ${locked ? 'cursor-not-allowed bg-light-gray text-[#637831]' : 'text-body-color'}`}
+        className={`w-full rounded-md border px-5 py-3 text-base text-body-color outline-none ${isInvalid ? 'border-custom-red' : 'border-gray-300 focus:border-custom-blue focus:border-5 focus:ring-0'} ${locked ? 'cursor-not-allowed bg-light-gray text-[#637831]' : 'text-body-color'}`}
         placeholder={placeholder}
         disabled={locked}
         style={locked ? { backgroundColor: '#f8f8f8', color: '#637831' } : {}}

@@ -1,9 +1,10 @@
 import React from 'react';
 import html2pdf from 'html2pdf.js';
 
-const ButtonFillpdf = ({ label, width = '175px' }) => {
+const ButtonFillpdf = ({ label, width = '175px', height='50px'}) => {
   const buttonStyle = {
     width,
+    height
   };
 
   const exportPDF = () => {

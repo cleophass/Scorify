@@ -1,4 +1,3 @@
-// Contrats.jsx
 import { useState } from "react";
 import Table from "../subcomponents/Table";
 import TableContrat from "../assets/TableContrat.json";
@@ -16,37 +15,45 @@ const Contrats = () => {
 
     const [searchQuery, setSearchQuery] = useState("");
     const handleSearch = (query) => {
-        setSearchQuery(query.toLowerCase()); // Convert search query to lowercase right away.
+        setSearchQuery(query.toLowerCase());
     };
-    const filterContracts = (contract) => {
-        if (searchQuery) {
-            return (
-                contract.title.toLowerCase().includes(searchQuery) ||
-                contract.provider.toLowerCase().includes(searchQuery) ||
-                // Check other fields that should be included in the search
-                contract.id.toString().includes(searchQuery)
-            );
-        }
-        return true; // If no search query, return all contracts.
-    };
-    const [service, setService] = useState("");
-    const [Provider, setProvider] = useState(""); // New state for Provider
 
-    // Function to convert data to excel and trigger download
+    const filterContracts = (contract) => {
+        return searchQuery ? (
+            contract.title.toLowerCase().includes(searchQuery) ||
+            contract.id.toString().includes(searchQuery)
+        ) : true;
+    };
+
+    const [service, setService] = useState("");
+    const [scoreRange, setScoreRange] = useState(""); // État pour stocker la plage de score
+
+    const filterByScore = (contract) => {
+        if (scoreRange === "") { // Si "Rien" est sélectionné
+            return contract.score === undefined; // Affiche seulement les contrats sans score
+        }
+        switch (scoreRange) {
+            case "0-25":
+                return contract.score >= 0 && contract.score <= 25;
+            case "26-50":
+                return contract.score >= 26 && contract.score <= 50;
+            case "51-100":
+                return contract.score >= 51 && contract.score <= 100;
+            default:
+                return true; // Si aucune plage de score n'est sélectionnée, retourner tous les contrats
+        }
+    };
+    
+
     const exportToExcel = () => {
-        // Assuming TableContrat is the dataset you want to export
-        // Ensure this is the dataset you want, possibly applying any filters you have on the view
         const ws = XLSX.utils.json_to_sheet(TableContrat);
         const wb = XLSX.utils.book_new();
         XLSX.utils.book_append_sheet(wb, ws, "Contracts");
-
-        // You could also customize the file name to include timestamps or other identifying information
         XLSX.writeFile(wb, "Contracts.xlsx");
     };
 
     const onPageChange = (newPage) => {
         setCurrentPage(newPage);
-        // Charger les données pour la nouvelle page sélectionnée
     };
 
     return (
@@ -61,7 +68,7 @@ const Contrats = () => {
                 </div>
                 <div className="flex justify-between items-center mb-6">
                     <SearchBar
-                        placeholder="Recherchez par affaire, contrat, provider, ID ..."
+                        placeholder="Recherchez par affaire, contrat, ID ..."
                         onSearch={handleSearch}
                     />
                     <div className="flex gap-2">
@@ -70,20 +77,19 @@ const Contrats = () => {
                             options={["Tous", "Développeur", "Gestionnaire de Projet", "Chercheur en informatique"]}
                             onChange={(value) => setService(value === "Tous" ? "" : value)}
                         />
-
                         <DropDownButton
-                            label="Filtrer par Fournisseur"
-                            options={["Tous", "Alex Semuyel", "Patrice Martin", "Camille Dubois", "Jeanne D'Arc"]}
-                            onChange={(value) => setProvider(value === "Tous" ? "" : value)}
-                        />
+    label="Filtrer par Score"
+    options={["Rien", "0-25", "26-50", "51-100"]}
+    onChange={(value) => setScoreRange(value === "Rien" ? "" : value)}
+/>
                     </div>
                 </div>
                 <Table
                     data={TableContrat.filter(
                         (contract) =>
                             (service ? contract.title.toLowerCase().includes(service.toLowerCase()) : true) &&
-                            (Provider ? contract.provider.toLowerCase().includes(Provider.toLowerCase()) : true) &&
-                            filterContracts(contract)
+                            filterContracts(contract) &&
+                            filterByScore(contract)
                     )}
                 />
                 <Pagination currentPage={currentPage} totalPages={totalPages} onPageChange={onPageChange} />

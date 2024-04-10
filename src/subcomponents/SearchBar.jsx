@@ -14,7 +14,7 @@ import React from "react";
 // }
 
 // eslint-disable-next-line react/prop-types
-export default function SearchBar({ placeholder, onSearch }) {
+export default function SearchBar({ placeholder, onSearch,width ="487px" }) {
     const [query, setQuery] = useState("");
     useEffect(() => {
         if (onSearch) {
@@ -35,7 +35,7 @@ export default function SearchBar({ placeholder, onSearch }) {
             <div className="relative">
                 <Combobox.Input
                     className="bg-white border border-light-gray rounded-lg flex items-center justify-between transition-all hover:bg-gray-50"
-                    style={{ width: "4 n80px", height: "50px" }}
+                    style={{ width: width, height: "50px" }}
                     onChange={(event) => setQuery(event.target.value)}
                     placeholder={placeholder}
                 />

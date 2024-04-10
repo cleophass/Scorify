@@ -7,7 +7,7 @@ const Buttontemp = ({ label, height = '50px', width = '221px', onClick }) => {
       width,
       height,
     };
-    const className = 'bg-custom-blue hover:bg-blue-700 text-white font-bold py-2 px-4 rounded';
+    const className = 'bg-custom-blue text-white font-bold py-2 px-4 rounded';
 
     return (
         <button
@@ -57,7 +57,7 @@ const Buttontemp = ({ label, height = '50px', width = '221px', onClick }) => {
         <button
           ref={trigger}
           onClick={() => setModalOpen(true)}
-          className={`bg-custom-blue hover:bg-blue-700 text-white font-bold py-2 px-4 rounded `}
+          className={`bg-custom-blue text-white font-bold py-2 px-4 rounded `}
           style={{ height: '50px', width: '221px' }}
         >
             Inviter un collaborateur        </button>
@@ -91,13 +91,13 @@ const Buttontemp = ({ label, height = '50px', width = '221px', onClick }) => {
               <div className="w-1/2 px-3">
                 <button
                   onClick={() => setModalOpen(false)}
-                  className="block w-full rounded-md border border-stroke p-3 text-center text-base font-medium text-dark transition hover:border-red-600 hover:bg-red-600 hover:text-white dark:text-white"
+                  className="block w-full rounded-md border border-stroke p-3 text-center text-base font-medium text-dark transition dark:text-white"
                 >
-                  Cancel
+                  Annuler
                 </button>
               </div>
               <div className="w-1/2 px-3">
-                <button className="text-inter block w-full rounded-md border border-primary bg-custom-blue p-3 text-center text-base font-medium text-white hover:opacity-70">
+                <button className="text-inter block w-full rounded-md border border-primary bg-custom-blue p-3 text-center text-base font-medium text-white ">
                   Enregistrer
                 </button>
               </div>

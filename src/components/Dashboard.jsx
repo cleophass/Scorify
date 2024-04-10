@@ -30,7 +30,7 @@ const Dashboard = () => {
     <div id="content-to-export" className="px-16 py-10">
       <div className="flex justify-between items-center mb-10">
         <h1 className="text-4xl font-bold text-custom-grey">Bienvenue Mayo,</h1>
-        <ButtonFillpdf label="Exporter (pdf)" />
+        <ButtonFillpdf label="Exporter (pdf) " />
       </div>
 
       <div className="flex justify-between items-center mb-6">

@@ -16,7 +16,7 @@ const PasswordInput = ({ label, value, onChange, isInvalid }) => {
           type={isHidden ? 'password' : 'text'}
           value={value}
           onChange={onChange}
-          className={`w-full rounded-md border px-5 py-3 text-base text-body-color outline-none ${isInvalid ? 'border-red-500' : 'border-gray-300 focus:border-blue-500'} focus:ring-0 dark:text-white`}
+          className={`w-full rounded-md border px-5 py-3 text-base text-body-color outline-none ${isInvalid ? 'border-custom-red' : 'border-gray-300 focus:border-custom-blue'} focus:ring-0 dark:text-white`}
           placeholder={label}
         />
         <button type="button" className="absolute inset-y-0 right-0 flex items-center pr-3" onClick={toggleVisibility}>

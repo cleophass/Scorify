@@ -78,7 +78,7 @@ const ModalUploadPhotos = () => {
   <div className="">
     <button
       onClick={() => setModalOpen(false)}
-      className="block rounded-md border border-stroke text-center text-base font-medium text-dark transition hover:border-red-600 hover:bg-red-600 hover:text-white dark:text-white"
+      className="block rounded-md border border-stroke text-center text-base font-medium text-dark transition   dark:text-white"
       style={{width:"198px", height:"50px"}}
     >
       Annuler
@@ -86,7 +86,8 @@ const ModalUploadPhotos = () => {
   </div>
   <div className="">
     <button
-      className="block rounded-md border border-primary bg-custom-blue text-center text-base font-medium text-white transition hover:bg-light-blue"
+    onClick={() => setModalOpen(false)}
+      className="block rounded-md border border-primary bg-custom-blue text-center text-base font-medium text-white transition "
       style={{width:"198px", height:"50px"}}
     >
       Enregistrer
