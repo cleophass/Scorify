@@ -60,7 +60,7 @@ const EditModal = () => {
               Modifier le critère
             </h3>
             <span
-              className="mx-auto mb-6 inline-block h-1 w-[90px] rounded bg-blue-500"
+              className="mx-auto mb-6 inline-block h-1 w-[90px] rounded bg-custom-blue"
             ></span>
             
             <TextInput width="430px"label="Nom du critère" />

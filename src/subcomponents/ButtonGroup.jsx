@@ -7,7 +7,7 @@ const ButtonGroup = ({ active, onButtonClick }) => {
       <button
         onClick={() => onButtonClick('contrats')}
         className={`font-medium rounded-l-md py-3 px-4 transition-all ${
-          active === 'contrats' ? 'bg-blue-600 text-white' : 'bg-white text-gray-700'
+          active === 'contrats' ? 'bg-custom-blue text-white' : 'bg-white text-gray-700'
         }`}
       >
         Contrats
@@ -15,7 +15,7 @@ const ButtonGroup = ({ active, onButtonClick }) => {
       <button
         onClick={() => onButtonClick('affaires')}
         className={`font-medium py-3 px-4 transition-all rounded-r-md ${
-          active === 'affaires' ? 'bg-blue-600 text-white' : 'bg-white text-gray-700'
+          active === 'affaires' ? 'bg-custom-blue text-white' : 'bg-white text-gray-700'
         }`}
       >
         Affaires

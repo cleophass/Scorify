@@ -59,7 +59,7 @@ const ModalUploadPhotos = () => {
             
 
             <span
-              className="mx-auto mb-6 inline-block h-1 w-[90px] rounded bg-blue-500"
+              className="mx-auto mb-6 inline-block h-1 w-[90px] rounded bg-custom-blue"
             ></span>
             <h4 className="text-base font-normal text-gray-500 mb-6 text-left">
   Importer un fichier

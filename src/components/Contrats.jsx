@@ -14,7 +14,7 @@ const Contrats = () => {
     const totalPages = 4;
     const [searchQuery, setSearchQuery] = useState("");
     const [selectedService, setSelectedService] = useState(["Marketing", "Développement", "Support"]);
-    const [scoreRange, setScoreRange] = useState(["rien", "0-25", "26-50", "51-100"]);
+    const [scoreRange, setScoreRange] = useState(["Aucun", "0-25", "26-50", "51-100"]);
 
 
     const handleSearch = (query) => {
@@ -63,7 +63,7 @@ const Contrats = () => {
 
         const showScore = scoreRange.some(range => {
             switch (range) {
-                case "rien": return contract.score < 0;
+                case "Aucun": return contract.score < 0;
                 case "0-25": return contract.score >= 0 && contract.score <= 25;
                 case "26-50": return contract.score >= 26 && contract.score <= 50;
                 case "51-100": return contract.score >= 51 && contract.score <= 100;

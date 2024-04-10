@@ -75,7 +75,7 @@ const Buttontemp = ({ label, height = '50px', width = '221px', onClick }) => {
               Inviter un Collaborateur
             </h3>
             <span
-              className="mx-auto mb-6 inline-block h-1 w-[90px] rounded bg-blue-500"
+              className="mx-auto mb-6 inline-block h-1 w-[90px] rounded bg-custom-blue"
             ></span>
             
             <TextInput width="430px"label="Adresse email" />
