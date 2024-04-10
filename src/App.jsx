@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import Auth from "./primarycomponents/Auth";
 import MainApp from "./primarycomponents/MainApp";
+import "./styles.css";
 function App() {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
 
