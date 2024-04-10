@@ -1,0 +1,14 @@
+[
+  {
+    "id": "1",
+    "critere": "Lisibilité et qualité de la proposition",
+    "importance": "3",
+    "description": "Description explicative ici, elle peut être sur une."
+  },
+  {
+    "id": "2",
+    "critere": "Lisibilité et qualité de la proposition",
+    "importance": "2",
+    "description": "Description explicative ici, elle peut être ."
+  }
+]

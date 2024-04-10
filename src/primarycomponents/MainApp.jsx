@@ -3,6 +3,7 @@ import Sidebar from '../components/Sidebar.jsx'; // Assurez-vous du chemin d'acc
 import Dashboard from '../components/Dashboard.jsx';
 import Contrats from '../components/Contrats.jsx';
 import Account from '../components/Account.jsx';
+import Critere from '../components/Critere.jsx';
 // Autres imports de composants
 import { Routes, Route, Navigate } from "react-router-dom";
 
@@ -18,6 +19,8 @@ const MainApp = ({ onLogout }) => {
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/contrats" element={<Contrats />} />
             <Route path="/account" element={<Account />} /> 
+            <Route path="/criteres" element={<Critere />} />
+
             {/* Ajoutez d'autres routes ici si nécessaire */}
           </Routes>
         </div>
