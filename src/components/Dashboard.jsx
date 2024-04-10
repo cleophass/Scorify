@@ -37,8 +37,8 @@ const Dashboard = () => {
       <ButtonGroup active={activeTab} onButtonClick={handleButtonClick} />
         <div className="flex justify-start space-x-11">
         <DropDownButton
-  label="Tous les services"
-  options={["Marketing", "Achats", "RH", "R&D", "Juridique", "Logistique", "Autres"]}
+  label="Filtrer par service"
+  options={["Tous les services", "Marketing", "Achats", "RH", "R&D", "Juridique", "Logistique", "Autres"]}
   onChange={(option) => console.log(option)}
 />
 

@@ -64,7 +64,7 @@ const ModalUploadPhotos = () => {
             <h4 className="text-base font-normal text-gray-500 mb-6 text-left">
   Importer un fichier
 </h4>
-            <div className="w-full h-[140px] mb-10 px-3 py-6 bg-white rounded-lg shadow border border-zinc-200 flex-col justify-center items-center gap-2 inline-flex">
+            <div className="w-full h-[140px] mb-10 px-3 py-6 bg-white rounded-lg border border-zinc-200 flex-col justify-center items-center gap-2 inline-flex">
     <div className="p-2 bg-indigo-50 rounded-[50px] justify-center items-center  inline-flex">
         <div className="" />
         <ArrowUpTrayIcon className="h-5 w-5 text-indigo-500"/>

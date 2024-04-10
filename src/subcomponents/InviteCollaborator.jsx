@@ -60,7 +60,7 @@ const Buttontemp = ({ label, height = '50px', width = '221px', onClick }) => {
           className={`bg-custom-blue hover:bg-blue-700 text-white font-bold py-2 px-4 rounded `}
           style={{ height: '50px', width: '221px' }}
         >
-            Inviter un Collaborateur        </button>
+            Inviter un collaborateur        </button>
         <div
           className={` bg-black bg-opacity-50 z-10 fixed left-0 top-0 flex h-full min-h-screen w-full items-center justify-center bg-dark/90 px-4 py-5 ${
             modalOpen ? "block" : "hidden"
