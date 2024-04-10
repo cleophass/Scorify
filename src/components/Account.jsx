@@ -20,7 +20,7 @@ const Account = () => {
         <img className="h-16 w-16 rounded-full border-2 border-custom-blue" src={profilepicture} alt="Profile" />
         <div className=''>
         <ModalUploadPhotos />
-        <span className="text-gray-500 text-base font-normal leading-normal font-inter">Recommandé : 500 x 500 px (PNG, SVG, JPG)</span>
+        <span className="text-gray-500 text-base font-normal leading-normal font-inter">Recommandé : 500 x 500 px (png, jpg)</span>
                 
         </div>
 

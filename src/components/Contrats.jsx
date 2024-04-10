@@ -98,18 +98,18 @@ const Contrats = () => {
                 </div>
                 <div className="flex justify-between items-center mb-6">
                     <SearchBar
-                        placeholder="Recherchez par affaire, contrat, ID ..."
+                        placeholder="Rechercher par affaire, contrat, ID ..."
                         onSearch={handleSearch}
                     />
                     <div className="flex gap-2">
                     <DropDownButton
-                            label="Filtrer par Service"
-                            options={["Marketing", "Développement", "Support"]}
+                            label="Filtrer par service"
+                            options={["Achats", "Juridique", "Logistique", "Marketing", "R&D", "RH", "Autres"]}
                             onChange={onChangeService}
                         />
                         <DropDownButton
-                            label="Filtrer par Score"
-                            options={["rien", "0-25", "26-50", "51-100"]}
+                            label="Filtrer par score"
+                            options={["0-25/100", "26-50/100", "51-100/100", "Aucun"]}
                             onChange={onChangeScoreRange}
                         />
                     </div>

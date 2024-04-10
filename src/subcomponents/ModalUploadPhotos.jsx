@@ -71,7 +71,7 @@ const ModalUploadPhotos = () => {
     </div>
     <div className="self-stretch h-12 flex-col justify-center items-center flex">
         <div className="self-stretch text-center text-gray-900 text-sm font-normal font-inter leading-normal">Importer ou glisser-déposer</div>
-        <div className="self-stretch text-center text-gray-500 text-sm font-normal font-inter leading-normal">Format autorisé : pdf</div>
+        <div className="self-stretch text-center text-gray-500 text-sm font-normal font-inter leading-normal">Format autorisé : png, jpg</div>
     </div>
 </div>
 <div className=" flex flex-wrap justify-between w-full">

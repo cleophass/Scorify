@@ -7,8 +7,8 @@ const UserProfile = () => {
       <div className="rounded-lg px-4 pt-4 flex items-center">
         <img className="h-16 w-16 rounded-full border-2 border-custom-blue" src={profilepicture} alt="Monkey" />
         <div className="ml-4">
-          <div className="text-lg font-medium">Mayo</div>
-          <div className="text-sm text-gray-600">hello@tailgrids.com</div>
+          <div className="text-lg font-medium">Daniel</div>
+          <div className="text-sm text-gray-600">daniel@green.com</div>
           <div className="text-sm font-semibold text-custom-blue mt-1">Manager</div>
         </div>
       </div>
