@@ -17,7 +17,9 @@ export default {
         'light-blue' : '#EFF2FF',
         'custom-yellow' : '#FBBF24',
         'custom-green' : '#22AD5C',
-        'custom-red' : '#F23030'
+        'custom-red' : '#F23030',
+        'success-light' :'#DAF8E6',
+        'warning-light' :'#FFFBEB',
       },
       fontFamily: {
         'inter': ['Inter', 'sans-serif'],

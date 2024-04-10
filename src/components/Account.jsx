@@ -4,7 +4,7 @@ import profilepicture from '../assets/monkey.jpg';
 import MyInfo from '../subcomponents/MyInfo.jsx';
 import ModalUploadPhotos from '../subcomponents/ModalUploadPhotos.jsx';
 import InviteCollaborator from '../subcomponents/InviteCollaborator.jsx';
-
+import MyTeam from '../subcomponents/MyTeam.jsx';
 const Account = () => {
     return (
         <div id='content-to-export' className="px-16 py-10">
@@ -32,6 +32,16 @@ const Account = () => {
         <div className='mt-10 '>
          <MyInfo />
         
+        </div>
+        <div className='text-right mt-10'>
+        <button
+          className={`bg-custom-blue text-white font-bold py-2 px-4 rounded `}
+          style={{ height: '50px', width: '141px' }}
+        >
+           Enregistrer        </button>
+        </div>
+        <div className='mt-10'>
+            <MyTeam />
         </div>
       
         </div>
