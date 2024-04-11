@@ -68,7 +68,7 @@ const EditModal = () => {
             <div className="mb-10">
             <h1 className={`text-left mb-2 text-sm font-medium text-gray-700'}`}>Importance</h1>
 
-            <DropdownComponent label="Séléctionner une option" width="430px"options={[{ label: "option1" }, { label: "option2s" }]} />
+            <DropdownComponent label="Séléctionner une option" width="430px"options={[{ label: "Haute" }, { label: "Moyenne" },  { label: "Faible" }]} />
             </div>
      
             

@@ -64,10 +64,10 @@ const Contrats = () => {
         const showScore = scoreRange.some(range => {
             switch (range) {
                 case "Aucun": return contract.score < 0;
-                case "0-25": return contract.score >= 0 && contract.score <= 25;
-                case "26-50": return contract.score >= 26 && contract.score <= 50;
-                case "51-100": return contract.score >= 51 && contract.score <= 100;
-                default: return false;
+                case "0-25/100": return contract.score >= 0 && contract.score <= 25;
+                case "26-50/100": return contract.score >= 26 && contract.score <= 50;
+                case "51-100/100": return contract.score >= 51 && contract.score <= 100;
+                default: return true;
             }
         });
         return  (showScore);
@@ -93,7 +93,7 @@ const Contrats = () => {
                     <h1 className="text-4xl font-bold">Contrats</h1>
                     <div className="flex gap-3">
                         <ButtonOutline label="Exporter (.xls)" onClick={exportToExcel} />
-                        <ButtonFill label="Nouveau contrat" />
+                        <ButtonFill label="Nouveau contrat" icon={true} />
                     </div>
                 </div>
                 <div className="flex justify-between items-center mb-6">

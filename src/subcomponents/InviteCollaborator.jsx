@@ -97,7 +97,7 @@ const Buttontemp = ({ label, height = '50px', width = '221px', onClick }) => {
                 </button>
               </div>
               <div className="w-1/2 px-3">
-                <button className="text-inter block w-full rounded-md border border-primary bg-custom-blue p-3 text-center text-base font-medium text-white ">
+                <button onClick={() => setModalOpen(false)} className="text-inter block w-full rounded-md border border-primary bg-custom-blue p-3 text-center text-base font-medium text-white ">
                   Enregistrer
                 </button>
               </div>
