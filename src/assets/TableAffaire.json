@@ -39,8 +39,7 @@
     "provider": "Swile",
     "score": 95,
     "avatars": [
-      "/src/assets/homme_1.png",
-      "/src/assets/femme_1.png"
+      "/src/assets/homme_1.png"
     ],
     "dateCreated": "10/04/2024"
   }

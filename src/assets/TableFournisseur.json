@@ -1,0 +1,34 @@
+[
+  {
+    "id": "110",
+    "provider": "Logitec",
+    "contractRelated": 2,
+    "affairesRelated": 2,
+    "contractManager": "/src/assets/homme_1.png",
+    "dateCreated": "12/12/2023"
+  },
+  {
+    "id": "110",
+    "provider": "Logitec",
+    "contractRelated": 2,
+    "affairesRelated": 2,
+    "contractManager": "/src/assets/homme_1.png",
+    "dateCreated": "12/12/2023"
+  },
+  {
+    "id": "110",
+    "provider": "Logitec",
+    "contractRelated": 2,
+    "affairesRelated": 2,
+    "contractManager": "/src/assets/femme_1.png",
+    "dateCreated": "12/12/2023"
+  },
+  {
+    "id": "110",
+    "provider": "Logitec",
+    "contractRelated": 2,
+    "affairesRelated": 2,
+    "contractManager": "/src/assets/femme_2.png",
+    "dateCreated": "12/12/2023"
+  }
+]

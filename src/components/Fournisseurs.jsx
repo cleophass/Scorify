@@ -1,6 +1,7 @@
 import { useState } from "react";
-import Table from "../subcomponents/Table";
-import TableAffaire from "../assets/TableAffaire.json";
+import Table from "../subcomponents/Table.jsx";
+import TableFournisseur from "../assets/TableFournisseur.json";
+import TableSupplier from "../subcomponents/TableSupplier.jsx";
 import ButtonFill from "../subcomponents/ButtonFill.jsx";
 import ButtonOutline from "../subcomponents/ButtonOutline.jsx";
 import SearchBar from "../subcomponents/SearchBar.jsx";
@@ -9,7 +10,7 @@ import Pagination from "../subcomponents/Pagination.jsx";
 import * as XLSX from "xlsx";
 import React from "react";
 import DeleteModal from "../subcomponents/DeleteModal.jsx";
-const Affaires = () => {
+const Fournisseurs = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const totalPages = 4;
     const [searchQuery, setSearchQuery] = useState("");
@@ -30,7 +31,7 @@ const Affaires = () => {
 
     const filterByService = (contract) => {
         if (selectedService.length === 0) {
-            return true; // Afficher tous les affaires si aucun service n'est sélectionné
+            return true; // Afficher tous les Fournisseurs si aucun service n'est sélectionné
         }
         const showService = selectedService.some((service) => {
             switch (service) {
@@ -54,7 +55,7 @@ const Affaires = () => {
 
     const filterByScore = (contract) => {
         if (scoreRange.length === 0) {
-            return true; // Afficher tous les affaires si aucune plage n'est sélectionnée
+            return true; // Afficher tous les Fournisseurs si aucune plage n'est sélectionnée
         }
 
         const showScore = scoreRange.some((range) => {
@@ -75,10 +76,10 @@ const Affaires = () => {
     };
 
     const exportToExcel = () => {
-        const ws = XLSX.utils.json_to_sheet(TableAffaire);
+        const ws = XLSX.utils.json_to_sheet(TableFournisseur);
         const wb = XLSX.utils.book_new();
-        XLSX.utils.book_append_sheet(wb, ws, "Affaire");
-        XLSX.writeFile(wb, "Affaire.xlsx");
+        XLSX.utils.book_append_sheet(wb, ws, "Fournisseur");
+        XLSX.writeFile(wb, "Fournisseur.xlsx");
     };
 
     const onPageChange = (newPage) => {
@@ -89,14 +90,14 @@ const Affaires = () => {
         <>
             <div className="px-16 py-10">
                 <div className="flex justify-between items-center mb-10">
-                    <h1 className="text-4xl font-bold">Affaires</h1>
+                    <h1 className="text-4xl font-bold">Fournisseurs</h1>
                     <div className="flex gap-3">
                         <ButtonOutline label="Exporter (.xls)" onClick={exportToExcel} />
-                        <ButtonFill label="Nouveau affaire" />
+                        <ButtonFill label="Nouveau Fournisseur" />
                     </div>
                 </div>
                 <div className="flex justify-between items-center mb-6">
-                    <SearchBar placeholder="Rechercher par affaire, affaire, ID ..." onSearch={handleSearch} />
+                    <SearchBar placeholder="Rechercher par Fournisseur, Fournisseur, ID ..." onSearch={handleSearch} />
                     <div className="flex gap-2">
                         <DropDownButton
                             label="Filtrer par service"
@@ -116,7 +117,7 @@ const Affaires = () => {
                         Comparer
                     </button>
                 </div>
-                <Table data={TableAffaire.filter((contract) => filterContracts(contract) && filterByScore(contract))} />
+                <TableSupplier data={TableFournisseur.filter((contract) => filterContracts(contract))} />
 
                 <Pagination currentPage={currentPage} totalPages={totalPages} onPageChange={onPageChange} />
             </div>
@@ -124,4 +125,4 @@ const Affaires = () => {
     );
 };
 
-export default Affaires;
+export default Fournisseurs;
