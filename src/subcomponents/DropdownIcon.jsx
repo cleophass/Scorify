@@ -6,7 +6,7 @@ const useClickOutside = (handler) => {
 
   useEffect(() => {
     let maybeHandler = (event) => {
-      if (!domNode.current.contains(event.target)) {
+      if (domNode.current && !domNode.current.contains(event.target)) {
         handler();
       }
     };
@@ -16,21 +16,19 @@ const useClickOutside = (handler) => {
     return () => {
       document.removeEventListener("mousedown", maybeHandler);
     };
-  });
+  }, []); // Exécutez ce useEffect uniquement lors du montage
 
   return domNode;
 };
 
-const DropdownIcon = () => {
+const DropdownIcon = ({ option1 = "Voir", option2 = "Modifier" }) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
-  let domNode = useClickOutside(() => {
-    setDropdownOpen(false);
-  });
+  let domNode = useClickOutside(() => setDropdownOpen(false));
 
   return (
     <div className="relative inline-block" ref={domNode}>
       <button onClick={() => setDropdownOpen(!dropdownOpen)} className="inline-flex justify-center items-center">
-        <EllipsisVerticalIcon className="w-6 h-6"/> 
+        <EllipsisVerticalIcon className="w-6 h-6"/> {/* Assurez-vous que l'icône est importée correctement */}
       </button>
       {dropdownOpen && (
         <div
@@ -38,12 +36,12 @@ const DropdownIcon = () => {
           style={{
             right: '50%',
             transform: 'translateX(50%)',
-            minWidth: '140px', // Minimum width can be adjusted as needed
+            minWidth: '140px',
             boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)'
           }}
         >
-          <DropdownItem label="Voir" />
-          <DropdownItem label="Modifier" />
+          <DropdownItem label={option1} />
+          <DropdownItem label={option2} />
         </div>
       )}
     </div>
@@ -58,7 +56,7 @@ const DropdownItem = ({ label }) => {
       href="#"
       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
       onClick={(e) => {
-        e.preventDefault(); // Prevent the page navigation
+        e.preventDefault(); // Prévenir la navigation par défaut
         console.log(label + " clicked");
       }}
     >

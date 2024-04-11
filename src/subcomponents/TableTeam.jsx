@@ -36,7 +36,7 @@ const DataRow = ({ id, fullName, contact, role, statut, contrats, avatars, dateC
       <div className="w-[137px] text-left font-inter">{role}</div>
       <div className="w-[137px] text-left font-inter"><Statut statut={statut}/></div>
       <div className="w-[100px] text-left font-inter">{contrats}</div>
-      <div className="w-[10px] text-left font-inter"><DropdownIcon/></div>
+      <div className="w-[10px] text-left font-inter"><DropdownIcon option2="Renvoyer l'invitation"/></div>
     </div>
   );
 };
