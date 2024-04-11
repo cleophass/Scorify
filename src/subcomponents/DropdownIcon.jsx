@@ -30,8 +30,7 @@ const DropdownIcon = () => {
   return (
     <div className="relative inline-block" ref={domNode}>
       <button onClick={() => setDropdownOpen(!dropdownOpen)} className="inline-flex justify-center items-center">
-        {/* <EllipsisVerticalIcon className="w-6 h-6"/> */}
-        <div className="text-inter text-l text-custom-blue">Voir</div>
+        <EllipsisVerticalIcon className="w-6 h-6"/> 
       </button>
       {dropdownOpen && (
         <div
