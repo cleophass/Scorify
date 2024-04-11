@@ -9,16 +9,16 @@ import Statut from './Statut.jsx';
 const TableHeader = ({ isAllSelected, toggleAll }) => {
   return (
     <div className="px-4 py-3 bg-indigo-50 rounded-tl-md rounded-tr-md flex items-center">
-      <div className="px-3 w-[46px]">
+      <div className="px-3 w-[80px]">
         <input type="checkbox" checked={isAllSelected} onChange={toggleAll} />
       </div>
-      <div className="w-[80px] px-4 font-inter font-bold">Id</div>
-      <div className="w-[242px] px-3 font-inter font-bold">Nom complet</div>
-      <div className="w-[242px] px-2 font-inter font-bold">Contact</div>
-      <div className="w-[137px] px-2 font-inter font-bold">Rôle</div>
-      <div className="w-[137px] px-2 font-inter font-bold">Statut</div>
-      <div className="w-[137px] px-2 font-inter font-bold">Contrats</div>
-      <div className="flex-grow px-4 font-inter font-bold"></div>
+      <div className="w-[80px] text-left font-inter font-bold">Id</div>
+      <div className="w-[200px] text-left font-inter font-bold">Nom complet</div>
+      <div className="w-[242px] text-left font-inter font-bold">Contact</div>
+      <div className="w-[137px] text-left font-inter font-bold">Rôle</div>
+      <div className="w-[137px] text-left font-inter font-bold">Statut</div>
+      <div className="w-[100px] text-left font-inter font-bold">Contrats</div>
+      <div className="w-[10px] text-left font-inter font-bold"></div>
     </div>
   );
 };
@@ -27,16 +27,16 @@ const TableHeader = ({ isAllSelected, toggleAll }) => {
 const DataRow = ({ id, fullName, contact, role, statut, contrats, avatars, dateCreated, isSelected, toggle }) => {
   return (
     <div className={`px-4 py-6 flex items-center border-b border-zinc-200 ${isSelected ? 'bg-gray-200' : ''}`}>
-      <div className="px-3 w-[46px]">
+      <div className="px-3 w-[80px]">
         <input type="checkbox" checked={isSelected} onChange={() => toggle(id)} />
       </div>
-      <div className="w-[80px] px-4 font-inter">{id}</div>
-      <div className="w-[242px] px-3 font-inter">{fullName}</div>
-      <div className="w-[242px] px-2 font-inter">{contact}</div>
-      <div className="w-[137px] px-2 font-inter">{role}</div>
-      <div className="w-[137px] px-2 font-inter"><Statut statut={statut}/></div>
-      <div className="w-[137px] px-2 font-inter">{contrats}</div>
-      <div className="flex-grow px-4 font-inter"><DropdownIcon/></div>
+      <div className="w-[80px] text-left font-inter">{id}</div>  
+      <div className="w-[200px] text-left font-inter">{fullName}</div>
+      <div className="w-[242px] text-left font-inter">{contact}</div>
+      <div className="w-[137px] text-left font-inter">{role}</div>
+      <div className="w-[137px] text-left font-inter"><Statut statut={statut}/></div>
+      <div className="w-[100px] text-left font-inter">{contrats}</div>
+      <div className="w-[10px] text-left font-inter"><DropdownIcon/></div>
     </div>
   );
 };

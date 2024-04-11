@@ -1,11 +1,21 @@
 import React from 'react';
-
-const ButtonFill = ({ label, height='auto',width = 'auto', fill = true }) => { // Added fill prop with a default of true
+import { PlusCircleIcon } from '@heroicons/react/24/outline';
+const ButtonFill = ({ label, height='auto',width = 'auto', fill = true, icon=false}) => { // Added fill prop with a default of true
   // Conditionally setting the className and additional styles based on the fill prop
   const buttonStyle = {
     width, // Use the given width
     height, // Use the given height
   };
+  // if icon is true add the icon to the label
+  if (icon) {
+    label = (
+      <div className="flex items-center justify-center">
+        <PlusCircleIcon className="h-6 pr-2 text-white" />
+        {label}
+      </div>
+    );
+  }
+
 
   const className = fill
     ? 'bg-custom-blue hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'

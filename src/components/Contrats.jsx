@@ -93,7 +93,7 @@ const Contrats = () => {
                     <h1 className="text-4xl font-bold">Contrats</h1>
                     <div className="flex gap-3">
                         <ButtonOutline label="Exporter (.xls)" onClick={exportToExcel} />
-                        <ButtonFill label="Nouveau contrat" />
+                        <ButtonFill label="Nouveau contrat" icon={true} />
                     </div>
                 </div>
                 <div className="flex justify-between items-center mb-6">
