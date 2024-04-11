@@ -1,15 +1,14 @@
 import { useState } from "react";
-import Table from "../subcomponents/Table";
-import TableAffaire from "../assets/TableAffaire.json";
+import profilepicture from "../assets/homme_1.png";
+import TableCta from "../subcomponents/TableCta.jsx";
+import TableContrat from "../assets/TableContrat.json";
 import ButtonFill from "../subcomponents/ButtonFill.jsx";
 import ButtonOutline from "../subcomponents/ButtonOutline.jsx";
-import SearchBar from "../subcomponents/SearchBar.jsx";
-import DropDownButton from "../subcomponents/DropDownButton.jsx";
 import Pagination from "../subcomponents/Pagination.jsx";
 import * as XLSX from "xlsx";
 import React from "react";
-import DeleteModal from "../subcomponents/DeleteModal.jsx";
-const Affaires = () => {
+
+const Contrats = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const totalPages = 4;
     const [searchQuery, setSearchQuery] = useState("");
@@ -30,7 +29,7 @@ const Affaires = () => {
 
     const filterByService = (contract) => {
         if (selectedService.length === 0) {
-            return true; // Afficher tous les affaires si aucun service n'est sélectionné
+            return true; // Afficher tous les contrats si aucun service n'est sélectionné
         }
         const showService = selectedService.some((service) => {
             switch (service) {
@@ -54,7 +53,7 @@ const Affaires = () => {
 
     const filterByScore = (contract) => {
         if (scoreRange.length === 0) {
-            return true; // Afficher tous les affaires si aucune plage n'est sélectionnée
+            return true; // Afficher tous les contrats si aucune plage n'est sélectionnée
         }
 
         const showScore = scoreRange.some((range) => {
@@ -75,10 +74,10 @@ const Affaires = () => {
     };
 
     const exportToExcel = () => {
-        const ws = XLSX.utils.json_to_sheet(TableAffaire);
+        const ws = XLSX.utils.json_to_sheet(TableContrat);
         const wb = XLSX.utils.book_new();
-        XLSX.utils.book_append_sheet(wb, ws, "Affaire");
-        XLSX.writeFile(wb, "Affaire.xlsx");
+        XLSX.utils.book_append_sheet(wb, ws, "Contracts");
+        XLSX.writeFile(wb, "Contracts.xlsx");
     };
 
     const onPageChange = (newPage) => {
@@ -87,41 +86,43 @@ const Affaires = () => {
 
     return (
         <>
-            <div className="px-16 py-10">
-                <div className="flex justify-between items-center mb-10">
-                    <h1 className="text-4xl font-bold">Affaires</h1>
-                    <div className="flex gap-3">
-                        <ButtonOutline label="Exporter (.xls)" onClick={exportToExcel} />
-                        <ButtonFill label="Nouveau affaire" />
-                    </div>
+            <div className="px-16 pt-10 pb-1 " style={{ width: "1194px" }}>
+                <h1 className="text-4xl font-bold">Alex Semuyel</h1>
+                <div className="flex items-center justify-between my-4 " style={{ width: "210px" }}>
+                    <img className="h-16 w-16 rounded-full" src={profilepicture} alt="Profile" />
+                    <p>
+                        <span className="font-bold">ID membre</span> 12345
+                    </p>
                 </div>
-                <div className="flex justify-between items-center mb-6">
-                    <SearchBar placeholder="Rechercher par affaire, affaire, ID ..." onSearch={handleSearch} />
-                    <div className="flex gap-2">
-                        <DropDownButton
-                            label="Filtrer par service"
-                            options={["Achats", "Juridique", "Logistique", "Marketing", "R&D", "RH", "Autres"]}
-                            onChange={onChangeService}
-                        />
-                        <DropDownButton
-                            label="Filtrer par score"
-                            options={["0-25/100", "26-50/100", "51-100/100", "Aucun"]}
-                            onChange={onChangeScoreRange}
-                        />
-                    </div>
-                </div>
-                <div className="mb-5 mt-2 flex gap-2">
-                    <DeleteModal />{" "}
-                    <button className="text-custom-blue rounded-full bg-primary text-base font-medium ">
-                        Comparer
-                    </button>
-                </div>
-                <Table data={TableAffaire.filter((contract) => filterContracts(contract) && filterByScore(contract))} />
+            </div>
 
-                <Pagination currentPage={currentPage} totalPages={totalPages} onPageChange={onPageChange} />
+            <div className="px-16 pt-6 pb-5">
+                <div className="mb-5">
+                    <div className="flex justify-between items-center mb-10">
+                        <h2 className="text-3xl font-bold">Contrats liés</h2>
+                        <div className="flex gap-3">
+                            <ButtonFill label="Exporter (.xls)" onClick={exportToExcel} />
+                        </div>
+                    </div>
+
+                    <TableCta data={TableContrat} />
+                    <Pagination currentPage={currentPage} totalPages={totalPages} onPageChange={onPageChange} />
+                </div>
+
+                <div className="mb-5">
+                    <div className="flex justify-between items-center mb-10">
+                        <h2 className="text-3xl font-bold">Affaires liées</h2>
+                        <div className="flex gap-3">
+                            <ButtonFill label="Exporter (.xls)" onClick={exportToExcel} />
+                        </div>
+                    </div>
+
+                    <TableCta data={TableContrat} />
+                    <Pagination currentPage={currentPage} totalPages={totalPages} onPageChange={onPageChange} />
+                </div>
             </div>
         </>
     );
 };
 
-export default Affaires;
+export default Contrats;

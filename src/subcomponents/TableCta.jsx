@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import Score from "./Score.jsx";
 import TeamAvatars from "./TeamAvatars.jsx";
 import { EllipsisVerticalIcon } from "@heroicons/react/24/outline";
-import DropdownIcon from "../subcomponents/DropdownIcon.jsx";
-import Statut from "./Statut.jsx";
+import DropdownIcon from "./DropdownIcon.jsx";
 
 // Composant pour l'entête du tableau
 const TableHeader = ({ isAllSelected, toggleAll }) => {
@@ -12,46 +11,45 @@ const TableHeader = ({ isAllSelected, toggleAll }) => {
             <div className="px-3 w-[46px]">
                 <input type="checkbox" checked={isAllSelected} onChange={toggleAll} />
             </div>
-            <div className="w-[80px] px-4 font-inter font-bold">Id</div>
-            <div className="w-[242px] px-3 font-inter font-bold">Nom complet</div>
-            <div className="w-[242px] px-2 font-inter font-bold">Contact</div>
-            <div className="w-[137px] px-2 font-inter font-bold">Rôle</div>
-            <div className="w-[137px] px-2 font-inter font-bold">Statut</div>
-            <div className="w-[137px] px-2 font-inter font-bold">Contrats</div>
+            <div className="w-[80px] px-4 font-inter font-bold">ID</div>
+            <div className="w-[242px] px-3 font-inter font-bold">Titre</div>
+            <div className="w-[169px] px-3 font-inter font-bold">Fournisseur</div>
+            <div className="w-[137px] px-2 font-inter font-bold">Score</div>
+            <div className="w-[137px] px-2 font-inter font-bold">Équipe</div>
+            <div className="w-[137px] px-2 font-inter font-bold">Créé le</div>
             <div className="flex-grow px-4 font-inter font-bold"></div>
         </div>
     );
 };
 
 // Composant pour une ligne de données
-const DataRow = ({ id, fullName, contact, role, statut, contrats, avatars, dateCreated, isSelected, toggle }) => {
+const DataRow = ({ id, title, provider, score, avatars, dateCreated, isSelected, toggle }) => {
     return (
         <div className={`px-4 py-6 flex items-center border-b border-zinc-200 ${isSelected ? "bg-gray-200" : ""}`}>
             <div className="px-3 w-[46px]">
                 <input type="checkbox" checked={isSelected} onChange={() => toggle(id)} />
             </div>
             <div className="w-[80px] px-4 font-inter">{id}</div>
-            <div className="w-[242px] px-3 font-inter">{fullName}</div>
-            <div className="w-[242px] px-2 font-inter">{contact}</div>
-            <div className="w-[137px] px-2 font-inter">{role}</div>
+            <div className="w-[242px] px-3 font-inter">{title}</div>
+            <div className="w-[169px] px-3 font-inter">{provider}</div>
             <div className="w-[137px] px-2 font-inter">
-                <Statut statut={statut} />
+                <Score score={score} />
             </div>
-            <div className="w-[137px] px-2 font-inter">{contrats}</div>
+            <div className="w-[137px] px-2 font-inter">
+                <TeamAvatars avatars={avatars} />
+            </div>
+            <div className="w-[137px] px-2 font-inter">{dateCreated}</div>
             <div className="flex-grow px-4 font-inter">
-                <DropdownIcon
-                    label1="Voir"
-                    path1="/vue-collaborateur"
-                    label2="Renvoyer l’invitation"
-                    path2="/renvoyer"
-                />
+                <a style={{ color: "#3758F9" }} href="/contrats/1">
+                    Voir
+                </a>
             </div>
         </div>
     );
 };
 
 // Composant principal pour le tableau
-const TableTeam = ({ data }) => {
+const Table = ({ data }) => {
     const [selectedIds, setSelectedIds] = useState(new Set());
 
     const toggleAll = () => {
@@ -89,4 +87,4 @@ const TableTeam = ({ data }) => {
     );
 };
 
-export default TableTeam;
+export default Table;
