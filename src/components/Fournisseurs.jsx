@@ -15,7 +15,6 @@ const Fournisseurs = () => {
     const totalPages = 4;
     const [searchQuery, setSearchQuery] = useState("");
     const [selectedService, setSelectedService] = useState(["Marketing", "Développement", "Support"]);
-    const [scoreRange, setScoreRange] = useState(["Aucun", "0-25", "26-50", "51-100"]);
 
     const handleSearch = (query) => {
         setSearchQuery(query.toLowerCase());
@@ -97,17 +96,12 @@ const Fournisseurs = () => {
                     </div>
                 </div>
                 <div className="flex justify-between items-center mb-6">
-                    <SearchBar placeholder="Rechercher par Fournisseur, Fournisseur, ID ..." onSearch={handleSearch} />
+                    <SearchBar placeholder="Rechercher par fournisseur, affaire, contrat, ID ..." onSearch={handleSearch} />
                     <div className="flex gap-2">
                         <DropDownButton
                             label="Filtrer par service"
                             options={["Achats", "Juridique", "Logistique", "Marketing", "R&D", "RH", "Autres"]}
                             onChange={onChangeService}
-                        />
-                        <DropDownButton
-                            label="Filtrer par score"
-                            options={["0-25/100", "26-50/100", "51-100/100", "Aucun"]}
-                            onChange={onChangeScoreRange}
                         />
                     </div>
                 </div>

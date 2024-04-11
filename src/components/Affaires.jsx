@@ -61,14 +61,14 @@ const Affaires = () => {
             switch (range) {
                 case "Aucun":
                     return contract.score < 0;
-                case "0-25":
+                case "0-25/100":
                     return contract.score >= 0 && contract.score <= 25;
-                case "26-50":
+                case "26-50/100":
                     return contract.score >= 26 && contract.score <= 50;
-                case "51-100":
+                case "51-100/100":
                     return contract.score >= 51 && contract.score <= 100;
                 default:
-                    return false;
+                    return true;
             }
         });
         return showScore;
@@ -96,7 +96,7 @@ const Affaires = () => {
                     </div>
                 </div>
                 <div className="flex justify-between items-center mb-6">
-                    <SearchBar placeholder="Rechercher par affaire, affaire, ID ..." onSearch={handleSearch} />
+                    <SearchBar placeholder="Rechercher par affaire, fournisseur, contrat, ID ..." onSearch={handleSearch} />
                     <div className="flex gap-2">
                         <DropDownButton
                             label="Filtrer par service"
