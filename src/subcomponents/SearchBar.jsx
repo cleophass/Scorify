@@ -33,12 +33,12 @@ export default function SearchBar({ placeholder, onSearch,width ="540px" }) {
     return (
         <Combobox as="div" value={selectedPerson} onChange={setSelectedPerson}>
             <div className="relative">
-                <Combobox.Input
-                    className="bg-white border border-light-gray rounded-lg flex items-center justify-between transition-all hover:bg-gray-50"
-                    style={{ width: width, height: "50px" }}
-                    onChange={(event) => setQuery(event.target.value)}
-                    placeholder={placeholder}
-                />
+            <Combobox.Input
+    className="bg-white border border-light-gray rounded-lg flex items-center justify-between hover:bg-gray-50 focus:ring-0"
+    style={{ width: width, height: "50px" }}
+    onChange={(event) => setQuery(event.target.value)}
+    placeholder={placeholder}
+/>
                 <MagnifyingGlassIcon className="w-5 h-5 absolute right-4 top-[50%] translate-y-[-50%]" />
             </div>
 
