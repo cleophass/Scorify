@@ -48,7 +48,7 @@ const Fournisseurs = () => {
     };
     const filterContracts = (contract) => {
         return searchQuery
-            ? contract.title.toLowerCase().includes(searchQuery) || contract.id.toLowerCase().includes(searchQuery)
+            ? contract.provider.toLowerCase().includes(searchQuery) || contract.id.toLowerCase().includes(searchQuery)
             : true;
     };
 

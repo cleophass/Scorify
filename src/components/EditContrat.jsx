@@ -7,6 +7,8 @@ import DeleteModal from "../subcomponents/DeleteModal";
 import TableEdit from "../subcomponents/TableEdit";
 import TableEditcontent from "../assets/TableEdit.json";
 import AlertComponent from "../subcomponents/AlertComponent";
+import ButtonFill from "../subcomponents/ButtonFill";
+import NewEditCriteria from "../subcomponents/NewEditCriteria";
 
 const dropdownOptions = [
     { label: 'Paul', href: '#' }
@@ -68,6 +70,9 @@ const EditContrat = () => {
            <h1 className="text-3xl font-bold text-custom-grey">Critères du contrat</h1>
            
            <TableEdit data={TableEditcontent} onScoreChange={setTotalScore} />
+           <div className="mt-5 mb-5">
+           <NewEditCriteria />
+           </div>
         </div>
 
     );
