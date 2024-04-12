@@ -9,10 +9,10 @@ import TableEditcontent from "../assets/TableEdit.json";
 import AlertComponent from "../subcomponents/AlertComponent";
 
 const dropdownOptions = [
-    { label: 'Collaborateur', href: '#' }
+    { label: 'Paul', href: '#' }
 ];
 const dropdownOptions2 = [
-    { label: 'Xieling', href: '#' }
+    { label: 'Samuel', href: '#' }
 ];
 const EditContrat = () => {
     const [totalScore, setTotalScore] = useState('-');
@@ -25,7 +25,7 @@ const EditContrat = () => {
        
       <TextInput 
                         label="Titre du contrat" 
-                        value="Logitech" // Valeur initiale
+                        value="Hébergement et maintenance" // Valeur initiale
                         onChange={(e) => {/* logic for handling change */}} // Gérer le changement
                         labelFontSize="text-lg" 
                         locked={false} // Assurez-vous que c'est modifiable
@@ -34,14 +34,14 @@ const EditContrat = () => {
         <div>
             <label className="mb-2 text-lg font-medium 'text-dark-grey" style={{ height: '28px' }}>Fournisseur</label>
                 <div className="mt-2">
-                    <DropdownComponent label="Manager"  options={dropdownOptions} />
+                    <DropdownComponent label="Logitec"  options={dropdownOptions} />
                 </div>
             </div>
         
         <div>
             <label className="mb-2 text-lg font-medium 'text-dark-grey" style={{ height: '28px' }}>Equipe</label>
                 <div className="mt-2">
-                    <DropdownComponent label="maya"  options={dropdownOptions2} />
+                    <DropdownComponent label="Stéphanie"  options={dropdownOptions2} />
                 </div>
             </div>
         </div>

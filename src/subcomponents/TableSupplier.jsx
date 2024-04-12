@@ -15,8 +15,8 @@ const TableHeader = ({ isAllSelected, toggleAll }) => {
             <div className="w-[169px] px-3 font-inter font-bold">Fournisseur</div>
             <div className="w-[137px] px-2 font-inter font-bold">Contrats liés</div>
             <div className="w-[137px] px-2 font-inter font-bold">Affaires liées</div>
-            <div className="w-[157px] px-2 font-inter font-bold">Contract manager </div>
-            <div className="flex-grow px-4 font-inter font-bold">Créé le</div>
+            <div className="w-[169px] px-2 font-inter font-bold">Contract manager </div>
+            <div className="w-[169px] px-2 font-inter font-bold">Créé le</div>
         </div>
     );
 };
@@ -39,12 +39,12 @@ const DataRow = ({
             </div>
             <div className="w-[80px] px-4 font-inter">{id}</div>
             <div className="w-[169px] px-3 font-inter">{provider}</div>
-            <div className="w-[169px] px-3 font-inter">{contractRelated}</div>
-            <div className="w-[169px] px-3 font-inter">{affairesRelated}</div>
-            <div className="w-[137px] px-2">
+            <div className="w-[137px] px-3 font-inter">{contractRelated}</div>
+            <div className="w-[137px] px-3 font-inter">{affairesRelated}</div>
+            <div className="w-[169px] px-2">
                 <TeamAvatars avatars={[contractManager]} />
             </div>
-            <div className="w-[137px] px-2 font-inter">{dateCreated}</div>
+            <div className="w-[169px] px-2 font-inter">{dateCreated}</div>
             <div className="flex-grow px-4 font-inter">
                 <DropdownIcon label1="Voir" path1="/contrats/1" label2="Modifier" path2="/path-to-edit" />
             </div>
