@@ -20,13 +20,13 @@ const Editaffaire = () => {
     const [totalScore, setTotalScore] = useState('-');
     return (
         <div id="content-to-export" className="px-16 py-10 ">
-      <h1 className="text-4xl font-bold text-custom-grey">Modifier affaire Logitec -110</h1>
+      <h1 className="text-4xl font-bold text-custom-grey">Modifier affaire Logitec - 110</h1>
       <AlertComponent score={totalScore} />
       {/* div to put item in line */}
       <div className="flex " style={{"gap":"32px"}}>
        
       <TextInput 
-                        label="Titre du affaire" 
+                        label="Titre de l'affaire" 
                         value="Hébergement et maintenance" // Valeur initiale
                         onChange={(e) => {/* logic for handling change */}} // Gérer le changement
                         labelFontSize="text-lg" 
@@ -67,7 +67,7 @@ const Editaffaire = () => {
         >
            Enregistrer        </button>
            </div>
-           <h1 className="text-3xl font-bold text-custom-grey">Critères du affaire</h1>
+           <h1 className="text-3xl font-bold text-custom-grey">Critères de l'affaire</h1>
            
            <TableEdit data={TableEditcontent} onScoreChange={setTotalScore} />
            <div className="mt-5 mb-5">
