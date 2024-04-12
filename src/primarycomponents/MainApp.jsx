@@ -12,6 +12,7 @@ import Critere from "../components/Critere.jsx";
 // Autres imports de composants
 import { Routes, Route, Navigate } from "react-router-dom";
 import EditContrat from "../components/EditContrat.jsx";
+import EditAffaires from "../components/EditAffaires.jsx";
 
 const MainApp = ({ onLogout }) => {
     const [activePage, setActivePage] = useState("dashboard");
@@ -31,6 +32,8 @@ const MainApp = ({ onLogout }) => {
                     <Route path="/affaires" element={<Affaires />} />
                     <Route path="/contrats/1" element={<VueContrat />} />
                     <Route path="/contrats/1/edit" element={<EditContrat />} />
+                    
+                    <Route path="/affaires/1/edit" element={<EditAffaires />} />
                     <Route path="/fournisseurs" element={<Fournisseurs />} />
                     <Route path="/fournisseurs/1" element={<VueFournisseur />} />
                     <Route path="/account" element={<Account />} />

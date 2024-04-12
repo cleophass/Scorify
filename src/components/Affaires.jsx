@@ -116,7 +116,7 @@ const Affaires = () => {
                         Comparer
                     </button>
                 </div>
-                <Table data={TableAffaire.filter((contract) => filterContracts(contract) && filterByScore(contract))} />
+                <Table data={TableAffaire.filter((contract) => filterContracts(contract) && filterByScore(contract))} path1="/1" path2="1/edit" />
 
                 <Pagination currentPage={currentPage} totalPages={totalPages} onPageChange={onPageChange} />
             </div>
