@@ -17,7 +17,7 @@ const ButtonFill = ({ label, height = "auto", width = "auto", fill = true, icon 
         );
     }
 
-    return <button className={buttonStyle} onClick={onClick} style={{ width: width }}>{label}</button>;
+    return <button className={buttonStyle} onClick={onClick} style={{ width: width, height: height }}>{label}</button>;
 };
 
 export default ButtonFill;

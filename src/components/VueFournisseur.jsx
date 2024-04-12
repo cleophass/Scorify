@@ -48,8 +48,8 @@ const Contrats = () => {
                     {/* Titre et boutons */}
                     <h1 className="text-4xl font-bold">Fournisseurs</h1>
                     <div className="flex gap-3">
-                        <ButtonFill label="Nouveau contrat" fill={false} icon={true} />
-                        <ButtonFill label="Modifier" fill={true} icon={false} />
+                        <ButtonFill label="Nouveau contrat" fill={false} icon={true} height="50px"/>
+                        <ButtonFill label="Modifier" fill={true} icon={false} height="50px" />
                     </div>
                 </div>
                 {/* Profil fournisseur et image */}
