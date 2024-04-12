@@ -34,7 +34,7 @@ export default function SearchBar({ placeholder, onSearch,width ="540px" }) {
         <Combobox as="div" value={selectedPerson} onChange={setSelectedPerson}>
             <div className="relative">
             <Combobox.Input
-    className="bg-white border border-light-gray rounded-lg flex items-center justify-between hover:bg-gray-50 focus:ring-0"
+    className="bg-white border border-light-gray rounded-lg flex items-center justify-between© hover:bg-gray-50 focus:ring-0"
     style={{ width: width, height: "50px" }}
     onChange={(event) => setQuery(event.target.value)}
     placeholder={placeholder}
