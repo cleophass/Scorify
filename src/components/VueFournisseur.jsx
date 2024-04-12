@@ -46,7 +46,7 @@ const Contrats = () => {
             <div className="px-16 pt-10 pb-5">
                 <div className="flex justify-between items-center mb-5">
                     {/* Titre et boutons */}
-                    <h1 className="text-4xl font-bold">Fournisseurs</h1>
+                    <h1 className="text-4xl font-bold">Fournisseur Logitec</h1>
                     <div className="flex gap-3">
                         <ButtonFill label="Nouveau contrat" fill={false} icon={true} height="50px"/>
                         <ButtonFill label="Modifier" fill={true} icon={false} height="50px" />
