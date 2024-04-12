@@ -33,14 +33,14 @@ const EditContrat = () => {
                         locked={false} // Assurez-vous que c'est modifiable
                         width="330px"
                     />
-        <div>
-            <label className="mb-2 text-lg font-medium 'text-dark-grey" style={{ height: '28px' }}>Fournisseur</label>
+        <div style={{width:'330px'}}>
+            <label className="mb-2 text-lg font-medium 'text-dark-grey" style={{ width:'330px',height: '28px' }}>Fournisseur</label>
                 <div className="mt-2">
                     <DropdownComponent label="Logitec"  options={dropdownOptions} />
                 </div>
             </div>
         
-        <div>
+        <div style={{width:'330px'}}>
             <label className="mb-2 text-lg font-medium 'text-dark-grey" style={{ height: '28px' }}>Equipe</label>
                 <div className="mt-2">
                     <DropdownComponent label="Stéphanie"  options={dropdownOptions2} />
