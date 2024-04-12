@@ -83,7 +83,7 @@ const Buttontemp = ({ label, height = '50px', width = '221px', onClick }) => {
             <div className="mb-10">
             <h1 className={`text-left mb-2 text-sm font-medium text-gray-700'}`}>Rôle</h1>
 
-            <DropdownComponent label="Rôle" width="430px"options={[{ label: "Admin" }, { label: "Collaborateur" }]} />
+            <DropdownComponent label="Rôle" width="430px" options={[{ label: "Admin" }, { label: "Collaborateur" }]} />
             </div>
      
             

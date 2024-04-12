@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React,{ useState } from "react";
 import profilepicture from "../assets/homme_1.png";
 import TableCta from "../subcomponents/TableCta.jsx";
 import TableContrat from "../assets/TableContrat.json";
@@ -6,7 +6,6 @@ import ButtonFill from "../subcomponents/ButtonFill.jsx";
 import ButtonOutline from "../subcomponents/ButtonOutline.jsx";
 import Pagination from "../subcomponents/Pagination.jsx";
 import * as XLSX from "xlsx";
-import React from "react";
 
 const Contrats = () => {
     const [currentPage, setCurrentPage] = useState(1);
@@ -74,6 +73,7 @@ const Contrats = () => {
     };
 
     const exportToExcel = () => {
+        console.log("Exporting to Excel");
         const ws = XLSX.utils.json_to_sheet(TableContrat);
         const wb = XLSX.utils.book_new();
         XLSX.utils.book_append_sheet(wb, ws, "Contracts");
