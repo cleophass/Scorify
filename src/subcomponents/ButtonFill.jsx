@@ -10,14 +10,14 @@ const ButtonFill = ({ label, height = "auto", width = "auto", fill = true, icon 
 
     if (icon) {
         label = (
-            <div className="flex items-center">
+            <div className="flex items-center" >
                 <PlusCircleIcon className={`${iconColor} h-5 w-5`} />
                 <span className="ml-2">{label}</span> {/* Espace entre icône et texte */}
             </div>
         );
     }
 
-    return <button className={buttonStyle}>{label}</button>;
+    return <button className={buttonStyle} style={{ width: width }}>{label}</button>;
 };
 
 export default ButtonFill;
