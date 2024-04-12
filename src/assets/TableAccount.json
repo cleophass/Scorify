@@ -6,5 +6,45 @@
     "role":"Collaborateur",
     "statut":"Actif",
     "contrats":"2"
+  },
+  {
+    "id": "2",
+    "fullName": "Cléophas Fournier ",
+    "contact":"cleophas@green.com",
+    "role":"Collaborateur",
+    "statut":"Actif",
+    "contrats":"1"
+  },
+  {
+    "id": "3",
+    "fullName": "Lucien Au",
+    "contact":"lucien@green.com",
+    "role":"Collaborateur",
+    "statut":"Invité",
+    "contrats":"0"
+  },
+  {
+    "id": "4",
+    "fullName": "Xieling Hamon",
+    "contact":"xieling@green.com",
+    "role":"Collaborateur",
+    "statut":"Actif",
+    "contrats":"0"
+  },
+  {
+    "id": "5",
+    "fullName": "Bineta Wade",
+    "contact":"bineta@green.com",
+    "role":"Collaborateur",
+    "statut":"Actif",
+    "contrats":"3"
+  },
+  {
+    "id": "6",
+    "fullName": "Martin Lee",
+    "contact":"martin@green.com",
+    "role":"Collaborateur",
+    "statut":"Actif",
+    "contrats":"2"
   }
 ]
