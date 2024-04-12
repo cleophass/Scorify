@@ -1,32 +1,23 @@
-import React from 'react';
-import { PlusCircleIcon } from '@heroicons/react/24/outline'; // Importation de l'icône nécessaire
+import React from "react";
+import { PlusCircleIcon } from "@heroicons/react/24/outline";
 
 const ButtonFill = ({ label, height = "auto", width = "auto", fill = true, icon = false }) => {
-    // Conditionally setting the className and additional styles based on the fill prop
-    const buttonStyle = {
-        width, // Use the given width
-        height, // Use the given height
-    };
+    const iconColor = fill ? "text-white" : "text-blue-600"; // Texte blanc quand rempli, bleu sinon.
 
-    // if icon is true, add the icon to the label
+    const buttonStyle = fill
+        ? "bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded shadow-sm" // Style pour bouton rempli
+        : "text-blue-600 border border-blue-600 hover:bg-blue-50 font-medium py-2 px-4 rounded shadow-sm"; // Style pour bouton non rempli
+
     if (icon) {
         label = (
-            <div className="flex items-center justify-center">
-                <PlusCircleIcon className="h-6 pr-2 text-white" />
-                {label}
+            <div className="flex items-center">
+                <PlusCircleIcon className={`${iconColor} h-5 w-5`} />
+                <span className="ml-2">{label}</span> {/* Espace entre icône et texte */}
             </div>
         );
     }
 
-    const className = fill
-        ? "bg-custom-blue hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded"
-        : "border-primary border rounded-md inline-flex items-center justify-center py-3 px-7 text-center text-base font-medium text-primary hover:bg-blue-light-5 hover:text-body-color dark:hover:text-dark-3 disabled:bg-gray-3 disabled:border-gray-3 disabled:text-dark-5 active:bg-blue-light-3";
-
-    return (
-        <button className={className} style={buttonStyle}>
-            {label}
-        </button>
-    );
+    return <button className={buttonStyle}>{label}</button>;
 };
 
 export default ButtonFill;

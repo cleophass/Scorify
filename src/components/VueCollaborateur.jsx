@@ -105,7 +105,7 @@ const Contrats = () => {
                         </div>
                     </div>
 
-                    <TableCta data={TableContrat} />
+                    <TableCta data={TableContrat} path="/contrats/1" />
                     <Pagination currentPage={currentPage} totalPages={totalPages} onPageChange={onPageChange} />
                 </div>
 
