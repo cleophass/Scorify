@@ -29,7 +29,7 @@ const DropdownComponent = ({ label, options,width="33Opx" }) => {
             <button
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                 className="inline-flex justify-between items-center bg-white border border-light-gray rounded-lg px-4 py-2 w-full text-gray-500 hover:bg-gray-50 transition-colors"
-                style={{ height: '50px' }}
+                style={{ height: '50px', width: '330px' }}
             >
                 {label}
                 <ChevronDownIcon className="w-4 h-4 ml-2" />

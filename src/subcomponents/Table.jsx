@@ -40,7 +40,7 @@ const DataRow = ({ id, title, provider, score, avatars, dateCreated, isSelected,
             </div>
             <div className="w-[137px] px-2 font-inter">{dateCreated}</div>
             <div className="flex-grow px-4 font-inter">
-                <DropdownIcon label1="Voir" path1="/contrats/1" label2="Modifier" path2="/path-to-edit" />
+                <DropdownIcon label1="Voir" path1="/contrats/1" label2="Modifier" path2="/contrats/1/edit" />
             </div>
         </div>
     );
