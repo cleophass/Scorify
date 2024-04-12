@@ -4,11 +4,11 @@ const ProgressBar = ({ score = 0 }) => {
   // Définir une fonction pour déterminer la couleur en fonction du score
   const getColor = (score) => {
     if (score < 3) {
-      return "bg-red-600";
+      return "bg-custom-green";
     } else if (score < 7) {
-      return "bg-orange-600";
+      return "bg-custom-yellow";
     } else {
-      return "bg-green-600";
+      return "bg-custom-red";
     }
   };
 
