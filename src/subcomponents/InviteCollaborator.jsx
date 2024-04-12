@@ -72,7 +72,7 @@ const Buttontemp = ({ label, height = '50px', width = '221px', onClick }) => {
             className="w-full max-w-[570px] rounded-[20px] bg-white px-8 py-12 text-center dark:bg-dark-2 md:px-[70px] md:py-[60px]"
           >
             <h3 className="pb-[18px] text-xl font-semibold text-dark dark:text-white sm:text-2xl">
-              Inviter un Collaborateur
+              Inviter un collaborateur
             </h3>
             <span
               className="mx-auto mb-6 inline-block h-1 w-[90px] rounded bg-custom-blue"

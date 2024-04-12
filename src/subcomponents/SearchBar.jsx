@@ -14,7 +14,7 @@ import React from "react";
 // }
 
 // eslint-disable-next-line react/prop-types
-export default function SearchBar({ placeholder, onSearch,width ="487px" }) {
+export default function SearchBar({ placeholder, onSearch,width ="540px" }) {
     const [query, setQuery] = useState("");
     useEffect(() => {
         if (onSearch) {

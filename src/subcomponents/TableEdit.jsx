@@ -7,10 +7,10 @@ import DeleteModal from './DeleteModal.jsx';
 const TableHeader = () => {
   return (
     <div className="px-4 py-3 bg-indigo-50 rounded-tl-md rounded-tr-md flex items-center">
-      <div className="w-[300px] px-4 font-inter font-bold">Critère</div>
-      <div className="w-[142px] px-4 font-inter font-bold">Importance</div>
-      <div className="w-[300px] px-4 font-inter font-bold">Note /10</div>
-      <div className="w-[137px] px-8 font-inter font-bold">Note Updated</div>
+      <div className="w-[372px] px-4 font-inter font-bold">Critère</div>
+      <div className="w-[156px] px-4 font-inter font-bold">Importance</div>
+      <div className="w-[156px] px-4 font-inter font-bold">Note /10</div>
+      <div className="w-[137px] px-8 font-inter font-bold">Score</div>
     </div>
   );
 };
@@ -30,9 +30,9 @@ const DataRow = ({ critere, importance, note, setNote }) => {
 
   return (
     <div className="px-4 py-6 flex items-center border-b border-zinc-200">
-      <div className="w-[300px] px-4 font-inter">{critere}</div>
-      <div className="w-[142px] px-4 font-inter"><Importance importance={importance} /></div>
-      <div className="w-[300px] px-4 font-inter">
+      <div className="w-[372px] px-4 font-inter">{critere}</div>
+      <div className="w-[156px] px-4 font-inter"><Importance importance={importance} /></div>
+      <div className="w-[156px] px-4 font-inter">
         <input type="number" className="border rounded px-2 py-1 text-center" value={note} onChange={handleInputChange} min="0" max="10" placeholder="0" />
       </div>
       <div className="w-[137px] px-8 font-inter flex justify-center"><ProgressBar score={note} /></div>
