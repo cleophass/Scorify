@@ -2,7 +2,7 @@ import { useState } from "react";
 import profilepicture from "../assets/homme_1.png";
 import TableCta from "../subcomponents/TableCta.jsx";
 import TableSupplierLies from "../subcomponents/TableSupplierLies.jsx";
-import TableAffaire from "../assets/TableAffaire.json";
+import TableContrat from "../assets/TableContrat.json";
 import TableCriteriaContrat from "../subcomponents/TableCriteriaContrat.jsx";
 import TableCritere from "../assets/TableCritere.json";
 import TableCritereVue from "../assets/TableCritereVue.json";
@@ -17,9 +17,8 @@ import TextArea from "../subcomponents/TextArea.jsx";
 import Pagination from "../subcomponents/Pagination.jsx";
 import * as XLSX from "xlsx";
 import React from "react";
-import ButtonRecommandation from "../subcomponents/ButtonRecommandation.jsx";
 
-const VueContrats = () => {
+const Contrats = () => {
     const [totalScore, setTotalScore] = useState("-");
     const [currentPage, setCurrentPage] = useState(1);
     const totalPages = 4;
@@ -55,12 +54,10 @@ const VueContrats = () => {
             {/* header */}
 
             <div className="px-16 pt-10 pb-5">
-                <ButtonRecommandation />
                 <div className="flex justify-between items-center mb-5">
                     {/* Titre et boutons */}
-                    <h1 className="text-4xl font-bold">Contrat Logitec</h1>
+                    <h1 className="text-4xl text-black font-bold">Affaire Logitec</h1>
                     <div className="flex gap-3">
-                        <ButtonFill label="Voir le contrat" fill={false} icon={true} iconType="arrow" height="50px" />
                         <ButtonFill label="Modifier" fill={true} icon={false} iconType="arrow" height="50px" />{" "}
                     </div>
                 </div>
@@ -84,16 +81,16 @@ const VueContrats = () => {
 
                 <div className="mb-5">
                     <div className="flex justify-between items-center mb-10">
-                        <h2 className="text-3xl font-bold">Affaires liées</h2>
+                        <h2 className="text-3xl text-black font-bold">Contrat liées</h2>
                     </div>
 
-                    <TableCta data={TableAffaire} path="/affaires/1" />
+                    <TableCta data={TableContrat} path="/contrats/1" />
                     <Pagination currentPage={currentPage} totalPages={totalPages} onPageChange={onPageChange} />
                 </div>
 
                 <div className="mb-5">
                     <div className="flex justify-between items-center mb-10">
-                        <h2 className="text-3xl font-bold">Fournisseurs liés</h2>
+                        <h2 className="text-3xl text-black font-bold">Fournisseurs liés</h2>
                     </div>
 
                     <TableSupplierLies data={TableFournisseur} path="/fournisseurs/1" />
@@ -104,4 +101,4 @@ const VueContrats = () => {
     );
 };
 
-export default VueContrats;
+export default Contrats;

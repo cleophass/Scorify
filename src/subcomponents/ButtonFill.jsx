@@ -1,25 +1,39 @@
 import React from "react";
-import { PlusCircleIcon } from "@heroicons/react/24/outline"; // Importation de l'icône nécessaire
+import { PlusCircleIcon, ArrowDownTrayIcon } from "@heroicons/react/24/outline";
 
-const ButtonFill = ({ label, height = "auto", width = "auto", fill = true, icon = false, onClick }) => {
-    const iconColor = fill ? "text-white" : "text-blue-600"; // Texte blanc quand rempli, bleu sinon.
-
+const ButtonFill = ({
+    label,
+    height = "auto",
+    width = "auto",
+    fill = true,
+    icon = false, // boolean to show/hide icon
+    iconType = "plus", // "plus" or "arrow", default is "plus"
+    onClick,
+}) => {
+    const iconColor = fill ? "text-white" : "text-blue-600"; // Text color based on fill
     const buttonStyle = fill
-        ? "bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded shadow-sm" // Style pour bouton rempli
-        : "text-blue-600 border border-blue-600 hover:bg-blue-50 font-medium py-2 px-4 rounded shadow-sm"; // Style pour bouton non rempli
+        ? "bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded shadow-sm"
+        : "text-blue-600 border border-blue-600 hover:bg-blue-50 font-medium py-2 px-4 rounded shadow-sm";
 
+    let IconComponent = null;
     if (icon) {
-        label = (
-            <div className="flex items-center">
-                <PlusCircleIcon className={`${iconColor} h-5 w-5`} />
-                <span className="ml-2">{label}</span> {/* Espace entre icône et texte */}
-            </div>
-        );
+        if (iconType === "plus") {
+            IconComponent = PlusCircleIcon;
+        } else if (iconType === "arrow") {
+            IconComponent = ArrowDownTrayIcon;
+        }
     }
 
     return (
         <button className={buttonStyle} onClick={onClick} style={{ width, height }}>
-            {label}
+            {IconComponent ? (
+                <div className="flex items-center">
+                    <IconComponent className={`${iconColor} h-5 w-5`} />
+                    <span className="ml-2">{label}</span>
+                </div>
+            ) : (
+                label
+            )}
         </button>
     );
 };

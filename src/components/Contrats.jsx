@@ -6,6 +6,7 @@ import ButtonOutline from "../subcomponents/ButtonOutline.jsx";
 import SearchBar from "../subcomponents/SearchBar.jsx";
 import DropDownButton from "../subcomponents/DropDownButton.jsx";
 import Pagination from "../subcomponents/Pagination.jsx";
+import ButtonRecommandation from "../subcomponents/ButtonRecommandation.jsx";
 import * as XLSX from "xlsx";
 import React from "react";
 import DeleteModal from "../subcomponents/DeleteModal.jsx";
@@ -90,6 +91,7 @@ const Contrats = () => {
     return (
         <>
             <div className="px-16 py-10">
+                <ButtonRecommandation />
                 <div className="flex justify-between items-center mb-10">
                     <h1 className="text-4xl font-bold">Contrats</h1>
                     <div className="flex gap-3">
