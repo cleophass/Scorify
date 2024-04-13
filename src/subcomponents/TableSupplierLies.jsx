@@ -22,7 +22,17 @@ const TableHeader = ({ isAllSelected, toggleAll }) => {
 };
 
 // Composant pour une ligne de données
-const DataRow = ({ id, provider, contractRelated, affairesRelated, avatars, dateCreated, isSelected, toggle }) => {
+const DataRow = ({
+    id,
+    provider,
+    contractRelated,
+    affairesRelated,
+    avatars,
+    dateCreated,
+    isSelected,
+    toggle,
+    path = "/default-path",
+}) => {
     return (
         <div className={`px-4 py-6 flex items-center border-b border-zinc-200 ${isSelected ? "bg-gray-200" : ""}`}>
             <div className="px-3 w-[46px]">
@@ -37,14 +47,16 @@ const DataRow = ({ id, provider, contractRelated, affairesRelated, avatars, date
             </div>
             <div className="w-[169px] px-2 font-inter">{dateCreated}</div>
             <div className="flex-grow px-4 font-inter">
-                <DropdownIcon label1="Voir" path1="/fournisseurs/1" label2="Modifier" path2="/path-to-edit" />
+                <a style={{ color: "#3758F9" }} href={path}>
+                    Voir
+                </a>
             </div>
         </div>
     );
 };
 
 // Composant principal pour le tableau
-const Table = ({ data }) => {
+const Table = ({ data, path }) => {
     const [selectedIds, setSelectedIds] = useState(new Set());
 
     const toggleAll = () => {
@@ -76,6 +88,7 @@ const Table = ({ data }) => {
                     {...item}
                     isSelected={selectedIds.has(item.id)}
                     toggle={toggle}
+                    path={path}
                 />
             ))}
         </div>

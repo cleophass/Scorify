@@ -122,7 +122,11 @@ const Affaires = () => {
                         </button>
                     </Link>
                 </div>
-                <Table data={TableAffaire.filter((contract) => filterContracts(contract) && filterByScore(contract))} path1="/1" path2="1/edit" />
+                <Table
+                    data={TableAffaire.filter((contract) => filterContracts(contract) && filterByScore(contract))}
+                    path1="/Affaires/1"
+                    path2="1/edit"
+                />
 
                 <Pagination currentPage={currentPage} totalPages={totalPages} onPageChange={onPageChange} />
             </div>

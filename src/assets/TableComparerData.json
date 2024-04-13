@@ -1,0 +1,17 @@
+[
+  {
+    "criterium": "Score",
+    "tech1": 75,
+    "tech2": 75
+  },
+  {
+    "criterium": "Lisibilité et qualité de la proposition",
+    "tech1": 3,
+    "tech2": 70
+  },
+  {
+    "criterium": "Disponibilité",
+    "tech1": 30,
+    "tech2": 75
+  }
+]

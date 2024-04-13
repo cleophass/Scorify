@@ -4,7 +4,7 @@
     "provider": "Logitec",
     "contractRelated": 1,
     "affairesRelated": 1,
-    "contractManager": "/src/assets/homme_1.png",
+    "avatars": "/src/assets/homme_1.png",
     "dateCreated": "12/03/2024"
   },
   {
@@ -12,7 +12,7 @@
     "provider": "Paul",
     "contractRelated": 3,
     "affairesRelated": 2,
-    "contractManager": "/src/assets/homme_1.png",
+    "avatars": "/src/assets/homme_1.png",
     "dateCreated": "02/01/2024"
   },
   {
@@ -20,7 +20,7 @@
     "provider": "Swile",
     "contractRelated": 2,
     "affairesRelated": 2,
-    "contractManager": "/src/assets/femme_1.png",
+    "avatars": "/src/assets/femme_1.png",
     "dateCreated": "12/12/2023"
   },
   {
@@ -28,7 +28,7 @@
     "provider": "Safran",
     "contractRelated": 2,
     "affairesRelated": 1,
-    "contractManager": "/src/assets/femme_2.png",
+    "avatars": "/src/assets/femme_2.png",
     "dateCreated": "22/10/2023"
   }
 ]
