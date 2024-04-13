@@ -11,7 +11,7 @@ export default function TextArea({ defaultValue }) {
                     rows={4}
                     name="comment"
                     id="comment"
-                    className="block w-full rounded-md border-gray-300 shadow-sm focus:ring text-black"
+                    className="block w-full rounded-md border-gray-300 shadow-sm text-black"
                     defaultValue={defaultValue}
                 />
             </div>
