@@ -1,7 +1,7 @@
 import React from "react";
-import { PlusCircleIcon } from "@heroicons/react/24/outline";
+import { PlusCircleIcon } from "@heroicons/react/24/outline"; // Importation de l'icône nécessaire
 
-const ButtonFill = ({ label, height = "auto", width = "auto", fill = true, icon = false,onClick }) => {
+const ButtonFill = ({ label, height = "auto", width = "auto", fill = true, icon = false, onClick }) => {
     const iconColor = fill ? "text-white" : "text-blue-600"; // Texte blanc quand rempli, bleu sinon.
 
     const buttonStyle = fill
@@ -10,14 +10,18 @@ const ButtonFill = ({ label, height = "auto", width = "auto", fill = true, icon 
 
     if (icon) {
         label = (
-            <div className="flex items-center" >
+            <div className="flex items-center">
                 <PlusCircleIcon className={`${iconColor} h-5 w-5`} />
                 <span className="ml-2">{label}</span> {/* Espace entre icône et texte */}
             </div>
         );
     }
 
-    return <button className={buttonStyle} onClick={onClick} style={{ width: width, height: height }}>{label}</button>;
+    return (
+        <button className={buttonStyle} onClick={onClick} style={{ width, height }}>
+            {label}
+        </button>
+    );
 };
 
 export default ButtonFill;

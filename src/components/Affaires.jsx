@@ -9,6 +9,7 @@ import Pagination from "../subcomponents/Pagination.jsx";
 import * as XLSX from "xlsx";
 import React from "react";
 import DeleteModal from "../subcomponents/DeleteModal.jsx";
+import { Link } from "react-router-dom";
 const Affaires = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const totalPages = 4;
@@ -96,7 +97,10 @@ const Affaires = () => {
                     </div>
                 </div>
                 <div className="flex justify-between items-center mb-6">
-                    <SearchBar placeholder="Rechercher par affaire, fournisseur, contrat, ID ..." onSearch={handleSearch} />
+                    <SearchBar
+                        placeholder="Rechercher par affaire, fournisseur, contrat, ID ..."
+                        onSearch={handleSearch}
+                    />
                     <div className="flex gap-2">
                         <DropDownButton
                             label="Filtrer par service"
@@ -112,9 +116,11 @@ const Affaires = () => {
                 </div>
                 <div className="mb-5 mt-2 flex gap-2">
                     <DeleteModal />{" "}
-                    <button className="text-custom-blue rounded-full bg-primary text-base font-medium ">
-                        Comparer
-                    </button>
+                    <Link to="/affaires/comparer">
+                        <button className="text-custom-blue rounded-full bg-primary text-base font-medium ">
+                            Comparer
+                        </button>
+                    </Link>
                 </div>
                 <Table data={TableAffaire.filter((contract) => filterContracts(contract) && filterByScore(contract))} path1="/1" path2="1/edit" />
 

@@ -4,6 +4,8 @@ import Dashboard from "../components/Dashboard.jsx";
 import Contrats from "../components/Contrats.jsx";
 import VueContrat from "../components/VueContrat.jsx";
 import Affaires from "../components/Affaires.jsx";
+import ComparerAffaires from "../components/ComparerAffaires.jsx";
+import ComparerContrats from "../components/ComparerContrats.jsx";
 import Fournisseurs from "../components/Fournisseurs.jsx";
 import VueFournisseur from "../components/VueFournisseur.jsx";
 import VueCollaborateur from "../components/VueCollaborateur.jsx";
@@ -29,7 +31,9 @@ const MainApp = ({ onLogout }) => {
                 <Routes>
                     <Route path="/dashboard" element={<Dashboard />} />
                     <Route path="/contrats" element={<Contrats />} />
+                    <Route path="/contrats/comparer" element={<ComparerContrats />} />
                     <Route path="/affaires" element={<Affaires />} />
+                    <Route path="/affaires/comparer" element={<ComparerAffaires />} />
                     <Route path="/contrats/1" element={<VueContrat />} />
                     <Route path="/contrats/1/edit" element={<EditContrat />} />
                     
