@@ -11,6 +11,7 @@ import * as XLSX from "xlsx";
 import React from "react";
 import DeleteModal from "../subcomponents/DeleteModal.jsx";
 import { Link } from "react-router-dom";
+import ModalNewContrat from "../subcomponents/ModalNewContrat.jsx";
 
 const Contrats = () => {
     const [currentPage, setCurrentPage] = useState(1);
@@ -96,7 +97,7 @@ const Contrats = () => {
                     <h1 className="text-4xl font-bold">Contrats</h1>
                     <div className="flex gap-3">
                         <ButtonOutline label="Exporter (.xls)" onClick={exportToExcel} />
-                        <ButtonFill label="Nouveau contrat" icon={true} />
+                        <ModalNewContrat />
                     </div>
                 </div>
                 <div className="flex justify-between items-center mb-6">

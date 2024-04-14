@@ -10,6 +10,7 @@ import * as XLSX from "xlsx";
 import React from "react";
 import DeleteModal from "../subcomponents/DeleteModal.jsx";
 import { Link } from "react-router-dom";
+import ModalNewAffaire from "../subcomponents/ModalNewAffaire.jsx";
 const Affaires = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const totalPages = 4;
@@ -93,7 +94,7 @@ const Affaires = () => {
                     <h1 className="text-4xl font-bold">Affaires</h1>
                     <div className="flex gap-3">
                         <ButtonOutline label="Exporter (.xls)" onClick={exportToExcel} />
-                        <ButtonFill label="Nouvelle affaire" icon={true} />
+                        <ModalNewAffaire />
                     </div>
                 </div>
                 <div className="flex justify-between items-center mb-6">

@@ -10,6 +10,7 @@ import Pagination from "../subcomponents/Pagination.jsx";
 import * as XLSX from "xlsx";
 import React from "react";
 import DeleteModal from "../subcomponents/DeleteModal.jsx";
+import ModalNewFournisseur from "../subcomponents/ModalNewFournisseur.jsx";
 const Fournisseurs = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const totalPages = 4;
@@ -92,7 +93,7 @@ const Fournisseurs = () => {
                     <h1 className="text-4xl font-bold">Fournisseurs</h1>
                     <div className="flex gap-3">
                         <ButtonOutline label="Exporter (.xls)" onClick={exportToExcel} />
-                        <ButtonFill label="Nouveau fournisseur" icon={true} />
+                        <ModalNewFournisseur />
                     </div>
                 </div>
                 <div className="flex justify-between items-center mb-6">
