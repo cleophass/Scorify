@@ -5,9 +5,9 @@
     "provider": "Logitech",
     "score": 85,
     "avatars": [
-      "/src/assets/homme_1.png",
-      "/src/assets/femme_1.png",
-      "/src/assets/femme_2.png"
+      "/homme_1.png",
+      "/femme_1.png",
+      "/femme_2.png"
     ],
     "dateCreated": "07/04/2024"
   },
@@ -17,7 +17,7 @@
     "provider": "Safran",
     "score": 80,
     "avatars": [
-      "/src/assets/homme_1.png"
+      "/homme_1.png"
     ],
     "dateCreated": "08/04/2024"
   },
@@ -27,9 +27,9 @@
     "provider": "Paul",
     "score": 50,
     "avatars": [
-      "/src/assets/femme_1.png",
-      "/src/assets/femme_2.png",
-      "/src/assets/homme_1.png"
+      "/femme_1.png",
+      "/femme_2.png",
+      "/homme_1.png"
     ],
     "dateCreated": "09/04/2024"
   },
@@ -39,8 +39,8 @@
     "provider": "Swile",
     "score": 50,
     "avatars": [
-      "/src/assets/homme_1.png",
-      "/src/assets/femme_1.png"
+      "/homme_1.png",
+      "/femme_1.png"
     ],
     "dateCreated": "10/04/2024"
   }
