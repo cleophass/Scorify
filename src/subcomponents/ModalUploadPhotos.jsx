@@ -1,10 +1,12 @@
 import React, { useEffect, useRef, useState } from "react";
 import { ArrowUpTrayIcon } from "@heroicons/react/24/outline";
+import { useToasts } from "../components/ToastContext.jsx";
 const ModalUploadPhotos = () => {
   const [modalOpen, setModalOpen] = useState(false);
 
   const trigger = useRef(null);
   const modal = useRef(null);
+  const { addToast } = useToasts(); // Utilisez la fonction addToast pour afficher un message toaster
 
   // Close on click outside
   useEffect(() => {
@@ -85,8 +87,10 @@ const ModalUploadPhotos = () => {
     </button>
   </div>
   <div className="">
-    <button
-    onClick={() => setModalOpen(false)}
+  <button onClick={() => {
+    addToast('Les modifications ont été enregistrées avec succès.');
+    setModalOpen(false);
+}}
       className="block rounded-md border border-primary bg-custom-blue text-center text-base font-medium text-white transition "
       style={{width:"198px", height:"50px"}}
     >

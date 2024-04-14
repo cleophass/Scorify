@@ -4,11 +4,15 @@ import TextInput from '../subcomponents/TextInput.jsx';
 import TextInputLarge from '../subcomponents/TextInputLarge.jsx';
 import DropdownComponent from '../subcomponents/DropdownComponent.jsx';
 import { PlusCircleIcon } from "@heroicons/react/24/outline";
+import { useToasts } from "../components/ToastContext.jsx";
+
 const EditModal = () => {
   const [modalOpen, setModalOpen] = useState(false);
 
   const trigger = useRef(null);
   const modal = useRef(null);
+  const { addToast } = useToasts(); // Utilisez la fonction addToast pour afficher un message toaster
+
 
   // Close on click outside
   useEffect(() => {
@@ -82,10 +86,13 @@ const EditModal = () => {
                 </button>
               </div>
               <div className="w-1/2 px-3">
-                <button onClick={() => setModalOpen(false)}
-                className="text-inter block w-full rounded-md border border-primary bg-custom-blue p-3 text-center text-base font-medium text-white ">
-                  Enregistrer
-                </button>
+              <button onClick={() => {
+    addToast('Les modifications ont été enregistrées avec succès.');
+    setModalOpen(false);
+}}
+className="text-inter block w-full rounded-md border border-primary bg-custom-blue p-3 text-center text-base font-medium text-white ">
+    Enregistrer
+</button>
               </div>
             </div>
           </div>

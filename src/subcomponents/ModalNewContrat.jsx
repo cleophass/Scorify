@@ -3,12 +3,14 @@ import TextInput from '../subcomponents/TextInput.jsx';
 import DropdownComponent from '../subcomponents/DropdownComponent.jsx';
 import ButtonFill from "./ButtonFill.jsx";
 import { useNavigate } from 'react-router-dom';  // Import useNavigate from react-router-dom
+import { useToasts } from "../components/ToastContext.jsx";
 
 const ModalNewContrat = () => {
     const [modalOpen, setModalOpen] = useState(false);
     const modal = useRef(null);
     const trigger = useRef(null);
     const navigate = useNavigate(); // Initialize the useNavigate hook
+    const { addToast } = useToasts(); // Utilisez la fonction addToast pour afficher un message toaster
 
     // Close on click outside
     useEffect(() => {
@@ -35,10 +37,12 @@ const ModalNewContrat = () => {
     }, []);
 
     const handleNext = () => {
-      navigate('/contrats/1/edit'); // Navigate to the specified path
-      setModalOpen(false); // Optionally close the modal
+      // Ajoutez le message toaster ici
+      addToast("Les modifications ont été enregistrées avec succès.");
+      navigate('/contrats/1/edit'); // Naviguez à l'URL spécifié
+      setModalOpen(false); // Ferme le modal si nécessaire
     };
-
+    
     return (
       <>
         <div>

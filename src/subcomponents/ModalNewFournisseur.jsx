@@ -3,12 +3,15 @@ import TextInput from '../subcomponents/TextInput.jsx';
 import DropdownComponent from '../subcomponents/DropdownComponent.jsx';
 import ButtonFill from "./ButtonFill.jsx";
 import { useNavigate } from 'react-router-dom';  // Import useNavigate from react-router-dom
+import { useToasts } from "../components/ToastContext.jsx";
+
 
 const ModalNewFournisseur = () => {
     const [modalOpen, setModalOpen] = useState(false);
     const modal = useRef(null);
     const trigger = useRef(null);
     const navigate = useNavigate(); // Initialize the useNavigate hook
+    const { addToast } = useToasts(); // Utilisez la fonction addToast pour afficher un message toaster
 
     // Close on click outside
     useEffect(() => {
@@ -36,6 +39,8 @@ const ModalNewFournisseur = () => {
 
     const handleNext = () => {
       navigate('/fournisseurs/1/edit'); // Navigate to the specified path
+      addToast("Les modifications ont été enregistrées avec succès."); // Add a toaster message here
+
       setModalOpen(false); // Optionally close the modal
     };
 
