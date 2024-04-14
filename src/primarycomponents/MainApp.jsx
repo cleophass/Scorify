@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ToastProvider, ToastContainer } from '../components/ToastContext'; // Assurez-vous que ce chemin est correct
+import { ToastProvider, ToastContainer } from "../components/ToastContext"; // Assurez-vous que ce chemin est correct
 // Autres imports...
 import Sidebar from "../components/Sidebar.jsx";
 import Dashboard from "../components/Dashboard.jsx";
@@ -11,6 +11,7 @@ import ComparerAffaires from "../components/ComparerAffaires.jsx";
 import ComparerContrats from "../components/ComparerContrats.jsx";
 import Fournisseurs from "../components/Fournisseurs.jsx";
 import VueFournisseur from "../components/VueFournisseur.jsx";
+import EditFournisseur from "../components/EditFournisseur.jsx";
 import VueCollaborateur from "../components/VueCollaborateur.jsx";
 import Account from "../components/Account.jsx";
 import Critere from "../components/Critere.jsx";
@@ -22,11 +23,14 @@ const MainApp = ({ onLogout }) => {
     const [activePage, setActivePage] = useState("dashboard");
 
     return (
-        <ToastProvider> {/* Englobe tout le contenu avec ToastProvider */}
+        <ToastProvider>
+            {" "}
+            {/* Englobe tout le contenu avec ToastProvider */}
             <div className="flex">
                 <Sidebar activePage={activePage} setActivePage={setActivePage} onLogout={onLogout} />
                 <div className="flex-grow" style={{ marginLeft: "16rem" }}>
-                    <ToastContainer /> {/* Positionnez le ToastContainer ici pour qu'il soit visible sur toutes les pages */}
+                    <ToastContainer />{" "}
+                    {/* Positionnez le ToastContainer ici pour qu'il soit visible sur toutes les pages */}
                     <Routes>
                         <Route path="/dashboard" element={<Dashboard />} />
                         <Route path="/contrats" element={<Contrats />} />
@@ -38,6 +42,7 @@ const MainApp = ({ onLogout }) => {
                         <Route path="/contrats/1/edit" element={<EditContrat />} />
                         <Route path="/affaires/1/edit" element={<EditAffaires />} />
                         <Route path="/fournisseurs" element={<Fournisseurs />} />
+                        <Route path="/fournisseurs/1/edit" element={<EditFournisseur />} />
                         <Route path="/fournisseurs/1" element={<VueFournisseur />} />
                         <Route path="/account" element={<Account />} />
                         <Route path="/guide" element={<Guide />} />
