@@ -37,7 +37,7 @@ const ComparerAffaires = () => {
     return (
         <div className="px-16 py-10">
             <div className="flex justify-between items-center mb-10">
-                <h1 className="text-4xl font-bold text-black">Comparer Affaires</h1>
+                <h1 className="text-4xl font-bold text-black">Comparer les contrats</h1>
                 <div className="flex gap-3">
                     <ButtonFill label="Annuler" fill={false} />
                     <ButtonFill label="Exporter (.xls)" onClick={exportToExcel} />
@@ -46,20 +46,25 @@ const ComparerAffaires = () => {
             <div className="flex justify-left items-left mb-6">
                 <div className="flex gap-5">
                     <DropDownButton
-                        label="Titre de la"
-                        options={["Affaire 1", "Affaire 2", "Affaire 3", "Affaire 4"]}
+                        label="Maintenance et héberge..."
+                        options={["Fournitures et équipements", "Collations", "Tickets restaurant", "Promotion immobilière"]}
                         onChange={onChangeService}
                     />
                     <DropDownButton
-                        label="Affaire 1"
-                        options={["Affaire 1", "Affaire 2", "Affaire 3", "Affaire 4"]}
+                        label="Fournitures et équipe..."
+                        options={["Maintenance et hébergement", "Collations", "Tickets restaurant", "Promotion immobilière"]}
                         onChange={onChangeService}
                     />
                     <DropDownButton
-                        label="Affaire 2"
-                        options={["Affaire 1", "Affaire 2", "Affaire 3", "Affaire 4"]}
+                        label="Sélectionner une affaire"
+                        options={["Maintenance et hébergement", "Fournitures et équipements", "Collations", "Tickets restaurant", "Promotion immobilière"]}
                         onChange={onChangeService}
                     />
+                    <DropDownButton
+                        label="Sélectionner une affaire"
+                        options={["Maintenance et hébergement", "Fournitures et équipements", "Collations", "Tickets restaurant", "Promotion immobilière"]}
+                        onChange={onChangeService}
+                        />
                 </div>
             </div>
 

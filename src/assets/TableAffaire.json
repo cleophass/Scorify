@@ -3,7 +3,7 @@
     "id": "1",
     "title": "Maintenance et hébergement",
     "provider": "Logitec",
-    "score": 50,
+    "score": -1,
     "avatars": [
       "/src/assets/homme_1.png",
       "/src/assets/femme_1.png",
@@ -15,7 +15,7 @@
     "id": "2",
     "title": "Fourniture équipements",
     "provider": "Safran",
-    "score": -1,
+    "score": 89,
     "avatars": [
       "/src/assets/homme_1.png"
     ],
@@ -37,7 +37,7 @@
     "id": "4",
     "title": "Titres restaurants",
     "provider": "Swile",
-    "score": 95,
+    "score": 10,
     "avatars": [
       "/src/assets/homme_1.png"
     ],

@@ -36,7 +36,7 @@ const MyInfo = () => {
                 </div>
                     <TextInput 
                         label="Nom" 
-                        value="Dubois" // Valeur initiale
+                        value="Dupont" // Valeur initiale
                         onChange={(e) => {/* logic for handling change */}} // Gérer le changement
                         labelFontSize="text-lg" 
                         locked={false} // Assurez-vous que c'est modifiable

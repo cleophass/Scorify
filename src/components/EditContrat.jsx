@@ -20,7 +20,7 @@ const EditContrat = () => {
     const [totalScore, setTotalScore] = useState('-');
     return (
         <div id="content-to-export" className="px-16 py-10 ">
-      <h1 className="text-4xl font-bold text-custom-grey">Modifier contrat Logitec -110</h1>
+      <h1 className="text-4xl font-bold text-custom-grey">Modifier contrat Logitec - 1</h1>
       <AlertComponent score={totalScore} />
       {/* div to put item in line */}
       <div className="flex " style={{"gap":"32px"}}>

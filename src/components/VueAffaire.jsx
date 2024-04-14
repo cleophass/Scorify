@@ -64,8 +64,8 @@ const Contrats = () => {
                 {/* Profil fournisseur et image */}
                 <div className="flex items-center justify-between my-4">
                     <div className="flex flex-col gap-3">
-                        <p className="text-gray-500 font-bold">110 - Maintenance et hébergement</p>
-                        <p className="text-gray-500 font-bold">Interlocuteur : Samuel Dupont</p>
+                        <p className="text-gray-500 font-bold">1 - Maintenance et hébergement</p>
+                        <p className="text-gray-500 font-bold">Interlocuteur : Samuel Fournier</p>
                         <img className="h-10 w-10 rounded-full" src={profilepicture} alt="Profile" />
                     </div>
                 </div>
@@ -81,7 +81,7 @@ const Contrats = () => {
 
                 <div className="mb-5">
                     <div className="flex justify-between items-center mb-10">
-                        <h2 className="text-3xl text-black font-bold">Contrat liées</h2>
+                        <h2 className="text-3xl text-black font-bold">Contrat liés</h2>
                     </div>
 
                     <TableCta data={TableContrat} path="/contrats/1" />

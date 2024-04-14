@@ -8,12 +8,9 @@ import DropdownIcon from "../subcomponents/DropdownIcon.jsx";
 const TableHeader = ({ isAllSelected, toggleAll }) => {
     return (
         <div className="px-4 py-3 bg-indigo-50 rounded-tl-md rounded-tr-md flex items-center">
-            <div className="px-3 w-[46px]">
-                <input type="checkbox" checked={isAllSelected} onChange={toggleAll} />
-            </div>
             <div className="w-[240px] px-4 font-inter font-bold"></div>
-            <div className="w-[240px] px-3 font-inter font-bold">Regional Paradigm Technician (110)</div>
-            <div className="w-[240px] px-3 font-inter font-bold">Regional Paradigm Technician (110)</div>
+            <div className="w-[240px] px-3 font-inter font-bold">Maintenance et hébergement (Logitec)</div>
+            <div className="w-[240px] px-3 font-inter font-bold">Fournitures et équipements (Safran)</div>
             <div className="flex-grow px-4 font-inter font-bold"></div>
         </div>
     );
@@ -25,9 +22,6 @@ const DataRow = ({ id, criterium, tech1, tech2, score, index, isSelected, toggle
     const displayTech2 = index === 0 ? <Score score={tech2} /> : `${tech2}/10`;
     return (
         <div className={`px-4 py-6 flex items-center border-b border-zinc-200 ${isSelected ? "bg-gray-200" : ""}`}>
-            <div className="px-3 w-[46px]">
-                <input type="checkbox" checked={isSelected} onChange={() => toggle(id)} />
-            </div>
             <div className="w-[240px] px-4 font-inter">{criterium}</div>
             <div className="w-[240px] px-2 font-inter">{displayTech1}</div>
             <div className="w-[240px] px-2 font-inter">{displayTech2}</div>

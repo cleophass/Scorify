@@ -55,7 +55,7 @@ const Contrats = () => {
                 {/* Profil fournisseur et image */}
                 <div className="flex items-center justify-between my-4">
                     <div className="flex flex-col gap-3">
-                        <p className="text-gray-500 font-bold">110 - Samuel Dupont</p>
+                        <p className="text-gray-500 font-bold">1 - Samuel Fournier</p>
                         <img className="h-16 w-16 rounded-full" src={profilepicture} alt="Profile" />
                     </div>
                 </div>

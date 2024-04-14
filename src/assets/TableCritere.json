@@ -12,6 +12,12 @@
     "critere": "Temps de traitement",
     "importance": "2",
     "description": "Description explicative ici, elle peut être sur une ligne ou pas."
+  },
+  {
+    "id": "3",
+    "critere": "Disponibilité",
+    "importance": "1",
+    "description": "Description explicative ici, elle peut être sur une ligne ou pas."
   }
 ],
 "affaires":[
@@ -26,6 +32,12 @@
     "critere": "Lisibilité et qualité de la proposition",
     "importance": "2",
     "description": "Description explicative ici, elle peut être ."
+  },
+  {
+    "id": "3",
+    "critere": "Disponibilité",
+    "importance": "1",
+    "description": "Description explicative ici, elle peut être sur une ligne ou pas."
   }
 ]
 }

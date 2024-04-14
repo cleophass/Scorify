@@ -1,5 +1,5 @@
 import React,{ useState } from "react";
-import profilepicture from "../assets/homme_1.png";
+import profilepicture from "../assets/femme_1.png";
 import TableCta from "../subcomponents/TableCta.jsx";
 import TableContrat from "../assets/TableContrat.json";
 import ButtonFill from "../subcomponents/ButtonFill.jsx";
@@ -87,11 +87,11 @@ const Contrats = () => {
     return (
         <>
             <div className="px-16 pt-10 pb-1 " style={{ width: "1194px" }}>
-                <h1 className="text-4xl font-bold">Alex Semuyel</h1>
+                <h1 className="text-4xl font-bold">Stéphanie Durant</h1>
                 <div className="flex items-center justify-between my-4 " style={{ width: "210px" }}>
                     <img className="h-16 w-16 rounded-full" src={profilepicture} alt="Profile" />
                     <p>
-                        <span className="font-bold">ID membre</span> 12345
+                        <span className="font-bold">ID membre</span> 123
                     </p>
                 </div>
             </div>
