@@ -17,6 +17,7 @@ import Critere from "../components/Critere.jsx";
 import EditContrat from "../components/EditContrat.jsx";
 import EditAffaires from "../components/EditAffaires.jsx";
 import { Routes, Route } from "react-router-dom";
+import Guide from "../components/Guide.jsx";
 
 const MainApp = ({ onLogout }) => {
     const [activePage, setActivePage] = useState("dashboard");
@@ -40,6 +41,7 @@ const MainApp = ({ onLogout }) => {
                         <Route path="/fournisseurs" element={<Fournisseurs />} />
                         <Route path="/fournisseurs/1" element={<VueFournisseur />} />
                         <Route path="/account" element={<Account />} />
+                        <Route path="/guide" element={<Guide />} />
                         <Route path="/vue-collaborateur" element={<VueCollaborateur />} />
                         <Route path="/criteres" element={<Critere />} />
                         {/* Ajoutez d'autres routes ici si nécessaire */}

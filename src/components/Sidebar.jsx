@@ -59,6 +59,9 @@ const Sidebar = ({ activePage, setActivePage, onLogout }) => {
                 <div className="py-2 px-5">
                     <div className="border-t border-light-gray my-5 mx-auto"></div>
                 </div>
+                <NavItem onClick={() => handleItemClick("guide")} isActive={activePage === "vue-collaborateur"}>
+                    Guide d'utilisation
+                </NavItem>
                 <NavItem onClick={() => handleItemClick("account")} isActive={activePage === "account"}>
                     Mon compte
                 </NavItem>

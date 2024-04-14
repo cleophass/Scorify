@@ -45,7 +45,7 @@ const Signup = () => {
       users.push(newUser);
       localStorage.setItem('users', JSON.stringify(users));
 
-      navigate('/'); // Redirection vers la page de connexion
+      navigate('/guideSign'); // Redirection vers la page de connexion
     }
   };
 
