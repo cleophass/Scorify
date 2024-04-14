@@ -56,7 +56,7 @@ const Contrats = () => {
                 <div className="flex items-center justify-between my-4">
                     <div className="flex flex-col gap-3">
                         <p className="text-gray-500 font-bold">1 - Samuel Fournier</p>
-                        <img className="h-16 w-16 rounded-full" src={profilepicture} alt="Profile" />
+                        <img className="h-10 w-10 rounded-full" src={profilepicture} alt="Profile" />
                     </div>
                 </div>
                 {/* Note */}

@@ -4,7 +4,7 @@ import { PlusCircleIcon, ArrowDownTrayIcon } from "@heroicons/react/24/outline";
 
 const ButtonFill = ({
     label,
-    height = "auto",
+    height = "50px",
     width = "auto",
     fill = true,
     icon = false, // Boolean to show/hide icon

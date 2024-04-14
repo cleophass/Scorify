@@ -40,7 +40,7 @@ const DataRow = ({ id, fullName, contact, role, statut, contrats, avatars, dateC
                     option1="Voir"
                     path1="/vue-collaborateur"
                     option2="Renvoyer l'invitation"
-                    path2="/renvoyer"
+                    path2="/account"
                 />
             </div>
             <div className="flex-grow"></div>

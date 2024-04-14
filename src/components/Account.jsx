@@ -50,7 +50,8 @@ const Account = () => {
          <MyInfo />
         
         </div>
-        <div className='text-right mt-10'>
+        <div className='justify-end mt-10 flex gap-3'>
+        <ButtonOutline label="Annuler" width='100px'/>
         <button
           className={`bg-custom-blue text-white font-bold py-2 px-4 rounded `}
           style={{ height: '50px', width: '141px' }}

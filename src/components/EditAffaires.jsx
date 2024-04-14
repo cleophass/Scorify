@@ -64,21 +64,26 @@ const Editaffaire = () => {
         <div className="self-stretch text-center text-gray-500 text-sm font-normal font-inter leading-normal">Format autorisé : png, jpg</div>
     </div>
 </div>
-            <div className="flex gap-3 justify-end">
-        <ButtonOutline label="Annuler" width = "116px" />
-    
-        <button
-          className={`bg-custom-blue text-white font-bold py-2 px-4 rounded `}
-          style={{ height: '50px', width: '141px' }}
-            onClick={handleSave}
-        >
-           Enregistrer        </button>
-           </div>
            <h1 className="text-3xl font-bold text-custom-grey">Critères de l'affaire</h1>
            
            <TableEdit data={TableEditcontent} onScoreChange={setTotalScore} />
-           <div className="mt-5 mb-5">
-           <NewEditCriteria />
+           <div className="mt-5 flex justify-between w-full">
+  <div>
+    <NewEditCriteria />
+  </div>
+  
+  <div className="flex gap-3">
+    <ButtonOutline label="Annuler" width="116px" />
+    <button
+      className="bg-custom-blue text-white font-bold py-2 px-4 rounded"
+      style={{ height: '50px', width: '141px' }}
+      onClick={handleSave}
+    >
+      Enregistrer
+    </button>
+
+    
+           </div>
            </div>
         </div>
 
