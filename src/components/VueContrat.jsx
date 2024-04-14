@@ -18,6 +18,7 @@ import Pagination from "../subcomponents/Pagination.jsx";
 import * as XLSX from "xlsx";
 import React from "react";
 import ButtonRecommandation from "../subcomponents/ButtonRecommandation.jsx";
+import { useNavigate } from "react-router-dom";
 
 const VueContrats = () => {
     const [totalScore, setTotalScore] = useState("-");
@@ -26,6 +27,7 @@ const VueContrats = () => {
     const [searchQuery, setSearchQuery] = useState("");
     const [selectedService, setSelectedService] = useState(["Marketing", "Développement", "Support"]);
     const [scoreRange, setScoreRange] = useState(["Aucun", "0-25", "26-50", "51-100"]);
+    const navigate = useNavigate();
 
     const handleSearch = (query) => {
         setSearchQuery(query.toLowerCase());
@@ -50,6 +52,9 @@ const VueContrats = () => {
         setCurrentPage(newPage);
     };
 
+    const handleEdit = () => {
+        navigate("/contrats/1/edit");
+    }
     return (
         <>
             {/* header */}
@@ -61,7 +66,7 @@ const VueContrats = () => {
                     <h1 className="text-4xl font-bold">Contrat Logitec</h1>
                     <div className="flex gap-3">
                         <ButtonFill label="Voir le contrat" fill={false} icon={true} iconType="arrow" height="50px" />
-                        <ButtonFill label="Modifier" fill={true} icon={false} iconType="arrow" height="50px" />{" "}
+                        <ButtonFill label="Modifier" fill={true} icon={false} iconType="arrow" height="50px" onClick={handleEdit} />{" "}
                     </div>
                 </div>
                 {/* Profil fournisseur et image */}

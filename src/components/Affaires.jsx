@@ -125,7 +125,7 @@ const Affaires = () => {
                 </div>
                 <Table
                     data={TableAffaire.filter((contract) => filterContracts(contract) && filterByScore(contract))}
-                    path1="/Affaires/1"
+                    path1="/affaires/1"
                     path2="1/edit"
                 />
 

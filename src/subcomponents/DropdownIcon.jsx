@@ -22,7 +22,7 @@ const useClickOutside = (handler) => {
     return domNode;
 };
 
-const DropdownIcon = ({ option1 = "Voir", path1, option2 = "Modifier", path2 }) => {
+const DropdownIcon = ({ option1 = "Voir", path1, option2 = "Modifier", path2, onOption1Click, onOption2Click }) => {
     const [dropdownOpen, setDropdownOpen] = useState(false);
     let domNode = useClickOutside(() => setDropdownOpen(false));
     const navigate = useNavigate(); // Nécessaire pour la navigation sur les items
@@ -42,8 +42,8 @@ const DropdownIcon = ({ option1 = "Voir", path1, option2 = "Modifier", path2 }) 
                     boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)'
                   }}
                 >
-                  <DropdownItem label={option1} path={path1} navigate={navigate} />
-                  <DropdownItem label={option2} path={path2} navigate={navigate} />
+                  <DropdownItem label={option1} path={path1} navigate={navigate} onClick={onOption1Click}/>
+                  <DropdownItem label={option2} path={path2} navigate={navigate} onClick={onOption2Click}/>
                 </div>
             )}
         </div>

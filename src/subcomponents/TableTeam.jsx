@@ -4,7 +4,7 @@ import TeamAvatars from "./TeamAvatars.jsx";
 import { EllipsisVerticalIcon } from "@heroicons/react/24/outline";
 import DropdownIcon from "../subcomponents/DropdownIcon.jsx";
 import Statut from "./Statut.jsx";
-
+import { useToasts } from "../components/ToastContext.jsx";
 // Composant pour l'entête du tableau
 const TableHeader = ({ isAllSelected, toggleAll }) => {
     return (
@@ -38,9 +38,13 @@ const DataRow = ({ id, fullName, contact, role, statut, contrats, avatars, dateC
             <div className="w-[100px] text-left font-inter">
                 <DropdownIcon 
                     option1="Voir"
-                    path1="/vue-collaborateur"
+                    path1="/account/vue-collaborateur"
                     option2="Renvoyer l'invitation"
                     path2="/account"
+                    onOption2Click={(e) => {
+                        e.preventDefault();  // Prévenir la navigation
+                        addToast('Invitation renvoyée avec succès');
+                      }}
                 />
             </div>
             <div className="flex-grow"></div>
@@ -50,6 +54,7 @@ const DataRow = ({ id, fullName, contact, role, statut, contrats, avatars, dateC
 
 // Composant principal pour le tableau
 const TableTeam = ({ data }) => {
+    const { addToast } = useToasts();
     const [selectedIds, setSelectedIds] = useState(new Set());
 
     const toggleAll = () => {
@@ -81,6 +86,7 @@ const TableTeam = ({ data }) => {
                     {...item}
                     isSelected={selectedIds.has(item.id)}
                     toggle={toggle}
+                    addToast={addToast}
                 />
             ))}
         </div>

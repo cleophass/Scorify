@@ -17,8 +17,10 @@ import TextArea from "../subcomponents/TextArea.jsx";
 import Pagination from "../subcomponents/Pagination.jsx";
 import * as XLSX from "xlsx";
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const Contrats = () => {
+    const navigate = useNavigate();
     const [totalScore, setTotalScore] = useState("-");
     const [currentPage, setCurrentPage] = useState(1);
     const totalPages = 4;
@@ -36,6 +38,10 @@ const Contrats = () => {
 
     const onChangeService = (newSelectedService) => {
         setSelectedService(newSelectedService);
+    };
+
+    const handleEdit = () => {
+        navigate("/affaires/1/edit");
     };
 
     const exportToExcel = () => {
@@ -58,7 +64,7 @@ const Contrats = () => {
                     {/* Titre et boutons */}
                     <h1 className="text-4xl text-black font-bold">Affaire Logitec</h1>
                     <div className="flex gap-3">
-                        <ButtonFill label="Modifier" fill={true} icon={false} iconType="arrow" height="50px" />{" "}
+                        <ButtonFill label="Modifier" fill={true} icon={false} iconType="arrow" height="50px" onClick={handleEdit}/>{" "}
                     </div>
                 </div>
                 {/* Profil fournisseur et image */}

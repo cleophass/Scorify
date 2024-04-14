@@ -4,6 +4,7 @@ import ButtonGroup from "../subcomponents/ButtonGroup.jsx";
 import DropDownButton from "../subcomponents/DropDownButton.jsx";
 import StatsCard from "../subcomponents/StatsCard.jsx";
 import GraphComponent from "../subcomponents/GraphComponent.jsx";
+import { useNavigate } from 'react-router-dom';  // Import useNavigate from react-router-dom
 
 // Importation du fichier JSON unifié
 import ChartData from "../assets/ChartDataUnified.json";
@@ -14,6 +15,8 @@ import LineChartComponent from "../subcomponents/LineChartComponent.jsx";
 import ButtonFillpdf from "../subcomponents/ButtonFillpdf.jsx";
 
 const Dashboard = () => {
+  const navigate = useNavigate(); // Initialize the useNavigate hook
+
   const [activeTab, setActiveTab] = useState("contrats");
   const { score: chartDataScore, service: chartDataService } = ChartData[activeTab] || { score: [], service: [] };
   const { table1: tableData1, table2: tableData2 } = TableData[activeTab] || { table1: [], table2: [] };
@@ -24,6 +27,14 @@ const Dashboard = () => {
   // const labels = ["Jan", "Fev", "Mar", "Avr", "Mai", "Jun", "Jul", "Août"];
   const handleButtonClick = (tabName) => {
     setActiveTab(tabName);
+  };
+  const handleClick = () => {
+    if (activeTab === "contrats") {
+      navigate('/contrats');
+    }
+    if (activeTab === "affaires") {
+      navigate('/affaires');
+    }
   };
   return (
     <div id="content-to-export" className="px-16 py-10 ">
@@ -70,7 +81,7 @@ const Dashboard = () => {
       </div>
       <div className="mb-6 flex justify-between items-center">
     <h1 className="text-2xl font-bold text-custom-grey">En attente de score</h1>
-    <a href="#" className="text-blue-600 text-base font-semibold leading-normal">Voir les {activeTab}</a>
+    <a href="" className="text-blue-600 text-base font-semibold leading-normal"onClick={handleClick}>Voir les {activeTab}</a>
     </div>
     <div className="mb-10">
 

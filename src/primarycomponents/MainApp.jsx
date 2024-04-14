@@ -18,7 +18,6 @@ import EditContrat from "../components/EditContrat.jsx";
 import EditAffaires from "../components/EditAffaires.jsx";
 import { Routes, Route } from "react-router-dom";
 import Guide from "../components/Guide.jsx";
-
 const MainApp = ({ onLogout }) => {
     const [activePage, setActivePage] = useState("dashboard");
 
@@ -33,7 +32,7 @@ const MainApp = ({ onLogout }) => {
                         <Route path="/contrats" element={<Contrats />} />
                         <Route path="/contrats/comparer" element={<ComparerContrats />} />
                         <Route path="/affaires" element={<Affaires />} />
-                        <Route path="/Affaires/1" element={<VueAffaire />} />
+                        <Route path="/affaires/1" element={<VueAffaire />} />
                         <Route path="/affaires/comparer" element={<ComparerAffaires />} />
                         <Route path="/contrats/1" element={<VueContrat />} />
                         <Route path="/contrats/1/edit" element={<EditContrat />} />
@@ -42,7 +41,7 @@ const MainApp = ({ onLogout }) => {
                         <Route path="/fournisseurs/1" element={<VueFournisseur />} />
                         <Route path="/account" element={<Account />} />
                         <Route path="/guide" element={<Guide />} />
-                        <Route path="/vue-collaborateur" element={<VueCollaborateur />} />
+                        <Route path="/account/vue-collaborateur" element={<VueCollaborateur />} />
                         <Route path="/criteres" element={<Critere />} />
                         {/* Ajoutez d'autres routes ici si nécessaire */}
                     </Routes>

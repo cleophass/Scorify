@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-d
 import Auth from "./primarycomponents/Auth";
 import MainApp from "./primarycomponents/MainApp";
 import "./styles.css";
+import ScrollToTop from "./components/ScrollToTop.jsx";
+
 function App() {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
 
@@ -28,6 +30,7 @@ function App() {
         // </div>
 
         <Router>
+            < ScrollToTop />
             <div className="app min-h-screen">
                 <Routes>
                     {isLoggedIn ? (
@@ -38,6 +41,7 @@ function App() {
                     )}
                 </Routes>
             </div>
+            
         </Router>
     );
 }
