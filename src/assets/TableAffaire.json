@@ -5,7 +5,7 @@
     "provider": "Logitec",
     "score": -1,
     "avatars": [
-      "/src/assets/homme_1.png",
+      "../assets/homme_1.png",
       "/src/assets/femme_1.png",
       "/src/assets/femme_2.png"
     ],
