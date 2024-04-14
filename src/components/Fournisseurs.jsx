@@ -92,7 +92,7 @@ const Fournisseurs = () => {
                 <div className="flex justify-between items-center mb-10">
                     <h1 className="text-4xl font-bold">Fournisseurs</h1>
                     <div className="flex gap-3">
-                        <ButtonOutline label="Exporter (.xls)" onClick={exportToExcel} />
+                        <ButtonOutline label="Exporter (.xls)" onClick={exportToExcel} toaster={true} />
                         <ModalNewFournisseur />
                     </div>
                 </div>

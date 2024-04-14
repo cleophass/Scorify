@@ -2,10 +2,12 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Signin from '../components/Signin';
 import Signup from '../components/Signup';
+import { ToastProvider, ToastContainer } from '../components/ToastContext'; // Assurez-vous que ce chemin est correct
+
 
 const Auth = ({ onLoginSuccess }) => {
   return (
-    // Utilisation de Tailwind CSS pour centrer
+    <ToastProvider>
     <div className='bg-back-gray'>
     <div className="flex justify-center items-center h-screen">
       <Routes>
@@ -16,6 +18,7 @@ const Auth = ({ onLoginSuccess }) => {
       </Routes>
     </div>
     </div>
+    </ToastProvider>
   );
 };
 

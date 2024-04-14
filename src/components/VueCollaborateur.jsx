@@ -101,7 +101,7 @@ const Contrats = () => {
                     <div className="flex justify-between items-center mb-10">
                         <h2 className="text-3xl font-bold">Contrats liés</h2>
                         <div className="flex gap-3">
-                            <ButtonFill label="Exporter (.xls)" onClick={exportToExcel} />
+                            <ButtonFill label="Exporter (.xls)" onClick={exportToExcel} toaster={true} />
                         </div>
                     </div>
 
@@ -113,7 +113,7 @@ const Contrats = () => {
                     <div className="flex justify-between items-center mb-10">
                         <h2 className="text-3xl font-bold">Affaires liées</h2>
                         <div className="flex gap-3">
-                            <ButtonFill label="Exporter (.xls)" onClick={exportToExcel} />
+                            <ButtonFill label="Exporter (.xls)" onClick={exportToExcel} toaster={true}/>
                         </div>
                     </div>
 

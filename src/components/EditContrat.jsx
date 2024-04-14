@@ -9,6 +9,8 @@ import TableEditcontent from "../assets/TableEdit.json";
 import AlertComponent from "../subcomponents/AlertComponent";
 import ButtonFill from "../subcomponents/ButtonFill";
 import NewEditCriteria from "../subcomponents/NewEditCriteria";
+import { useToasts } from "../components/ToastContext.jsx"; // Assurez-vous que ce chemin est correct
+
 
 const dropdownOptions = [
     { label: 'Paul', href: '#' }
@@ -17,7 +19,13 @@ const dropdownOptions2 = [
     { label: 'Samuel', href: '#' }
 ];
 const EditContrat = () => {
+    const { addToast } = useToasts();
+
     const [totalScore, setTotalScore] = useState('-');
+    const handleSave = () => {
+        // Logique pour sauvegarder les données ici...
+        addToast('Les modifications ont été enregistrées avec succès.');  // Affiche un message de confirmation
+    };
     return (
         <div id="content-to-export" className="px-16 py-10 ">
       <h1 className="text-4xl font-bold text-custom-grey">Modifier contrat Logitec - 1</h1>
@@ -62,9 +70,10 @@ const EditContrat = () => {
         <ButtonOutline label="Annuler" width = "116px" />
     
         <button
-          className={`bg-custom-blue text-white font-bold py-2 px-4 rounded `}
-          style={{ height: '50px', width: '141px' }}
-        >
+                    className="bg-custom-blue text-white font-bold py-2 px-4 rounded"
+                    style={{ height: '50px', width: '141px' }}
+                    onClick={handleSave}
+                >
            Enregistrer        </button>
            </div>
            <h1 className="text-3xl font-bold text-custom-grey">Critères du contrat</h1>

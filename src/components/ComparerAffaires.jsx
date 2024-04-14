@@ -40,7 +40,7 @@ const ComparerAffaires = () => {
                 <h1 className="text-4xl font-bold text-black">Comparer affaires</h1>
                 <div className="flex gap-3">
                     <ButtonFill label="Annuler" fill={false} />
-                    <ButtonFill label="Exporter (.xls)" onClick={exportToExcel} />
+                    <ButtonFill label="Exporter (.xls)" onClick={exportToExcel} toaster={true} />
                 </div>
             </div>
             <div className="flex justify-around items-center mb-6">
