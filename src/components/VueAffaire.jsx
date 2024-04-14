@@ -70,7 +70,7 @@ const Contrats = () => {
                     </div>
                 </div>
                 {/* Alerte */}
-                <AlertComponent score={40} />
+                <AlertComponent score={40} isContrat={false} />
 
                 {/* Table */}
                 {/* <TableEdit className="mt-5 mb-5" data={TableEditcontent} onScoreChange={setTotalScore} /> */}

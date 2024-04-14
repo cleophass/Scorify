@@ -21,7 +21,7 @@ const Editaffaire = () => {
     return (
         <div id="content-to-export" className="px-16 py-10 ">
       <h1 className="text-4xl font-bold text-custom-grey">Modifier affaire Logitec - 110</h1>
-      <AlertComponent score={totalScore} />
+      <AlertComponent score={totalScore} isContrat={false}  />
       {/* div to put item in line */}
       <div className="flex " style={{"gap":"32px"}}>
        

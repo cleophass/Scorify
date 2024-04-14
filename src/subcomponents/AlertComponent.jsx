@@ -1,7 +1,7 @@
 import React from "react";
 import { ExclamationTriangleIcon, InformationCircleIcon, CheckCircleIcon, XCircleIcon } from "@heroicons/react/24/outline";
 
-const AlertComponent = ({ score }) => {
+const AlertComponent = ({ score, isContrat = true }) => {
   let icon = null;
   let bgColor = '';
   let borderColor = '';
@@ -9,13 +9,14 @@ const AlertComponent = ({ score }) => {
   let textcolor = '';
   let title = '';
   let textElements = null;
+  let textType = isContrat ? 'Contrat' : 'Affaire';
 
   if (score === '-') {
     icon = <InformationCircleIcon className="h-5 text-white" />;
-    title = 'Evaluez votre contrat';
+    title = `Évaluez votre ${textType.toLowerCase()}`;
     textElements = (
       <>
-        Modifiez le contrat pour ajouter vos critères et notations afin d’établir un score pour ce contrat.
+        Modifiez le {textType.toLowerCase()} pour ajouter vos critères et notations afin d’établir un score pour ce {textType.toLowerCase()}.
       </>
     );
     bgColor = 'bg-blue-light';
@@ -27,7 +28,7 @@ const AlertComponent = ({ score }) => {
     title = 'Basique';
     textElements = (
       <>
-        <strong>Pas de suivi particulier.</strong> Contrats de faible valeur financière, risques minimaux, fournisseurs bien établis avec lesquels vous avez des antécédents positifs.
+        <strong>Pas de suivi particulier.</strong> {textType}s de faible valeur financière, risques minimaux, fournisseurs bien établis avec lesquels vous avez des antécédents positifs.
       </>
     );
     bgColor = 'bg-green-light';
@@ -39,7 +40,7 @@ const AlertComponent = ({ score }) => {
     title = 'Prioritaire';
     textElements = (
       <>
-        <strong>Ne nécessite pas de Contract Manager à temps plein.</strong> Contrats de grande valeur ou stratégiques, avec des risques significatifs, des fournisseurs qui requièrent une gestion active en raison de leur importance critique pour l'entreprise.
+        <strong>Ne nécessite pas de Contract Manager à temps plein.</strong> {textType}s de grande valeur ou stratégiques, avec des risques significatifs, des fournisseurs qui requièrent une gestion active en raison de leur importance critique pour l'entreprise.
       </>
     );
     bgColor = 'bg-yellow-light';
@@ -51,7 +52,7 @@ const AlertComponent = ({ score }) => {
     title = 'Critique';
     textElements = (
       <>
-        <strong>Nécessite un Contract Manager à temps plein.</strong> Contrats essentiels au fonctionnement de l'entreprise, à forte valeur, ou avec de nouveaux fournisseurs dont la fiabilité est encore à prouver.
+        <strong>Nécessite un Contract Manager à temps plein.</strong> {textType}s essentiels au fonctionnement de l'entreprise, à forte valeur, ou avec de nouveaux fournisseurs dont la fiabilité est encore à prouver.
       </>
     );
     bgColor = 'bg-red-light';
