@@ -108,9 +108,7 @@ const Fournisseurs = () => {
                 </div>
                 <div className="mb-5 mt-2 flex gap-2">
                     <DeleteModal />{" "}
-                    <button className="text-custom-blue rounded-full bg-primary text-base font-medium ">
-                        Comparer
-                    </button>
+                    
                 </div>
                 <TableSupplier data={TableFournisseur.filter((contract) => filterContracts(contract))} />
 

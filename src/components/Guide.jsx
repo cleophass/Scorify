@@ -18,7 +18,7 @@ const Guide = () => {
                 </div>
                 <p className="text-inter text-s mb-6 " style={{width:'560px'}}>Retrouvez ici une rapide démo afin de vous montrer les bases d’utilisation de l’outil.</p>
                 <div className="video-responsive mb-6">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/REVeqcS2aEU?si=5w8lacodmcwqavIq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/_afESnJ0QhA?si=Hb1JWk4kowV9ks4k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </div>
                 <div className="mb-6">
                     <ButtonFill label="Commencer à utiliser Scorify" width="560px" onClick={handleclick}/>

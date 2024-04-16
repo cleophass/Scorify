@@ -9,6 +9,7 @@ import Pagination from "../subcomponents/Pagination.jsx";
 import * as XLSX from "xlsx";
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import TableVueFournisseur from "../subcomponents/TableVueFournisseur.jsx";
 const Contrats = () => {
     const navigate = useNavigate();
     const [currentPage, setCurrentPage] = useState(1);
@@ -77,7 +78,7 @@ const Contrats = () => {
 
                     {/* Table */}
 
-                    <TableCta data={TableContrat} path="/contrats/1" />
+                    <TableVueFournisseur data={TableContrat} path="/contrats/1" />
                     <Pagination currentPage={currentPage} totalPages={totalPages} onPageChange={onPageChange} />
                 </div>
 
@@ -86,7 +87,7 @@ const Contrats = () => {
                         <h2 className="text-3xl font-bold">Contrats liés</h2>
                     </div>
 
-                    <TableCta data={TableContrat} path="/contrats/1" />
+                    <TableVueFournisseur data={TableContrat} path="/contrats/1" />
                     <Pagination currentPage={currentPage} totalPages={totalPages} onPageChange={onPageChange} />
                 </div>
             </div>
