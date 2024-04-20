@@ -19,6 +19,7 @@ import EditContrat from "../components/EditContrat.jsx";
 import EditAffaires from "../components/EditAffaires.jsx";
 import { Routes, Route } from "react-router-dom";
 import Guide from "../components/Guide.jsx";
+import ComparerFournisseurs from "../components/ComparerFournisseurs.jsx";
 const MainApp = ({ onLogout }) => {
     const [activePage, setActivePage] = useState("dashboard");
 
@@ -44,6 +45,7 @@ const MainApp = ({ onLogout }) => {
                         <Route path="/fournisseurs" element={<Fournisseurs />} />
                         <Route path="/fournisseurs/1/edit" element={<EditFournisseur />} />
                         <Route path="/fournisseurs/1" element={<VueFournisseur />} />
+                        <Route path="/fournisseurs/comparer" element={<ComparerFournisseurs />} />
                         <Route path="/account" element={<Account />} />
                         <Route path="/guide" element={<Guide />} />
                         <Route path="/account/vue-collaborateur" element={<VueCollaborateur />} />

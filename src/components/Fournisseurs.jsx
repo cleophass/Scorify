@@ -11,6 +11,8 @@ import * as XLSX from "xlsx";
 import React from "react";
 import DeleteModal from "../subcomponents/DeleteModal.jsx";
 import ModalNewFournisseur from "../subcomponents/ModalNewFournisseur.jsx";
+import { Link } from "react-router-dom";
+
 const Fournisseurs = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const totalPages = 4;
@@ -108,7 +110,11 @@ const Fournisseurs = () => {
                 </div>
                 <div className="mb-5 mt-2 flex gap-2">
                     <DeleteModal />{" "}
-                    
+                    <Link to="/fournisseurs/comparer">
+                        <button className="text-custom-blue rounded-full bg-primary text-base font-medium ">
+                            Comparer
+                        </button>
+                    </Link>
                 </div>
                 <TableSupplier data={TableFournisseur.filter((contract) => filterContracts(contract))} />
 
