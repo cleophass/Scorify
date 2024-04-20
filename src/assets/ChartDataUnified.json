@@ -110,5 +110,62 @@
           "color": "#dfe4ea"
         }
       ]
+    },
+    "fournisseurs"
+    : {
+      "score": [
+        {
+          "label": "0 - 26/100",
+          "value": 90,
+          "color": "#22AD5C"
+        },
+        {
+          "label": "27 - 50/100",
+          "value": 30,
+          "color": "#FBBF24"
+        },
+        {
+          "label": "51 - 75/100",
+          "value": 60,
+          "color": "#F23030"
+        }
+      ],
+      "service": [
+        {
+          "label": "Marketing",
+          "value": 25,
+          "color": "#3858f9"
+        },
+        {
+          "label": "R&D",
+          "value": 67,
+          "color": "#1c3fb7"
+        },
+        {
+          "label": "Logistique",
+          "value": 12,
+          "color": "#c3cdf6"
+        },
+        {
+          "label": "RH",
+          "value": 20,
+          "color": "#5475e5"
+        },
+        {
+          "label": "Juridique",
+          "value": 43,
+          "color": "#809aec"
+        },
+        {
+          "label": "Achats",
+          "value": 22,
+          "color": "#adbcf1"
+        },
+        {
+          "label": "Autres",
+          "value": 10,
+          "color": "#dfe4ea"
+        }
+      ]
     }
   }

@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-// Ajoutez des props pour recevoir l'onglet actif et la fonction de mise à jour.
+// Props to receive the active tab and the function to update it.
 const ButtonGroup = ({ active, onButtonClick }) => {
   return (
     <div className="flex items-center justify-center rounded-md shadow-sm border border-gray-300" role="group" style={{ height: '50px' }}>
@@ -11,6 +11,14 @@ const ButtonGroup = ({ active, onButtonClick }) => {
         }`}
       >
         Contrats
+      </button>
+      <button
+        onClick={() => onButtonClick('fournisseurs')}
+        className={`font-medium py-3 px-4 transition-all ${
+          active === 'fournisseurs' ? 'bg-custom-blue text-white' : 'bg-white text-gray-700'
+        }`}
+      >
+        Fournisseurs
       </button>
       <button
         onClick={() => onButtonClick('affaires')}

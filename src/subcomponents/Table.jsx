@@ -24,8 +24,6 @@ const TableHeader = ({ isAllSelected, toggleAll }) => {
 
 // Composant pour une ligne de données
 const DataRow = ({ id, title, provider, score, avatars, dateCreated, isSelected, toggle,path1 ="/contrats/1", path2="/contrats/1/edit" }) => {
-    console.log(path1);
-    console.log("2nd path is ",path2);
     
 
     return (

@@ -9,7 +9,7 @@
   },
   {
     "id": "2",
-    "provider": "Paul",
+    "provider": "Safran",
     "contractRelated": 3,
     "affairesRelated": 2,
     "score": 50,
@@ -25,7 +25,7 @@
   },
   {
     "id": "4",
-    "provider": "Safran",
+    "provider": "Paul",
     "contractRelated": 2,
     "affairesRelated": 1,
     "score": 10,

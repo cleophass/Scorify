@@ -18,6 +18,7 @@ const Dashboard = () => {
   const navigate = useNavigate(); // Initialize the useNavigate hook
 
   const [activeTab, setActiveTab] = useState("contrats");
+  
   const { score: chartDataScore, service: chartDataService } = ChartData[activeTab] || { score: [], service: [] };
   const { table1: tableData1, table2: tableData2 } = TableData[activeTab] || { table1: [], table2: [] };
   const { stats1 : stats1, stats2: stats2, stats3: stats3, stats4: stats4 } = statsData[activeTab] || { stats1: [], stats2: [], stats3: [], stats4: [] };
@@ -34,6 +35,9 @@ const Dashboard = () => {
     }
     if (activeTab === "affaires") {
       navigate('/affaires');
+    }
+    if (activeTab === "fournisseurs") {
+      navigate('/fournisseurs');
     }
   };
   return (

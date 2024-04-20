@@ -92,5 +92,52 @@
         "dateCreated": "02/02/2024"
       }
     ]
+  },
+  "fournisseurs":
+  {
+    "table1": [
+      {
+        "id": "11",
+        "title": "Fournisseur de bureau",
+        "provider": "Bureau vallée",
+        "score":-1,
+        "avatars": ["/homme_1.png", "/femme_1.png"],
+        "dateCreated": "01/01/2024"
+      },
+      {
+        "id": "12",
+        "title": "Fournisseur de collations",
+        "provider": "Paul",
+        "score":-1,
+        "avatars": ["/femme_1.png", "/femme_2.png", "/homme_1.png"],
+        "dateCreated": "01/01/2024"
+      },
+      {
+        "id": "13",
+        "title": "Fournisseur de titres restaurants",
+        "provider": "Swile",
+        "score":-1,
+        "avatars": ["/homme_1.png"],
+        "dateCreated": "01/01/2024"
+      }
+    ],
+    "table2": [
+      {
+        "id": "14",
+        "title": "Fournisseur de maintenance et hébergement",
+        "provider": "Logitec",
+        "score": 75,
+        "avatars": ["/femme_2.png", "/femme_1.png", "/homme_1.png"],
+        "dateCreated": "01/01/2024"
+      },
+      {
+        "id": "15",
+        "title": "Fournisseur de fournitures équipements",
+        "provider": "Safran",
+        "score": 50,
+        "avatars": ["/homme_1.png", "/femme_1.png", "/femme_2.png"],
+        "dateCreated": "02/02/2024"
+      }
+    ]
   }
 }

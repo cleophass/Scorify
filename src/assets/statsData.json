@@ -10,6 +10,13 @@
       "stats2":{ "title": "Affaires", "subtitle": "Score > 50/100", "value": "5", "percentage": 0.70, "barvalue": 90 },
       "stats3":{ "title": "Affaires", "subtitle": "En cours", "value": "10", "percentage": 0.20, "barvalue": 12 },
       "stats4":{ "title": "Affaires", "subtitle": "En attente de score", "value": "2", "percentage": 0.55, "barvalue": 23 }
+    },
+    "fournisseurs":
+    {
+      "stats1":{ "title": "Fournisseur", "subtitle": "Total", "value": "5", "percentage": 0.45, "barvalue": 85 },
+      "stats2":{ "title": "Fournisseur", "subtitle": "Score > 50/100", "value": "3", "percentage": 0.60, "barvalue": 95 },
+      "stats3":{ "title": "Fournisseur", "subtitle": "En cours", "value": "8", "percentage": 0.15, "barvalue": 5 },
+      "stats4":{ "title": "Fournisseur", "subtitle": "En attente de score", "value": "1", "percentage": 0.75, "barvalue": 45 }
     }
   }
   
