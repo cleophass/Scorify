@@ -4,6 +4,7 @@ import TeamAvatars from "./TeamAvatars.jsx";
 import { EllipsisVerticalIcon } from "@heroicons/react/24/outline";
 import DropdownIcon from "./DropdownIcon.jsx";
 
+
 // Composant pour l'entête du tableau
 const TableHeader = ({ isAllSelected, toggleAll }) => {
     return (
@@ -13,16 +14,16 @@ const TableHeader = ({ isAllSelected, toggleAll }) => {
             </div>
             <div className="w-[80px] px-4 font-inter font-bold">ID</div>
             <div className="w-[169px] px-3 font-inter font-bold">Fournisseur</div>
+            <div className="w-[169px] px-2 font-inter font-bold">Score </div>
             <div className="w-[137px] px-2 font-inter font-bold">Contrats liés</div>
             <div className="w-[137px] px-2 font-inter font-bold">Affaires liées</div>
-            <div className="w-[169px] px-2 font-inter font-bold">Contract manager </div>
             <div className="w-[169px] px-2 font-inter font-bold">Créé le</div>
         </div>
     );
 };
 
 // Composant pour une ligne de données
-const DataRow = ({ id, provider, contractRelated, affairesRelated, avatars, dateCreated, isSelected, toggle }) => {
+const DataRow = ({ id, provider,score, contractRelated, affairesRelated, dateCreated, isSelected, toggle }) => {
     return (
         <div className={`px-4 py-6 flex items-center border-b border-zinc-200 ${isSelected ? "bg-gray-200" : ""}`}>
             <div className="px-3 w-[46px]">
@@ -30,11 +31,9 @@ const DataRow = ({ id, provider, contractRelated, affairesRelated, avatars, date
             </div>
             <div className="w-[80px] px-4 font-inter">{id}</div>
             <div className="w-[169px] px-3 font-inter">{provider}</div>
+            <div className="w-[169px] px-2"> <Score score={score} /></div>
             <div className="w-[137px] px-3 font-inter">{contractRelated}</div>
             <div className="w-[137px] px-3 font-inter">{affairesRelated}</div>
-            <div className="w-[169px] px-2">
-                <TeamAvatars avatars={[avatars]} />
-            </div>
             <div className="w-[169px] px-2 font-inter">{dateCreated}</div>
             <div className="flex-grow px-4 font-inter">
                 <DropdownIcon label1="Voir" path1="/fournisseurs/1" label2="Modifier" path2="/fournisseurs/1/edit" />
