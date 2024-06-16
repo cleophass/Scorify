@@ -33,7 +33,7 @@ const MainApp = ({ onLogout }) => {
                     <ToastContainer />{" "}
                     {/* Positionnez le ToastContainer ici pour qu'il soit visible sur toutes les pages */}
                     <Routes>
-                        <Route path="/dashboard" element={<Dashboard />} />
+                        <Route path="/" element={<Dashboard />} />
                         <Route path="/contrats" element={<Contrats />} />
                         <Route path="/contrats/comparer" element={<ComparerContrats />} />
                         <Route path="/affaires" element={<Affaires />} />

@@ -24,6 +24,7 @@ function App() {
         sessionStorage.removeItem("isLoggedIn"); // Supprimez l'indicateur de connexion du localStorage
     };
 
+
     return (
         // <div style={{ width: '1168px', height: '398px', padding: '20px', boxSizing: 'border-box', background: '#FFF', borderRadius: '8px' }}>
         //   <LineChartComponent data={sampleData} />
@@ -33,12 +34,8 @@ function App() {
             < ScrollToTop />
             <div className="app min-h-screen">
                 <Routes>
-                    {isLoggedIn ? (
-                        // Passer handleLogout en prop pour permettre la déconnexion
-                        <Route path="/*" element={<MainApp onLogout={handleLogout} />} />
-                    ) : (
-                        <Route path="/*" element={<Auth onLoginSuccess={handleLoginSuccess} />} />
-                    )}
+                <Route path="/*" element={<MainApp onLogout={handleLogout} />} />
+                    
                 </Routes>
             </div>
             

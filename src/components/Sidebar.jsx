@@ -41,7 +41,7 @@ const Sidebar = ({ activePage, setActivePage, onLogout }) => {
                 <div className="flex items-center justify-center pt-5 pb-5">
                     <img src={Logo} alt="logo" className="h-14" />
                 </div>
-                <NavItem onClick={() => handleItemClick("dashboard")} isActive={activePage === "dashboard"}>
+                <NavItem onClick={() => handleItemClick("")} isActive={activePage === ""}>
                     Tableau de bord
                 </NavItem>
                 <NavItem onClick={() => handleItemClick("contrats")} isActive={activePage === "contrats"}>
